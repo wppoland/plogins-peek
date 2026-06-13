@@ -13,9 +13,9 @@ namespace Peek;
 
 defined('ABSPATH') || exit;
 
-$composer = __DIR__ . '/vendor/autoload.php';
-if (is_readable($composer)) {
-    require_once $composer;
+$peek_composer = __DIR__ . '/vendor/autoload.php';
+if (is_readable($peek_composer)) {
+    require_once $peek_composer;
     return;
 }
 

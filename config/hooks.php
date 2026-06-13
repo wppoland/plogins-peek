@@ -16,12 +16,7 @@ use Peek\Service\PeekService;
 
 defined('ABSPATH') || exit;
 
-$hooks = [
+return [
     PeekService::class,
+    ...(is_admin() ? [Settings::class] : []),
 ];
-
-if (is_admin()) {
-    $hooks[] = Settings::class;
-}
-
-return $hooks;
