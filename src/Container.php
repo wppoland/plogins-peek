@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PluginNamespace;
+namespace Peek;
 
 defined('ABSPATH') || exit;
 

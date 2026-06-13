@@ -1,0 +1,197 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Peek\Service;
+
+use Peek\Contract\HasHooks;
+use WPPoland\StorefrontKit\QuickView\QuickViewEngine;
+
+defined('ABSPATH') || exit;
+
+/**
+ * Thin adapter over the storefront-kit {@see QuickViewEngine}.
+ *
+ * Injects this plugin's text-domain ('peek'), option prefix ('peek_'), asset
+ * URLs and labels into the namespace-neutral engine, and supplies the two
+ * closures the engine needs: one to render packaged templates (loop button +
+ * modal shell) and one to build the per-product quick-view HTML fragment served
+ * over AJAX. All quick-view orchestration (hooks, nonce, enqueue, AJAX) lives in
+ * the kit; this class only supplies localisation, option storage, asset paths
+ * and the WooCommerce-specific fragment markup.
+ */
+final class PeekService implements HasHooks
+{
+    private const OPTION = 'peek_settings';
+
+    private ?QuickViewEngine $engine = null;
+
+    public function __construct()
+    {
+        // The engine ships with storefront-kit >= 1.3.0. When present, wire it
+        // with this plugin's text-domain / option prefix / asset URLs. Otherwise
+        // leave the service inert (see registerHooks()).
+        if (! class_exists(QuickViewEngine::class)) {
+            return;
+        }
+
+        $this->engine = new QuickViewEngine(
+            ajaxAction: 'peek_quick_view',
+            nonceAction: 'peek_quick_view',
+            scriptObjectName: 'peekQuickView',
+            assetHandle: 'peek',
+            styleUrl: \Peek\Plugin::instance()->url('assets/css/quick-view.css'),
+            scriptUrl: \Peek\Plugin::instance()->url('assets/js/quick-view.js'),
+            version: \Peek\VERSION,
+            buttonTemplate: 'quick-view-button',
+            modalTemplate: 'quick-view-modal',
+            labels: [
+                'loading'   => __('Loading product…', 'peek'),
+                'error'     => __('Failed to load the product preview.', 'peek'),
+                'not_found' => __('Product not found.', 'peek'),
+            ],
+            isEnabled: fn (): bool => $this->isEnabled(),
+            shouldRender: fn (): bool => $this->shouldRenderOnCurrentPage(),
+            settings: fn (): array => $this->settings(),
+            renderTemplate: function (string $template, array $context): void {
+                $this->renderTemplate($template, $context);
+            },
+            renderFragment: fn (\WC_Product $product, array $settings): string => $this->renderFragment($product, $settings),
+        );
+    }
+
+    public function registerHooks(): void
+    {
+        if ($this->engine instanceof QuickViewEngine) {
+            $this->engine->registerHooks();
+            return;
+        }
+
+        // TODO: storefront-kit < 1.3.0 has no QuickViewEngine. Bump the
+        // `wppoland/storefront-kit` constraint (composer update) to enable the
+        // quick view. No hooks are registered until the engine is present.
+    }
+
+    private function isEnabled(): bool
+    {
+        return (bool) ($this->settings()['enabled'] ?? false);
+    }
+
+    private function shouldRenderOnCurrentPage(): bool
+    {
+        return is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag();
+    }
+
+    /**
+     * Build the quick-view HTML fragment for a product.
+     *
+     * @param array<string, mixed> $settings
+     */
+    private function renderFragment(\WC_Product $product, array $settings): string
+    {
+        ob_start();
+        $this->renderTemplate('quick-view-content', [
+            'product'          => $product,
+            'settings'         => $settings,
+            'images'           => $this->productImages($product, $settings),
+            'add_to_cart_html' => $this->addToCartHtml($product, $settings),
+        ]);
+
+        return (string) ob_get_clean();
+    }
+
+    /**
+     * Image attachment IDs (main + a few gallery thumbs) honouring settings.
+     *
+     * @param array<string, mixed> $settings
+     * @return list<int>
+     */
+    private function productImages(\WC_Product $product, array $settings): array
+    {
+        $images = [];
+
+        if ((bool) ($settings['show_image'] ?? true)) {
+            $mainId = (int) $product->get_image_id();
+
+            if ($mainId > 0) {
+                $images[] = $mainId;
+            }
+        }
+
+        if ((bool) ($settings['show_gallery'] ?? true)) {
+            foreach (array_slice($product->get_gallery_image_ids(), 0, 4) as $imageId) {
+                $imageId = (int) $imageId;
+
+                if ($imageId > 0 && ! in_array($imageId, $images, true)) {
+                    $images[] = $imageId;
+                }
+            }
+        }
+
+        return $images;
+    }
+
+    /**
+     * Native WooCommerce add-to-cart markup (supports variations), rendered with
+     * the target product temporarily set as the global product.
+     *
+     * @param array<string, mixed> $settings
+     */
+    private function addToCartHtml(\WC_Product $product, array $settings): string
+    {
+        if (! (bool) ($settings['show_add_to_cart'] ?? true) || ! $product->is_purchasable()) {
+            return '';
+        }
+
+        // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- WooCommerce single add-to-cart rendering relies on the global product object.
+        $previousProduct = $GLOBALS['product'] ?? null;
+        $GLOBALS['product'] = $product;
+
+        ob_start();
+        woocommerce_template_single_add_to_cart();
+        $html = (string) ob_get_clean();
+
+        if ($previousProduct instanceof \WC_Product) {
+            $GLOBALS['product'] = $previousProduct;
+        } else {
+            unset($GLOBALS['product']);
+        }
+        // phpcs:enable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+
+        return $html;
+    }
+
+    /**
+     * Stored settings merged over packaged defaults.
+     *
+     * @return array<string, mixed>
+     */
+    private function settings(): array
+    {
+        $stored = get_option(self::OPTION, []);
+
+        if (! is_array($stored)) {
+            $stored = [];
+        }
+
+        /** @var array<string, mixed> $defaults */
+        $defaults = require PEEK_DIR . 'config/defaults.php';
+
+        return array_merge($defaults, $stored);
+    }
+
+    /**
+     * @param array<string, mixed> $context
+     */
+    private function renderTemplate(string $template, array $context): void
+    {
+        $file = PEEK_DIR . 'templates/' . $template . '.php';
+
+        if (! is_readable($file)) {
+            return;
+        }
+
+        extract($context, EXTR_SKIP);
+        require $file;
+    }
+}

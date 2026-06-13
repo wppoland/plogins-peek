@@ -10,7 +10,7 @@ minutes instead of rebuilding CI each time.
 > `wppoland/<slug>`. PRO → a separate **private** repo `wppoland/<slug>-pro`.
 
 1. **"Use this template" → create `wppoland/<slug>`** (public).
-2. **Run the scaffold script** — replaces all tokens and renames `plugin-slug.php → <slug>.php`
+2. **Run the scaffold script** — replaces all tokens and renames `peek.php → <slug>.php`
    (cross-platform; review the diff before committing):
    ```bash
    python3 scripts/init.py restock Restock "Restock" "Back-in-stock notifications for WooCommerce"
@@ -21,11 +21,11 @@ minutes instead of rebuilding CI each time.
 
    | Token | Replace with | Example |
    |---|---|---|
-   | `plugin-slug` | lowercase slug = text-domain = i18n domain | `restock` |
-   | `PluginNamespace` | PSR-4 PHP namespace | `Restock` |
-   | `PLUGINNAMESPACE` (in `define()`) | uppercased namespace | `RESTOCK` |
-   | `plugin_slug_` | option/meta prefix (slug, dashes→underscores) | `restock_` |
-   | `PLUGIN_NAME` / `PLUGIN_DESCRIPTION` / `PLUGIN_SHORT_DESCRIPTION` | name + descriptions | … |
+   | `peek` | lowercase slug = text-domain = i18n domain | `restock` |
+   | `Peek` | PSR-4 PHP namespace | `Restock` |
+   | `PEEK` (in `define()`) | uppercased namespace | `RESTOCK` |
+   | `peek_` | option/meta prefix (slug, dashes→underscores) | `restock_` |
+   | `Peek` / `Fast, accessible WooCommerce quick view — AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped` / `Fast, accessible WooCommerce quick view — AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped` | name + descriptions | … |
 3. `composer install` — resolves `wppoland/storefront-kit ^1.0` from VCS (no symlink). Implement
    your adapter in `src/`, wire it in `config/services.php` + `config/hooks.php`.
    *(For local atomic kit+adapter dev, see the kit README's path-override note.)*
@@ -37,8 +37,8 @@ minutes instead of rebuilding CI each time.
 
 ## What's wired
 
-- **Bootstrap** (`plugin-slug.php`): PHP/WC guards, HPOS + cart-blocks compat, `plugins_loaded`
-  boot, `do_action('plugin-slug/booted')` (the hook a PRO companion extends).
+- **Bootstrap** (`peek.php`): PHP/WC guards, HPOS + cart-blocks compat, `plugins_loaded`
+  boot, `do_action('peek/booted')` (the hook a PRO companion extends).
 - **Autoload** (`autoload.php`): Composer vendor autoloader + PSR-4 fallback (incl. the kit).
 - **DI**: `src/Plugin.php` singleton + `src/Container.php`; services in `config/services.php`,
   boot order in `config/hooks.php`, defaults in `config/defaults.php`; `src/Migrator.php`.

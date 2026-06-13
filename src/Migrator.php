@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PluginNamespace;
+namespace Peek;
 
 defined('ABSPATH') || exit;
 
@@ -12,7 +12,8 @@ defined('ABSPATH') || exit;
  */
 final class Migrator
 {
-    private const OPTION = 'plugin_slug_db_version';
+    private const OPTION   = 'peek_db_version';
+    private const SETTINGS = 'peek_settings';
 
     public function maybeMigrate(): void
     {
@@ -22,9 +23,23 @@ final class Migrator
             return;
         }
 
-        // Example: create tables / seed defaults here.
-        // $this->createWaitlistTable();
+        $this->seedDefaultSettings();
 
         update_option(self::OPTION, VERSION, false);
+    }
+
+    /**
+     * Seed the default settings once, without clobbering an existing config.
+     */
+    private function seedDefaultSettings(): void
+    {
+        if (get_option(self::SETTINGS, null) !== null) {
+            return;
+        }
+
+        /** @var array<string, mixed> $defaults */
+        $defaults = require PEEK_DIR . 'config/defaults.php';
+
+        add_option(self::SETTINGS, $defaults, '', false);
     }
 }

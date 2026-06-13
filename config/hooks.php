@@ -2,17 +2,26 @@
 /**
  * Boot order: services listed here are resolved from the container and have
  * their registerHooks() called during Plugin::boot(). Each must implement
- * PluginNamespace\Contract\HasHooks.
+ * Peek\Contract\HasHooks.
  *
- * @package PluginNamespace
+ * @package Peek
  *
  * @return array<class-string>
  */
 
 declare(strict_types=1);
 
+use Peek\Admin\Settings;
+use Peek\Service\PeekService;
+
 defined('ABSPATH') || exit;
 
-return [
-    // WaitlistService::class,
+$hooks = [
+    PeekService::class,
 ];
+
+if (is_admin()) {
+    $hooks[] = Settings::class;
+}
+
+return $hooks;

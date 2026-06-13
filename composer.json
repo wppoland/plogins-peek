@@ -1,6 +1,6 @@
 {
-    "name": "wppoland/plugin-slug",
-    "description": "PLUGIN_DESCRIPTION",
+    "name": "wppoland/peek",
+    "description": "Fast, accessible WooCommerce quick view — AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
     "repositories": [
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PluginNamespace\\": "src/"
+            "Peek\\": "src/"
         }
     },
     "scripts": {

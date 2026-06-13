@@ -1,0 +1,117 @@
+/**
+ * Peek — quick-view modal styles.
+ *
+ * Self-contained (no external token import). Theme authors can override the
+ * --peek-* custom properties. The closed modal is fully hidden (no reserved
+ * space, no layout shift); the dialog scrolls internally so opening it never
+ * reflows the page.
+ */
+
+.peek-quick-view-modal {
+    --peek-overlay-bg: rgba(0, 0, 0, 0.55);
+    --peek-surface-bg: #fff;
+    --peek-surface-radius-lg: 12px;
+    --peek-surface-radius-md: 8px;
+    --peek-surface-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+}
+
+/* Guarantee a closed modal stays hidden even if a theme forces a `display`
+   value on the overlay (which would otherwise win over the UA `[hidden]` rule). */
+.peek-quick-view-modal[hidden] {
+    display: none !important;
+}
+
+.peek-quick-view-trigger {
+    margin-top: 10px;
+}
+
+.peek-quick-view-backdrop {
+    position: absolute;
+    inset: 0;
+    background: var(--peek-overlay-bg);
+}
+
+.peek-quick-view-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(960px, calc(100vw - 32px));
+    max-height: calc(100vh - 32px);
+    overflow: auto;
+    margin: 16px auto;
+    background: var(--peek-surface-bg);
+    border-radius: var(--peek-surface-radius-lg);
+    padding: 24px;
+    box-shadow: var(--peek-surface-shadow);
+}
+
+.peek-quick-view-close {
+    position: sticky;
+    top: 0;
+    margin-left: auto;
+    display: block;
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.peek-quick-view-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.1fr);
+    gap: 24px;
+}
+
+.peek-quick-view-main-image img,
+.peek-quick-view-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--peek-surface-radius-md);
+}
+
+.peek-quick-view-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.peek-quick-view-summary > * + * {
+    margin-top: 12px;
+}
+
+.peek-quick-view-meta__label {
+    font-weight: 600;
+}
+
+.peek-quick-view-link {
+    margin-top: 8px;
+}
+
+body.peek-quick-view-open {
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .peek-quick-view-dialog {
+        width: calc(100vw - 16px);
+        max-height: calc(100vh - 16px);
+        margin: 8px auto;
+        padding: 16px;
+    }
+
+    .peek-quick-view-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .peek-quick-view-modal {
+        scroll-behavior: auto;
+    }
+}
