@@ -37,6 +37,45 @@
     margin-block-start: 10px;
 }
 
+ul.products li.product:has(.peek-quick-view-trigger--overlay) {
+    position: relative;
+}
+
+.peek-quick-view-trigger--overlay {
+    position: absolute;
+    z-index: 4;
+    inset-block-start: 0.65rem;
+    inset-inline-end: 0.65rem;
+    margin: 0;
+    pointer-events: none;
+}
+
+.peek-quick-view-trigger--overlay .peek-quick-view-button {
+    pointer-events: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+ul.products li.product:not(:hover):not(:focus-within) .peek-quick-view-trigger--overlay {
+    opacity: 0;
+}
+
+ul.products li.product:focus-within .peek-quick-view-trigger--overlay,
+ul.products li.product:hover .peek-quick-view-trigger--overlay {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .peek-quick-view-trigger--overlay {
+        transition: opacity 0.18s ease;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ul.products li.product:not(:hover):not(:focus-within) .peek-quick-view-trigger--overlay {
+        opacity: 1;
+    }
+}
+
 .peek-quick-view-backdrop {
     position: absolute;
     inset: 0;
