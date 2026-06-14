@@ -13,10 +13,12 @@ declare(strict_types=1);
 
 use Peek\Admin\Settings;
 use Peek\Service\PeekService;
+use Peek\Service\ShortcodeService;
 
 defined('ABSPATH') || exit;
 
 return [
     PeekService::class,
+    ShortcodeService::class,
     ...(is_admin() ? [Settings::class] : []),
 ];

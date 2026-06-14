@@ -13,6 +13,7 @@ use Peek\Admin\Settings;
 use Peek\Container;
 use Peek\Migrator;
 use Peek\Service\PeekService;
+use Peek\Service\ShortcodeService;
 
 defined('ABSPATH') || exit;
 
@@ -21,6 +22,9 @@ return static function (Container $c): void {
 
     // Thin adapter over the storefront-kit QuickViewEngine.
     $c->singleton(PeekService::class, static fn (): PeekService => new PeekService());
+
+    // `[peek_quick_view]` shortcode trigger, sharing the same engine + assets.
+    $c->singleton(ShortcodeService::class, static fn (): ShortcodeService => new ShortcodeService($c->get(PeekService::class)));
 
     // Admin (only needed in wp-admin context).
     if (is_admin()) {
