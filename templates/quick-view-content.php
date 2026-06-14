@@ -20,6 +20,19 @@ $peek_description  = (bool) ($settings['show_short_description'] ?? true)
     ? wpautop(wp_kses_post($product->get_short_description()))
     : '';
 $peek_sku_label    = (string) ($settings['sku_label'] ?? __('SKU', 'peek'));
+$peek_stock_html   = (bool) ($settings['show_stock'] ?? true)
+    ? wc_get_stock_html($product)
+    : '';
+
+// Track whether the summary column rendered anything, so we can show a friendly
+// fallback instead of an empty panel if the merchant disabled every section.
+$peek_has_summary = ((bool) ($settings['show_title'] ?? true) && trim((string) $product->get_name()) !== '')
+    || $peek_sku !== ''
+    || $peek_price_html !== ''
+    || $peek_stock_html !== ''
+    || $peek_description !== ''
+    || ($add_to_cart_html !== '')
+    || (bool) ($settings['show_view_product_link'] ?? true);
 ?>
 <div class="peek-quick-view-product product product-type-<?php echo esc_attr($product->get_type()); ?>">
     <div class="peek-quick-view-grid">
@@ -45,8 +58,11 @@ $peek_sku_label    = (string) ($settings['sku_label'] ?? __('SKU', 'peek'));
         </div>
 
         <div class="peek-quick-view-summary">
-            <?php if ((bool) ($settings['show_title'] ?? true)) : ?>
-                <h2 class="product_title entry-title"><?php echo esc_html($product->get_name()); ?></h2>
+            <?php
+            $peek_title = (bool) ($settings['show_title'] ?? true) ? trim((string) $product->get_name()) : '';
+            ?>
+            <?php if ($peek_title !== '') : ?>
+                <h2 class="product_title entry-title"><?php echo esc_html($peek_title); ?></h2>
             <?php endif; ?>
 
             <?php if ($peek_sku !== '') : ?>
@@ -58,6 +74,10 @@ $peek_sku_label    = (string) ($settings['sku_label'] ?? __('SKU', 'peek'));
 
             <?php if ($peek_price_html !== '') : ?>
                 <div class="peek-quick-view-price price"><?php echo wp_kses_post($peek_price_html); ?></div>
+            <?php endif; ?>
+
+            <?php if ($peek_stock_html !== '') : ?>
+                <div class="peek-quick-view-stock"><?php echo wp_kses_post($peek_stock_html); ?></div>
             <?php endif; ?>
 
             <?php if ($peek_description !== '') : ?>
@@ -77,6 +97,21 @@ $peek_sku_label    = (string) ($settings['sku_label'] ?? __('SKU', 'peek'));
                 >
                     <?php echo esc_html((string) ($settings['view_product_text'] ?? __('View full product', 'peek'))); ?>
                 </a>
+            <?php endif; ?>
+
+            <?php if (! $peek_has_summary) : ?>
+                <div class="peek-quick-view-status">
+                    <span class="peek-quick-view-status__icon" aria-hidden="true">👁</span>
+                    <p>
+                        <?php echo esc_html($product->get_name() !== '' ? $product->get_name() : __('Product preview', 'peek')); ?>
+                    </p>
+                    <a
+                        class="button alt peek-quick-view-link"
+                        href="<?php echo esc_url(get_permalink($product->get_id()) ?: ''); ?>"
+                    >
+                        <?php echo esc_html((string) ($settings['view_product_text'] ?? __('View full product', 'peek'))); ?>
+                    </a>
+                </div>
             <?php endif; ?>
 
             <?php do_action( 'peek_quick_view_content_end', $product, $settings ); ?>

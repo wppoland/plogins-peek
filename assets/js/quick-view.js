@@ -16,6 +16,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const dialog = modal.querySelector('.peek-quick-view-dialog') || modal;
+
+  const prefersReducedMotion =
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Build a friendly status block (spinner / icon + message) without injecting
+  // markup from config strings as HTML — text is set via textContent.
+  const renderStatus = (message, variant) => {
+    content.textContent = '';
+    const wrap = document.createElement('div');
+    wrap.className = 'peek-quick-view-status';
+
+    const indicator = document.createElement('span');
+    if (variant === 'error') {
+      indicator.className = 'peek-quick-view-status__icon';
+      indicator.setAttribute('aria-hidden', 'true');
+      indicator.textContent = '⚠';
+    } else {
+      indicator.className = 'peek-quick-view-status__spinner';
+      indicator.setAttribute('aria-hidden', 'true');
+    }
+    wrap.appendChild(indicator);
+
+    const text = document.createElement('p');
+    text.textContent = message || '';
+    wrap.appendChild(text);
+
+    content.appendChild(wrap);
+  };
+
   const FOCUSABLE = [
     'a[href]',
     'button:not([disabled])',
@@ -46,11 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
     lastFocused = trigger || (document.activeElement instanceof HTMLElement ? document.activeElement : null);
     modal.hidden = false;
     document.body.classList.add('peek-quick-view-open');
+
+    // Enter transition: start in the animating (hidden) state, then release on
+    // the next frame so the CSS transition runs. Skipped under reduced motion.
+    if (!prefersReducedMotion) {
+      modal.setAttribute('data-peek-animating', '');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => modal.removeAttribute('data-peek-animating'));
+      });
+    }
+
     focusFirst();
   };
 
   const closeModal = () => {
     modal.hidden = true;
+    modal.removeAttribute('data-peek-animating');
     document.body.classList.remove('peek-quick-view-open');
 
     // Return focus to the control that opened the modal (accessibility).
@@ -135,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     openModal(trigger);
     content.setAttribute('aria-busy', 'true');
-    content.innerHTML = `<p>${config.loadingText}</p>`;
+    renderStatus(config.loadingText, 'loading');
 
     const url = new URL(config.ajaxUrl, window.location.origin);
     url.searchParams.set('action', config.action);
@@ -144,20 +185,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const response = await fetch(url.toString(), { credentials: 'same-origin' });
+
+      if (!response.ok) {
+        throw new Error('quick-view-http-' + response.status);
+      }
+
       const payload = await response.json();
 
       if (!payload || !payload.success || !payload.data || !payload.data.html) {
         throw new Error('quick-view-failed');
       }
 
+      // Bail if the user already closed the modal while the request was in flight.
+      if (modal.hidden) {
+        return;
+      }
+
       content.innerHTML = payload.data.html;
       initVariations();
       // Move focus into the freshly loaded content if the modal is still open.
-      if (!modal.hidden) {
-        focusFirst();
-      }
+      focusFirst();
     } catch (error) {
-      content.innerHTML = `<p>${config.errorText}</p>`;
+      if (!modal.hidden) {
+        renderStatus(config.errorText, 'error');
+      }
     } finally {
       content.removeAttribute('aria-busy');
     }
