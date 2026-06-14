@@ -103,6 +103,54 @@ final class Settings implements HasHooks
                                 <p class="description"><?php esc_html_e('Text shown on the quick-view trigger button.', 'peek'); ?></p>
                             </td>
                         </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="peek_button_style"><?php esc_html_e('Button style', 'peek'); ?></label>
+                            </th>
+                            <td>
+                                <?php $peek_style = (string) ($settings['button_style'] ?? 'text'); ?>
+                                <select id="peek_button_style" name="<?php echo esc_attr(self::OPTION); ?>[button_style]">
+                                    <option value="text" <?php selected($peek_style, 'text'); ?>><?php esc_html_e('Text only', 'peek'); ?></option>
+                                    <option value="icon" <?php selected($peek_style, 'icon'); ?>><?php esc_html_e('Icon only', 'peek'); ?></option>
+                                    <option value="icon_text" <?php selected($peek_style, 'icon_text'); ?>><?php esc_html_e('Icon and text', 'peek'); ?></option>
+                                </select>
+                                <p class="description"><?php esc_html_e('How the trigger appears in the product loop. The icon-only style keeps the label as its accessible name.', 'peek'); ?></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="peek_display_scope"><?php esc_html_e('Where to load', 'peek'); ?></label>
+                            </th>
+                            <td>
+                                <?php $peek_scope = (string) ($settings['display_scope'] ?? 'shop'); ?>
+                                <select id="peek_display_scope" name="<?php echo esc_attr(self::OPTION); ?>[display_scope]">
+                                    <option value="shop" <?php selected($peek_scope, 'shop'); ?>><?php esc_html_e('Shop and product archives', 'peek'); ?></option>
+                                    <option value="shop_single" <?php selected($peek_scope, 'shop_single'); ?>><?php esc_html_e('Archives + single-product related/upsell loops', 'peek'); ?></option>
+                                </select>
+                                <p class="description"><?php esc_html_e('Choose whether the quick-view button also appears in the related and up-sell loops on single product pages.', 'peek'); ?></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2><?php esc_html_e('Modal chrome', 'peek'); ?></h2>
+                <p class="description">
+                    <?php esc_html_e('Labels and behaviour for the modal dialog itself.', 'peek'); ?>
+                </p>
+
+                <table class="form-table" role="presentation">
+                    <tbody>
+                        <?php
+                        $this->textRow('modal_title', __('Modal title', 'peek'), __('Heading announced for the dialog.', 'peek'), $settings);
+                        $this->textRow('close_label', __('Close button label', 'peek'), __('Accessible label for the close button.', 'peek'), $settings);
+                        $this->textRow('loading_text', __('Loading text', 'peek'), __('Shown while the product is fetched.', 'peek'), $settings);
+                        $this->textRow('error_text', __('Error text', 'peek'), __('Shown if the product fails to load.', 'peek'), $settings);
+                        $this->textRow('view_product_text', __('View product link text', 'peek'), __('Label for the link to the full product page.', 'peek'), $settings);
+                        $this->textRow('sku_label', __('SKU label', 'peek'), __('Prefix shown before the SKU value.', 'peek'), $settings);
+                        $this->checkboxRow('show_modal_label', __('Modal heading', 'peek'), __('Show the modal title above the loaded product.', 'peek'), $settings);
+                        $this->checkboxRow('show_close_button', __('Close button', 'peek'), __('Show the close (×) button.', 'peek'), $settings);
+                        $this->checkboxRow('show_backdrop_close', __('Close on backdrop click', 'peek'), __('Close the modal when the backdrop is clicked.', 'peek'), $settings);
+                        ?>
                     </tbody>
                 </table>
 
@@ -117,10 +165,12 @@ final class Settings implements HasHooks
                     <tbody>
                         <?php
                         $this->checkboxRow('show_image', __('Product image', 'peek'), __('Show the featured image.', 'peek'), $settings);
-                        $this->checkboxRow('show_gallery', __('Gallery thumbnails', 'peek'), __('Show up to four gallery thumbnails.', 'peek'), $settings);
+                        $this->checkboxRow('show_gallery', __('Gallery thumbnails', 'peek'), __('Show gallery thumbnails.', 'peek'), $settings);
+                        $this->numberRow('gallery_limit', __('Gallery thumbnail count', 'peek'), __('Maximum gallery thumbnails to show (0–12).', 'peek'), $settings, 0, 12);
                         $this->checkboxRow('show_title', __('Title', 'peek'), __('Show the product title.', 'peek'), $settings);
                         $this->checkboxRow('show_sku', __('SKU', 'peek'), __('Show the product SKU.', 'peek'), $settings);
                         $this->checkboxRow('show_price', __('Price', 'peek'), __('Show the product price.', 'peek'), $settings);
+                        $this->checkboxRow('show_stock', __('Stock status', 'peek'), __('Show the stock availability.', 'peek'), $settings);
                         $this->checkboxRow('show_short_description', __('Short description', 'peek'), __('Show the product short description.', 'peek'), $settings);
                         $this->checkboxRow('show_add_to_cart', __('Add to cart', 'peek'), __('Show the add-to-cart form (with variations).', 'peek'), $settings);
                         $this->checkboxRow('show_view_product_link', __('View full product link', 'peek'), __('Show a link to the full product page.', 'peek'), $settings);
@@ -164,6 +214,59 @@ final class Settings implements HasHooks
     }
 
     /**
+     * Render a single text-input row in the form-table.
+     *
+     * @param array<string, mixed> $settings
+     */
+    private function textRow(string $key, string $label, string $help, array $settings): void
+    {
+        $id = 'peek_' . $key;
+        ?>
+        <tr>
+            <th scope="row"><label for="<?php echo esc_attr($id); ?>"><?php echo esc_html($label); ?></label></th>
+            <td>
+                <input
+                    type="text"
+                    id="<?php echo esc_attr($id); ?>"
+                    name="<?php echo esc_attr(self::OPTION); ?>[<?php echo esc_attr($key); ?>]"
+                    value="<?php echo esc_attr((string) ($settings[$key] ?? '')); ?>"
+                    class="regular-text"
+                />
+                <p class="description"><?php echo esc_html($help); ?></p>
+            </td>
+        </tr>
+        <?php
+    }
+
+    /**
+     * Render a single number-input row in the form-table.
+     *
+     * @param array<string, mixed> $settings
+     */
+    private function numberRow(string $key, string $label, string $help, array $settings, int $min, int $max): void
+    {
+        $id = 'peek_' . $key;
+        ?>
+        <tr>
+            <th scope="row"><label for="<?php echo esc_attr($id); ?>"><?php echo esc_html($label); ?></label></th>
+            <td>
+                <input
+                    type="number"
+                    id="<?php echo esc_attr($id); ?>"
+                    name="<?php echo esc_attr(self::OPTION); ?>[<?php echo esc_attr($key); ?>]"
+                    value="<?php echo esc_attr((string) ($settings[$key] ?? '')); ?>"
+                    min="<?php echo esc_attr((string) $min); ?>"
+                    max="<?php echo esc_attr((string) $max); ?>"
+                    step="1"
+                    class="small-text"
+                />
+                <p class="description"><?php echo esc_html($help); ?></p>
+            </td>
+        </tr>
+        <?php
+    }
+
+    /**
      * Sanitises the submitted settings before save, preserving defaults for any
      * field not on the form.
      *
@@ -180,20 +283,60 @@ final class Settings implements HasHooks
 
         $buttonText = isset($raw['button_text']) ? sanitize_text_field((string) $raw['button_text']) : '';
 
+        $buttonStyle = isset($raw['button_style']) ? sanitize_key((string) $raw['button_style']) : 'text';
+        if (! in_array($buttonStyle, ['text', 'icon', 'icon_text'], true)) {
+            $buttonStyle = 'text';
+        }
+
+        $displayScope = isset($raw['display_scope']) ? sanitize_key((string) $raw['display_scope']) : 'shop';
+        if (! in_array($displayScope, ['shop', 'shop_single'], true)) {
+            $displayScope = 'shop';
+        }
+
+        $galleryLimit = isset($raw['gallery_limit']) ? (int) $raw['gallery_limit'] : (int) ($defaults['gallery_limit'] ?? 4);
+        $galleryLimit = max(0, min(12, $galleryLimit));
+
         $sanitized = array_merge($defaults, [
             'enabled'                => ! empty($raw['enabled']),
             'button_text'            => $buttonText !== '' ? $buttonText : (string) ($defaults['button_text'] ?? __('Quick view', 'peek')),
+            'button_style'           => $buttonStyle,
+            'display_scope'          => $displayScope,
+            'modal_title'            => $this->sanitizeText($raw, 'modal_title', $defaults),
+            'close_label'            => $this->sanitizeText($raw, 'close_label', $defaults),
+            'loading_text'           => $this->sanitizeText($raw, 'loading_text', $defaults),
+            'error_text'             => $this->sanitizeText($raw, 'error_text', $defaults),
+            'view_product_text'      => $this->sanitizeText($raw, 'view_product_text', $defaults),
+            'sku_label'              => $this->sanitizeText($raw, 'sku_label', $defaults),
+            'show_modal_label'       => ! empty($raw['show_modal_label']),
+            'show_close_button'      => ! empty($raw['show_close_button']),
+            'show_backdrop_close'    => ! empty($raw['show_backdrop_close']),
             'show_image'             => ! empty($raw['show_image']),
             'show_gallery'           => ! empty($raw['show_gallery']),
+            'gallery_limit'          => $galleryLimit,
             'show_title'             => ! empty($raw['show_title']),
             'show_sku'               => ! empty($raw['show_sku']),
             'show_price'             => ! empty($raw['show_price']),
+            'show_stock'             => ! empty($raw['show_stock']),
             'show_short_description' => ! empty($raw['show_short_description']),
             'show_add_to_cart'       => ! empty($raw['show_add_to_cart']),
             'show_view_product_link' => ! empty($raw['show_view_product_link']),
         ]);
 
         return (array) apply_filters('peek_sanitize_settings', $sanitized, $raw);
+    }
+
+    /**
+     * Sanitise a single text field, falling back to the packaged default when
+     * the submitted value is empty.
+     *
+     * @param array<string, mixed> $raw
+     * @param array<string, mixed> $defaults
+     */
+    private function sanitizeText(array $raw, string $key, array $defaults): string
+    {
+        $value = isset($raw[$key]) ? sanitize_text_field((string) $raw[$key]) : '';
+
+        return $value !== '' ? $value : (string) ($defaults[$key] ?? '');
     }
 
     /**

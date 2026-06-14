@@ -20,6 +20,9 @@ $peek_description  = (bool) ($settings['show_short_description'] ?? true)
     ? wpautop(wp_kses_post($product->get_short_description()))
     : '';
 $peek_sku_label    = (string) ($settings['sku_label'] ?? __('SKU', 'peek'));
+$peek_stock_html   = (bool) ($settings['show_stock'] ?? true)
+    ? wc_get_stock_html($product)
+    : '';
 ?>
 <div class="peek-quick-view-product product product-type-<?php echo esc_attr($product->get_type()); ?>">
     <div class="peek-quick-view-grid">
@@ -58,6 +61,10 @@ $peek_sku_label    = (string) ($settings['sku_label'] ?? __('SKU', 'peek'));
 
             <?php if ($peek_price_html !== '') : ?>
                 <div class="peek-quick-view-price price"><?php echo wp_kses_post($peek_price_html); ?></div>
+            <?php endif; ?>
+
+            <?php if ($peek_stock_html !== '') : ?>
+                <div class="peek-quick-view-stock"><?php echo wp_kses_post($peek_stock_html); ?></div>
             <?php endif; ?>
 
             <?php if ($peek_description !== '') : ?>
