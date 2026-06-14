@@ -21,6 +21,7 @@ return [
 
     // Loop trigger button.
     'show_on_loop' => true,
+    'loop_button_placement' => 'below',
     'button_text'  => 'Quick view',
     // Trigger display style: 'text', 'icon', or 'icon_text'.
     'button_style' => 'text',

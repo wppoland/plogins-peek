@@ -24,10 +24,12 @@ if (! in_array($peek_button_style, ['text', 'icon', 'icon_text'], true)) {
 
 $peek_show_icon  = $peek_button_style === 'icon' || $peek_button_style === 'icon_text';
 $peek_show_label = $peek_button_style === 'text' || $peek_button_style === 'icon_text';
+$peek_placement = (string) ($settings['loop_button_placement'] ?? 'below');
+$peek_overlay = $peek_placement === 'overlay';
 // Icon-only triggers need an accessible name.
 $peek_aria_label = $peek_show_label ? '' : $peek_button_text;
 ?>
-<div class="peek-quick-view-trigger">
+<div class="peek-quick-view-trigger<?php echo $peek_overlay ? ' peek-quick-view-trigger--overlay' : ''; ?>">
     <button
         type="button"
         class="button peek-quick-view-button peek-quick-view-button--<?php echo esc_attr($peek_button_style); ?>"

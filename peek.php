@@ -3,7 +3,7 @@
  * Plugin Name:       Peek - Quick View for WooCommerce
  * Plugin URI:        https://plogins.com/peek/
  * Description:        Fast, accessible WooCommerce quick view — AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped
- * Version:           0.2.0
+ * Version:           0.3.0
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -24,7 +24,7 @@ namespace Peek;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '0.2.0';
+const VERSION     = '0.3.0';
 const PLUGIN_FILE = __FILE__;
 
 define('PEEK_DIR', plugin_dir_path(__FILE__));

@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product modal, ajax, accessibility
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,10 @@ No. The modal is hidden until opened and overlays the page, so opening it never 
 2. The Peek settings screen.
 
 == Changelog ==
+
+= 0.3.0 =
+* New: loop button placement — below the card or overlay on the thumbnail (hover/focus).
+* New: `[peek]` shortcode as an alias for `[peek_quick_view]`.
 
 = 0.2.0 =
 * New: `[peek_quick_view]` shortcode to place a quick-view trigger anywhere, with optional `id`, `text` and `style` attributes.

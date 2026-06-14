@@ -157,6 +157,20 @@ final class Settings implements HasHooks
                             </tr>
                             <tr>
                                 <th scope="row">
+                                    <label for="peek_loop_button_placement"><?php esc_html_e('Button placement', 'peek'); ?></label>
+                                    <?php $this->helpTip('loop_button_placement', __('Below the card is the safest default. On-image overlay keeps grids compact and reveals the button when shoppers hover or focus the product — ideal for image-led catalogues.', 'peek')); ?>
+                                </th>
+                                <td>
+                                    <?php $peek_placement = (string) ($settings['loop_button_placement'] ?? 'below'); ?>
+                                    <select id="peek_loop_button_placement" name="<?php echo esc_attr(self::OPTION); ?>[loop_button_placement]" aria-describedby="peek-tip-loop_button_placement">
+                                        <option value="below" <?php selected($peek_placement, 'below'); ?>><?php esc_html_e('Below product card', 'peek'); ?></option>
+                                        <option value="overlay" <?php selected($peek_placement, 'overlay'); ?>><?php esc_html_e('On image (hover / focus)', 'peek'); ?></option>
+                                    </select>
+                                    <p class="description"><?php esc_html_e('Where the quick-view trigger sits in shop loops. Overlay mode never shifts card height.', 'peek'); ?></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
                                     <label for="peek_display_scope"><?php esc_html_e('Where to load', 'peek'); ?></label>
                                     <?php $this->helpTip('display_scope', __('Loading only where needed keeps pages fast. The second option also covers the “Related products” and “You may also like” loops on single product pages.', 'peek')); ?>
                                 </th>
@@ -368,6 +382,11 @@ final class Settings implements HasHooks
             $displayScope = 'shop';
         }
 
+        $loopPlacement = isset($raw['loop_button_placement']) ? sanitize_key((string) $raw['loop_button_placement']) : 'below';
+        if (! in_array($loopPlacement, ['below', 'overlay'], true)) {
+            $loopPlacement = 'below';
+        }
+
         $galleryLimit = isset($raw['gallery_limit']) ? (int) $raw['gallery_limit'] : (int) ($defaults['gallery_limit'] ?? 4);
         $galleryLimit = max(0, min(12, $galleryLimit));
 
@@ -375,6 +394,7 @@ final class Settings implements HasHooks
             'enabled'                => ! empty($raw['enabled']),
             'button_text'            => $buttonText !== '' ? $buttonText : (string) ($defaults['button_text'] ?? __('Quick view', 'peek')),
             'button_style'           => $buttonStyle,
+            'loop_button_placement'  => $loopPlacement,
             'display_scope'          => $displayScope,
             'modal_title'            => $this->sanitizeText($raw, 'modal_title', $defaults),
             'close_label'            => $this->sanitizeText($raw, 'close_label', $defaults),

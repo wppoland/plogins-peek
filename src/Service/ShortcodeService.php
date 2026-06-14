@@ -13,7 +13,7 @@ defined('ABSPATH') || exit;
  * quick-view trigger anywhere (a page, a custom template, a builder widget),
  * not just in the shop loop.
  *
- * Usage: [peek_quick_view id="123" text="Preview" style="icon_text"]
+ * Usage: [peek id="123"] or [peek_quick_view id="123" text="Preview" style="icon_text"]
  *
  * The button markup reuses the packaged loop-button template. When the
  * shortcode is present on a request, it flags {@see PeekService} so the engine
@@ -31,6 +31,7 @@ final class ShortcodeService implements HasHooks
     public function registerHooks(): void
     {
         add_shortcode('peek_quick_view', [$this, 'render']);
+        add_shortcode('peek', [$this, 'render']);
     }
 
     /**
@@ -51,7 +52,7 @@ final class ShortcodeService implements HasHooks
                 'style' => '',
             ],
             is_array($atts) ? $atts : [],
-            'peek_quick_view',
+            'peek',
         );
 
         $productId = absint($atts['id']);
