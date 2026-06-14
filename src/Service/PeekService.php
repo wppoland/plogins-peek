@@ -10,15 +10,12 @@ use WPPoland\StorefrontKit\QuickView\QuickViewEngine;
 defined('ABSPATH') || exit;
 
 /**
- * Thin adapter over the storefront-kit {@see QuickViewEngine}.
- *
- * Injects this plugin's text-domain ('peek'), option prefix ('peek_'), asset
- * URLs and labels into the namespace-neutral engine, and supplies the two
- * closures the engine needs: one to render packaged templates (loop button +
- * modal shell) and one to build the per-product quick-view HTML fragment served
- * over AJAX. All quick-view orchestration (hooks, nonce, enqueue, AJAX) lives in
- * the kit; this class only supplies localisation, option storage, asset paths
- * and the WooCommerce-specific fragment markup.
+ * Wires {@see QuickViewEngine} with this plugin's text-domain ('peek'), option
+ * prefix ('peek_'), asset URLs and labels, and supplies the two closures it
+ * needs: one to render templates (loop button + modal shell) and one to build
+ * the per-product quick-view HTML fragment served over AJAX. This class supplies
+ * localisation, option storage, asset paths and the WooCommerce-specific
+ * fragment markup.
  */
 final class PeekService implements HasHooks
 {
@@ -34,9 +31,9 @@ final class PeekService implements HasHooks
 
     public function __construct()
     {
-        // The engine ships with storefront-kit >= 1.3.0. When present, wire it
-        // with this plugin's text-domain / option prefix / asset URLs. Otherwise
-        // leave the service inert (see registerHooks()).
+        // When the quick-view engine is available, wire it with this plugin's
+        // text-domain / option prefix / asset URLs. Otherwise leave the service
+        // inert (see registerHooks()).
         if (! class_exists(QuickViewEngine::class)) {
             return;
         }
@@ -73,9 +70,8 @@ final class PeekService implements HasHooks
             return;
         }
 
-        // TODO: storefront-kit < 1.3.0 has no QuickViewEngine. Bump the
-        // `wppoland/storefront-kit` constraint (composer update) to enable the
-        // quick view. No hooks are registered until the engine is present.
+        // The quick-view engine is unavailable; no hooks are registered until it
+        // is present.
     }
 
     public function isEnabled(): bool

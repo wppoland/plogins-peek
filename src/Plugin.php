@@ -59,7 +59,7 @@ final class Plugin
         }
 
         /**
-         * Fires after Peek has fully booted. PRO companions hook here.
+         * Fires after Peek has fully booted. Other code can hook here to extend it.
          *
          * @param Plugin $plugin The booted plugin instance.
          */

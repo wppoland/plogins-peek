@@ -4,8 +4,7 @@
  *
  * The feature ships enabled. The merchant tunes the trigger button label and
  * which parts of the product render inside the modal from the Peek admin
- * screen. All product logic lives in the storefront-kit QuickViewEngine; these
- * values are passed through to it as the resolved settings.
+ * screen. These values are the resolved settings the quick view reads.
  *
  * @package Peek
  *

@@ -2,8 +2,7 @@
 /**
  * Loop quick-view trigger button.
  *
- * Rendered by the storefront-kit QuickViewEngine on
- * `woocommerce_after_shop_loop_item`.
+ * Rendered on `woocommerce_after_shop_loop_item`.
  *
  * @var \WC_Product            $product
  * @var array<string, mixed>   $settings

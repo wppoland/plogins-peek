@@ -1,52 +1,32 @@
-# plugin-template
+# Peek - Quick View for WooCommerce
 
-GitHub **template repo** for a WPPoland storefront FREE plugin. A thin adapter over
-`wppoland/storefront-kit`, pre-wired to the reusable CI/release workflows. Spin up a new plugin in
-minutes instead of rebuilding CI each time.
+Peek adds a "Quick view" button to your WooCommerce shop and archive loops. Clicking it opens an accessible modal that loads the product over AJAX, so shoppers can see the details without leaving the listing.
 
-## Create a new plugin
+## Features
 
-> 🔔 **You must create a new repository for each plugin.** FREE → a **public** repo
-> `wppoland/<slug>`. PRO → a separate **private** repo `wppoland/<slug>-pro`.
+- AJAX quick-view modal with the featured image, gallery, title, SKU, price, stock status, short description, add-to-cart form (variations included) and a link to the full product.
+- No jQuery in the plugin's own front-end code: a deferred, in-footer vanilla-JS script.
+- No layout shift — the modal stays hidden until opened and scrolls internally.
+- Focus-trapped and keyboard friendly: opens with focus inside the dialog, closes on Escape or backdrop click, and returns focus to the trigger.
+- Configurable trigger label and style, placement scope, and which parts render in the modal.
+- `[peek_quick_view]` shortcode (with `[peek]` alias) to place a trigger anywhere.
 
-1. **"Use this template" → create `wppoland/<slug>`** (public).
-2. **Run the scaffold script** — replaces all tokens and renames `peek.php → <slug>.php`
-   (cross-platform; review the diff before committing):
-   ```bash
-   python3 scripts/init.py restock Restock "Restock" "Back-in-stock notifications for WooCommerce"
-   #                        ^slug   ^Namespace ^Name    ^short description
-   rm scripts/init.py
-   ```
-   Tokens it replaces (case-sensitive):
+## Installation
 
-   | Token | Replace with | Example |
-   |---|---|---|
-   | `peek` | lowercase slug = text-domain = i18n domain | `restock` |
-   | `Peek` | PSR-4 PHP namespace | `Restock` |
-   | `PEEK` (in `define()`) | uppercased namespace | `RESTOCK` |
-   | `peek_` | option/meta prefix (slug, dashes→underscores) | `restock_` |
-   | `Peek` / `Fast, accessible WooCommerce quick view — AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped` / `Fast, accessible WooCommerce quick view — AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped` | name + descriptions | … |
-3. `composer install` — resolves `wppoland/storefront-kit ^1.0` from VCS (no symlink). Implement
-   your adapter in `src/`, wire it in `config/services.php` + `config/hooks.php`.
-   *(For local atomic kit+adapter dev, see the kit README's path-override note.)*
-4. Add repo secrets: **`WPORG_SVN_USERNAME`**, **`WPORG_SVN_PASSWORD`**.
-5. Drop wp.org assets in `.wordpress-org/`; fill in `readme.txt`.
-6. Add a `PluginEntry` to `plogins` `packages/registry/src/plugins.config.ts` + a docs folder.
-7. **Release:** bump the header `Version:` + `readme.txt` Stable tag, tag `vX.Y.Z`, push →
-   `_release-free.yml` runs CI, vendors the kit, and auto-deploys to wp.org SVN.
+1. Upload the plugin to `/wp-content/plugins/peek`, or install via Plugins → Add New.
+2. Activate it. WooCommerce must be active.
+3. Visit the **Peek** menu in wp-admin to configure the button label and modal contents.
 
-## What's wired
+## Frequently Asked Questions
 
-- **Bootstrap** (`peek.php`): PHP/WC guards, HPOS + cart-blocks compat, `plugins_loaded`
-  boot, `do_action('peek/booted')` (the hook a PRO companion extends).
-- **Autoload** (`autoload.php`): Composer vendor autoloader + PSR-4 fallback (incl. the kit).
-- **DI**: `src/Plugin.php` singleton + `src/Container.php`; services in `config/services.php`,
-  boot order in `config/hooks.php`, defaults in `config/defaults.php`; `src/Migrator.php`.
-- **CI/Release**: `.github/workflows/{ci,release}.yml` call `wppoland/workflows@v1`.
-- **Quality**: `phpcs.xml.dist` (WPCS), `phpstan.neon.dist` (level 6 + WC stubs), `.distignore`
-  (ships `vendor/` so the kit travels), `.wp-env.json`.
+**Where does the quick-view button appear?**
+On the shop page and product archive loops (categories, tags, taxonomies), after each product. Single product pages are left unchanged.
 
-## PRO companion (`<slug>-pro`, private)
+**Does it use jQuery?**
+The plugin's own front-end script is vanilla JavaScript. WooCommerce's bundled variation script is only enqueued when a product has variations, so the variation form works as expected.
 
-Create a separate private repo. It hooks `add_action('<slug>/booted', …)`, bundles the Freemius
-SDK, and releases via `wppoland/workflows/.github/workflows/_release-pro.yml@v1`.
+---
+
+Built by WPPoland — https://plogins.com
+
+License: GPL-2.0-or-later

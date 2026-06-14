@@ -1,8 +1,8 @@
 <?php
 /**
- * Quick-view modal shell, printed once in the footer by the storefront-kit
- * QuickViewEngine. The product fragment is injected into
- * `[data-peek-quick-view-content]` over AJAX by assets/js/quick-view.js.
+ * Quick-view modal shell, printed once in the footer. The product fragment is
+ * injected into `[data-peek-quick-view-content]` over AJAX by
+ * assets/js/quick-view.js.
  *
  * @var array<string, mixed> $settings
  * @var string               $loading_text

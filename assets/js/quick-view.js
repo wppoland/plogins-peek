@@ -3,8 +3,8 @@
  *
  * Vanilla JS (no jQuery dependency of our own). Opens a focus-trapped modal,
  * fetches the product fragment over admin-ajax, restores focus on close, and
- * closes on Escape / backdrop. Config is provided by the storefront-kit
- * QuickViewEngine via wp_localize_script as `window.peekQuickView`.
+ * closes on Escape / backdrop. Config is provided via wp_localize_script as
+ * `window.peekQuickView`.
  */
 document.addEventListener('DOMContentLoaded', () => {
   const config = window.peekQuickView;
