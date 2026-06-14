@@ -21,7 +21,13 @@ return [
 
     // Loop trigger button.
     'show_on_loop' => true,
+    'loop_button_placement' => 'below',
     'button_text'  => 'Quick view',
+    // Trigger display style: 'text', 'icon', or 'icon_text'.
+    'button_style' => 'text',
+    // Where the quick-view assets/button load: 'shop' (shop + product archives)
+    // or 'shop_single' (also single-product related/upsell loops).
+    'display_scope' => 'shop',
 
     // Modal chrome.
     'modal_title'        => 'Product quick view',
@@ -39,8 +45,10 @@ return [
     'show_title'           => true,
     'show_sku'             => true,
     'show_price'           => true,
+    'show_stock'           => true,
     'show_image'           => true,
     'show_gallery'         => true,
+    'gallery_limit'        => 4,
     'show_short_description' => true,
     'show_add_to_cart'     => true,
 

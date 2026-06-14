@@ -32,7 +32,10 @@ $peek_close_label = (string) ($settings['close_label'] ?? __('Close', 'peek'));
             <?php if ($show_modal_label) : ?>
                 <p class="peek-quick-view-content__label"><?php echo esc_html($peek_modal_title); ?></p>
             <?php endif; ?>
-            <p><?php echo esc_html($loading_text); ?></p>
+            <div class="peek-quick-view-status">
+                <span class="peek-quick-view-status__spinner" aria-hidden="true"></span>
+                <p><?php echo esc_html($loading_text); ?></p>
+            </div>
         </div>
     </div>
 </div>

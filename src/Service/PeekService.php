@@ -26,6 +26,12 @@ final class PeekService implements HasHooks
 
     private ?QuickViewEngine $engine = null;
 
+    /**
+     * Set when a `[peek_quick_view]` shortcode renders, so the engine loads the
+     * modal shell + assets on a request that is not a shop/archive view.
+     */
+    private bool $forced = false;
+
     public function __construct()
     {
         // The engine ships with storefront-kit >= 1.3.0. When present, wire it
@@ -72,14 +78,76 @@ final class PeekService implements HasHooks
         // quick view. No hooks are registered until the engine is present.
     }
 
-    private function isEnabled(): bool
+    public function isEnabled(): bool
     {
         return (bool) ($this->settings()['enabled'] ?? false);
     }
 
+    /**
+     * Resolved settings (defaults merged with stored options).
+     *
+     * @return array<string, mixed>
+     */
+    public function resolvedSettings(): array
+    {
+        return $this->settings();
+    }
+
+    /**
+     * Flag the current request so the engine prints the modal shell + assets
+     * even outside the shop/archive context (used by the shortcode).
+     */
+    public function forceQuickViewOnRequest(): void
+    {
+        $this->forced = true;
+    }
+
+    /**
+     * Enqueue the quick-view assets immediately (shortcode fallback for when
+     * the shortcode renders after `wp_enqueue_scripts`).
+     */
+    public function enqueueAssets(): void
+    {
+        if ($this->engine instanceof QuickViewEngine) {
+            $this->engine->enqueueAssets();
+        }
+    }
+
+    /**
+     * Render a quick-view trigger button for a product.
+     *
+     * @param array<string, mixed> $settings
+     */
+    public function renderButton(\WC_Product $product, array $settings): string
+    {
+        ob_start();
+        $this->renderTemplate('quick-view-button', [
+            'product'  => $product,
+            'settings' => $settings,
+        ]);
+
+        return (string) ob_get_clean();
+    }
+
     private function shouldRenderOnCurrentPage(): bool
     {
-        return is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag();
+        if ($this->forced) {
+            return true;
+        }
+
+        $onArchive = is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag();
+
+        if ($onArchive) {
+            return true;
+        }
+
+        // Single-product pages carry related/upsell loops; load there only when
+        // the merchant opts in via the display scope setting.
+        if ((string) ($this->settings()['display_scope'] ?? 'shop') === 'shop_single') {
+            return is_product();
+        }
+
+        return false;
     }
 
     /**
@@ -119,7 +187,10 @@ final class PeekService implements HasHooks
         }
 
         if ((bool) ($settings['show_gallery'] ?? true)) {
-            foreach (array_slice($product->get_gallery_image_ids(), 0, 4) as $imageId) {
+            $limit = (int) ($settings['gallery_limit'] ?? 4);
+            $limit = max(0, min(12, $limit));
+
+            foreach (array_slice($product->get_gallery_image_ids(), 0, $limit) as $imageId) {
                 $imageId = (int) $imageId;
 
                 if ($imageId > 0 && ! in_array($imageId, $images, true)) {
