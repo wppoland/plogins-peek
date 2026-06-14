@@ -1,0 +1,178 @@
+/**
+ * Peek - admin settings page styles.
+ *
+ * Scoped under .peek-admin so nothing leaks into the rest of wp-admin. Uses
+ * custom properties (themeable), fluid spacing via clamp(), logical properties,
+ * a dark-mode pass, and reduced-motion guards. No layout shift: cards reserve
+ * their own space and transitions are opacity/transform only.
+ */
+
+.peek-admin {
+    --peek-accent: #2271b1;
+    --peek-accent-hover: #135e96;
+    --peek-card-bg: #fff;
+    --peek-card-border: #dcdcde;
+    --peek-card-radius: 10px;
+    --peek-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+    --peek-muted: #50575e;
+    --peek-tip-bg: #1d2327;
+    --peek-tip-fg: #fff;
+    --peek-gap: clamp(0.75rem, 1.5vw, 1.25rem);
+
+    max-inline-size: 920px;
+}
+
+/* Intro / hero card. */
+.peek-admin__intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--peek-gap);
+    margin-block: 1rem 1.5rem;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    background: var(--peek-card-bg);
+    border: 1px solid var(--peek-card-border);
+    border-inline-start: 4px solid var(--peek-accent);
+    border-radius: var(--peek-card-radius);
+    box-shadow: var(--peek-card-shadow);
+}
+
+.peek-admin__intro-icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    inline-size: 48px;
+    block-size: 48px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--peek-accent) 12%, transparent);
+    color: var(--peek-accent);
+}
+
+.peek-admin__intro-icon svg {
+    inline-size: 26px;
+    block-size: 26px;
+}
+
+.peek-admin__intro-text {
+    flex: 1 1 16rem;
+    min-inline-size: 0;
+}
+
+.peek-admin__intro-text h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+}
+
+.peek-admin__intro-text p {
+    margin: 0;
+    color: var(--peek-muted);
+    max-inline-size: 60ch;
+}
+
+/* Section cards wrapping the form-tables. */
+.peek-admin__section {
+    margin-block-end: 1.5rem;
+    padding: clamp(0.75rem, 1.5vw, 1.25rem) clamp(1rem, 2vw, 1.5rem);
+    background: var(--peek-card-bg);
+    border: 1px solid var(--peek-card-border);
+    border-radius: var(--peek-card-radius);
+    box-shadow: var(--peek-card-shadow);
+}
+
+.peek-admin__section > h2 {
+    margin-block: 0 0.25rem;
+    padding-block-end: 0.5rem;
+    border-block-end: 1px solid var(--peek-card-border);
+}
+
+.peek-admin__section-intro {
+    margin-block: 0 0.5rem;
+    color: var(--peek-muted);
+    max-inline-size: 70ch;
+}
+
+.peek-admin .form-table th {
+    position: relative;
+    inline-size: clamp(160px, 26%, 240px);
+}
+
+/* Accessible "?" help affordance + tooltip. */
+.peek-help {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 18px;
+    block-size: 18px;
+    margin-inline-start: 6px;
+    padding: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--peek-accent);
+    background: color-mix(in srgb, var(--peek-accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--peek-accent) 35%, transparent);
+    border-radius: 50%;
+    cursor: help;
+    vertical-align: middle;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.peek-help:hover,
+.peek-help:focus-visible {
+    color: #fff;
+    background: var(--peek-accent);
+    outline: none;
+}
+
+.peek-help:focus-visible {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--peek-accent);
+}
+
+/* Popover-API tooltip; falls back to a positioned div for older browsers. */
+.peek-help-tip {
+    /* Anchored under the trigger and consistent across browsers. The "?" sits
+       inside a positioned <th>, so absolute placement tracks it reliably. */
+    position: absolute;
+    inset-block-start: calc(100% + 6px);
+    inset-inline-start: 0;
+    margin: 0;
+    inline-size: max-content;
+    max-inline-size: 280px;
+    padding: 0.5rem 0.7rem;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--peek-tip-fg);
+    text-align: start;
+    background: var(--peek-tip-bg);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+}
+
+.peek-help-tip[hidden] {
+    display: none;
+}
+
+.peek-admin .submit {
+    margin-block-start: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .peek-help {
+        transition: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .peek-admin {
+        --peek-card-bg: #1e1e1e;
+        --peek-card-border: #3c3c3c;
+        --peek-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        --peek-muted: #bdc1c6;
+        --peek-tip-bg: #f0f0f1;
+        --peek-tip-fg: #1d2327;
+    }
+}
