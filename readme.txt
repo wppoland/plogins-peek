@@ -35,11 +35,7 @@ A WooCommerce-capability settings page (Peek menu) lets you:
 
 = Shortcode =
 
-Place a quick-view trigger anywhere with `[peek_quick_view id="123"]`. Optional attributes: `text` (custom label) and `style` (`text`, `icon`, or `icon_text`). The shared modal and assets load automatically wherever the shortcode appears.
-
-= Engine =
-
-The quick-view orchestration (AJAX, nonce, asset enqueue, markup hooks) is provided by the shared, namespace-neutral `wppoland/storefront-kit` QuickView engine; this plugin is a thin adapter that supplies the text domain, options, asset URLs and WooCommerce fragment markup.
+Place a quick-view trigger anywhere with `[peek_quick_view id="123"]`. Optional attributes: `text` (custom label) and `style` (`text`, `icon`, or `icon_text`). The modal and its assets load automatically wherever the shortcode appears.
 
 == Installation ==
 
