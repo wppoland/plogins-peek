@@ -106,6 +106,8 @@ final class Settings implements HasHooks
                     </tbody>
                 </table>
 
+                <?php do_action( 'peek_admin_settings_after_general_table', $settings ); ?>
+
                 <h2><?php esc_html_e('Modal content', 'peek'); ?></h2>
                 <p class="description">
                     <?php esc_html_e('Choose what the quick-view modal shows for each product. The add-to-cart form supports variations.', 'peek'); ?>
@@ -125,6 +127,8 @@ final class Settings implements HasHooks
                         ?>
                     </tbody>
                 </table>
+
+                <?php do_action( 'peek_admin_settings_after_content_table', $settings ); ?>
 
                 <?php submit_button(); ?>
             </form>
@@ -176,7 +180,7 @@ final class Settings implements HasHooks
 
         $buttonText = isset($raw['button_text']) ? sanitize_text_field((string) $raw['button_text']) : '';
 
-        return array_merge($defaults, [
+        $sanitized = array_merge($defaults, [
             'enabled'                => ! empty($raw['enabled']),
             'button_text'            => $buttonText !== '' ? $buttonText : (string) ($defaults['button_text'] ?? __('Quick view', 'peek')),
             'show_image'             => ! empty($raw['show_image']),
@@ -188,6 +192,8 @@ final class Settings implements HasHooks
             'show_add_to_cart'       => ! empty($raw['show_add_to_cart']),
             'show_view_product_link' => ! empty($raw['show_view_product_link']),
         ]);
+
+        return (array) apply_filters('peek_sanitize_settings', $sanitized, $raw);
     }
 
     /**

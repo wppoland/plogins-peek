@@ -78,6 +78,8 @@ $peek_sku_label    = (string) ($settings['sku_label'] ?? __('SKU', 'peek'));
                     <?php echo esc_html((string) ($settings['view_product_text'] ?? __('View full product', 'peek'))); ?>
                 </a>
             <?php endif; ?>
+
+            <?php do_action( 'peek_quick_view_content_end', $product, $settings ); ?>
         </div>
     </div>
 </div>
