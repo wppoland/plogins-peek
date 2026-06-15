@@ -84,11 +84,15 @@ $peek_has_summary = ((bool) ($settings['show_title'] ?? true) && trim((string) $
                 <div class="peek-quick-view-description"><?php echo wp_kses_post($peek_description); ?></div>
             <?php endif; ?>
 
+            <?php do_action( 'peek_quick_view_before_cart', $product, $settings ); ?>
+
             <?php if ($add_to_cart_html !== '') : ?>
                 <div class="peek-quick-view-cart">
                     <?php echo $add_to_cart_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                 </div>
             <?php endif; ?>
+
+            <?php do_action( 'peek_quick_view_after_cart', $product, $settings ); ?>
 
             <?php if ((bool) ($settings['show_view_product_link'] ?? true)) : ?>
                 <a
