@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-14T10:34:10+00:00\n"
+"POT-Creation-Date: 2026-06-14T20:16:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: peek\n"
@@ -421,12 +421,12 @@ msgstr ""
 msgid "Product not found."
 msgstr ""
 
-#: templates/quick-view-content.php:98
-#: templates/quick-view-content.php:112
+#: templates/quick-view-content.php:102
+#: templates/quick-view-content.php:116
 msgid "View full product"
 msgstr ""
 
-#: templates/quick-view-content.php:106
+#: templates/quick-view-content.php:110
 msgid "Product preview"
 msgstr ""
 
