@@ -8,8 +8,14 @@
  */
 
 .peek-admin {
-    --peek-accent: #2271b1;
-    --peek-accent-hover: #135e96;
+    /* Iris accent — matched to the storefront modal's lens rim (#6d3bf5) so the
+       admin reads as the same product, used in restraint (intro rail, help "?",
+       focus rings) over WP's native grey. Computed contrast on the wp-admin
+       surfaces, sRGB: #6d3bf5 → 5.84:1 on #fff, 5.13:1 on the #f0f0f1 body
+       (AA text 4.5:1 + UI 3:1). The darker #5b2fd6 hover/fill → 7.44:1 on #fff,
+       6.53:1 on #f0f0f1, and carries white text at 7.44:1. */
+    --peek-accent: #6d3bf5;
+    --peek-accent-hover: #5b2fd6;
     --peek-card-bg: #fff;
     --peek-card-border: #dcdcde;
     --peek-card-radius: 10px;
@@ -121,12 +127,12 @@
 .peek-help:hover,
 .peek-help:focus-visible {
     color: #fff;
-    background: var(--peek-accent);
+    background: var(--peek-accent-hover);
     outline: none;
 }
 
 .peek-help:focus-visible {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--peek-accent);
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--peek-accent-hover);
 }
 
 /* Popover-API tooltip; falls back to a positioned div for older browsers. */
@@ -168,6 +174,10 @@
 
 @media (prefers-color-scheme: dark) {
     .peek-admin {
+        /* Brighter iris on dark cards (matches the storefront's dark pass).
+           Computed sRGB: #9b78f8 → 5.11:1 on the #1e1e1e card (AA text). */
+        --peek-accent: #9b78f8;
+        --peek-accent-hover: #b39bfa;
         --peek-card-bg: #1e1e1e;
         --peek-card-border: #3c3c3c;
         --peek-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
