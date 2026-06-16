@@ -12,7 +12,7 @@ Fast, accessible quick view for WooCommerce — an AJAX product modal with galle
 
 == Description ==
 
-Peek adds a "Quick view" button to your WooCommerce shop and archive product loops. Clicking it opens an accessible modal that loads the product over AJAX — without leaving the listing.
+Peek adds a "Quick view" button to your WooCommerce shop and archive product loops. Clicking it opens an accessible modal that loads the product over AJAX, so shoppers stay on the listing instead of clicking through to each product page.
 
 The modal shows the featured image and gallery thumbnails, title, SKU, price, stock status, short description, the native add-to-cart form (including variable products), and a link to the full product page. Each part can be toggled from the settings screen.
 
@@ -35,7 +35,9 @@ A WooCommerce-capability settings page (Peek menu) lets you:
 
 = Shortcode =
 
-Place a quick-view trigger anywhere with `[peek_quick_view id="123"]`. Optional attributes: `text` (custom label) and `style` (`text`, `icon`, or `icon_text`). The modal and its assets load automatically wherever the shortcode appears.
+Place a quick-view trigger anywhere with `[peek_quick_view id="123"]`, or the shorter `[peek id="123"]` alias. Optional attributes: `text` (custom label) and `style` (`text`, `icon`, or `icon_text`). The modal and its assets load automatically wherever the shortcode appears.
+
+Peek is developed in the open. The code, open issues and release history live at https://github.com/wppoland/peek — bug reports and patches are welcome there.
 
 == Installation ==
 
