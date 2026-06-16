@@ -1,6 +1,6 @@
 === Peek - Quick View for WooCommerce ===
 Contributors: wppoland
-Tags: woocommerce, quick view, product modal, ajax, accessibility
+Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
@@ -8,11 +8,11 @@ Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Fast, accessible quick view for WooCommerce — an AJAX product modal with gallery, price, SKU and add-to-cart. No jQuery, no layout shift.
+Fast product quick view for WooCommerce: an AJAX product modal with gallery, price, SKU and add-to-cart. No jQuery.
 
 == Description ==
 
-Peek adds a "Quick view" button to your WooCommerce shop and archive product loops. Clicking it opens an accessible modal that loads the product over AJAX, so shoppers stay on the listing instead of clicking through to each product page.
+Peek adds a product quick view button to your WooCommerce shop and archive product loops. Clicking it opens an accessible AJAX product modal, so shoppers can preview products, choose options and add to cart without leaving the listing.
 
 The modal shows the featured image and gallery thumbnails, title, SKU, price, stock status, short description, the native add-to-cart form (including variable products), and a link to the full product page. Each part can be toggled from the settings screen.
 
@@ -59,9 +59,21 @@ The plugin's own front-end script is vanilla JavaScript with no jQuery dependenc
 
 On the shop page and product archive loops (categories, tags, taxonomies), after each product. It does not change single product pages.
 
+= Does the modal support add to cart? =
+
+Yes. Peek renders WooCommerce's native add-to-cart form inside the quick shop modal, including quantity and variable-product choices.
+
+= Does it work with variable products? =
+
+Yes. Variable products use WooCommerce's own variation form inside the product modal, so shoppers can choose a variation before adding to cart.
+
 = Will it cause layout shift? =
 
 No. The modal is hidden until opened and overlays the page, so opening it never reflows existing content.
+
+= Can I place a quick-view button manually? =
+
+Yes. Use `[peek_quick_view id="123"]` or `[peek id="123"]` to add a product quick view trigger in custom layouts.
 
 == Screenshots ==
 
