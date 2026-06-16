@@ -9,15 +9,21 @@
  */
 
 .peek-quick-view-modal {
-    --peek-overlay-bg: rgba(0, 0, 0, 0.55);
+    /* Accent is "iris violet" — the colored ring of an eye coming into focus.
+       Deliberately not WP/SaaS blue: peeking is an optical act, so the moment
+       the panel snaps into focus is tinted like light caught through a lens. */
+    --peek-accent: #6d3bf5;
+    --peek-accent-soft: rgba(109, 59, 245, 0.16);
+    --peek-iris-glow: rgba(109, 59, 245, 0.28);
+
+    --peek-overlay-bg: rgba(15, 13, 28, 0.58);
     --peek-surface-bg: #fff;
     --peek-surface-fg: #1d2327;
     --peek-muted-fg: #50575e;
     --peek-border: rgba(0, 0, 0, 0.08);
-    --peek-accent: #2271b1;
     --peek-surface-radius-lg: clamp(10px, 1.5vw, 14px);
     --peek-surface-radius-md: 8px;
-    --peek-surface-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    --peek-surface-shadow: 0 24px 70px rgba(20, 12, 48, 0.32);
     --peek-pad: clamp(16px, 3vw, 28px);
     --peek-gap: clamp(16px, 2.5vw, 28px);
 
@@ -79,7 +85,12 @@ ul.products li.product:hover .peek-quick-view-trigger--overlay {
 .peek-quick-view-backdrop {
     position: absolute;
     inset: 0;
-    background: var(--peek-overlay-bg);
+    /* A faint, static iris-coloured tint pooled behind the panel — a quiet
+       sense-of-place cue. The motion lives in the aperture itself (below),
+       not here, so the scrim never competes with the moment. */
+    background:
+        radial-gradient(120% 90% at 50% 44%, var(--peek-iris-glow), transparent 62%),
+        var(--peek-overlay-bg);
 }
 
 .peek-quick-view-dialog {
@@ -93,6 +104,30 @@ ul.products li.product:hover .peek-quick-view-trigger--overlay {
     border-radius: var(--peek-surface-radius-lg);
     padding: var(--peek-pad);
     box-shadow: var(--peek-surface-shadow);
+}
+
+/* THE MOMENT — the lens rim. A single accent stroke across the top of the
+   panel, gradient-thinned at the edges so it reads as the rim of an aperture.
+   On open it draws in from the centre outward (scaleX), so the rim "snaps
+   shut around" the product the instant the peek lands in focus. One mark,
+   one gesture — no competing flourishes. */
+.peek-quick-view-dialog::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    block-size: 3px;
+    border-start-start-radius: var(--peek-surface-radius-lg);
+    border-start-end-radius: var(--peek-surface-radius-lg);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--peek-accent) 22%,
+        var(--peek-accent) 78%,
+        transparent
+    );
+    transform-origin: center;
+    pointer-events: none;
 }
 
 .peek-quick-view-dialog:focus-visible {
@@ -163,6 +198,17 @@ ul.products li.product:hover .peek-quick-view-trigger--overlay {
     margin-block-start: 12px;
 }
 
+.peek-quick-view-price {
+    font-size: 1.4em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.peek-quick-view-price .amount,
+.peek-quick-view-price ins .amount {
+    color: var(--peek-accent);
+}
+
 .peek-quick-view-meta {
     color: var(--peek-muted-fg);
     font-size: 0.9em;
@@ -218,14 +264,25 @@ body.peek-quick-view-open {
     overflow: hidden;
 }
 
-/* Open/close transition (progressive enhancement; the modal works without it). */
-.peek-quick-view-backdrop,
-.peek-quick-view-dialog {
-    transition: opacity 0.2s ease;
+/* Open/close transition (progressive enhancement; the modal works without it).
+   THE EARNED MICRO-INTERACTION: the panel irises open. A circular clip-path
+   expands from the centre — like a camera aperture widening to let the product
+   through — while the lens rim draws outward from the middle. One gesture,
+   rooted in peek's optical world: you are literally watching the shop "open
+   its eye" on the product without leaving the listing. */
+.peek-quick-view-backdrop {
+    transition: opacity 0.24s ease;
 }
 
 .peek-quick-view-dialog {
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition:
+        opacity 0.28s ease,
+        clip-path 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+    clip-path: circle(150% at 50% 44%);
+}
+
+.peek-quick-view-dialog::before {
+    transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.06s;
 }
 
 .peek-quick-view-modal[data-peek-animating] .peek-quick-view-backdrop {
@@ -234,7 +291,13 @@ body.peek-quick-view-open {
 
 .peek-quick-view-modal[data-peek-animating] .peek-quick-view-dialog {
     opacity: 0;
-    transform: translateY(8px);
+    /* Aperture shut: a small circle at the focal point, ready to iris open. */
+    clip-path: circle(8% at 50% 44%);
+}
+
+.peek-quick-view-modal[data-peek-animating] .peek-quick-view-dialog::before {
+    /* Rim collapsed to the centre, then draws outward as the aperture opens. */
+    transform: scaleX(0);
 }
 
 @media (max-width: 767px) {
@@ -263,20 +326,36 @@ body.peek-quick-view-open {
         animation: none;
     }
 
+    /* No aperture sweep for reduced-motion users: the panel and its rim appear
+       fully open at once. The iris glow is a static tint, not an animation, so
+       it stays as a quiet sense-of-place cue. */
+    .peek-quick-view-dialog,
+    .peek-quick-view-dialog::before {
+        transition: none;
+    }
+
     .peek-quick-view-modal[data-peek-animating] .peek-quick-view-dialog {
+        clip-path: circle(150% at 50% 44%);
+    }
+
+    .peek-quick-view-modal[data-peek-animating] .peek-quick-view-dialog::before {
         transform: none;
     }
 }
 
 @media (prefers-color-scheme: dark) {
     .peek-quick-view-modal {
-        --peek-overlay-bg: rgba(0, 0, 0, 0.7);
+        /* Brighter iris so the accent rail and price stay legible on dark. */
+        --peek-accent: #a98bff;
+        --peek-accent-soft: rgba(169, 139, 255, 0.22);
+        --peek-iris-glow: rgba(124, 77, 255, 0.34);
+
+        --peek-overlay-bg: rgba(6, 4, 16, 0.72);
         --peek-surface-bg: #1e1e1e;
         --peek-surface-fg: #e6e6e6;
         --peek-muted-fg: #b0b3b8;
         --peek-border: rgba(255, 255, 255, 0.12);
-        --peek-accent: #62a9e0;
-        --peek-surface-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        --peek-surface-shadow: 0 24px 70px rgba(0, 0, 0, 0.62);
     }
 }
 
