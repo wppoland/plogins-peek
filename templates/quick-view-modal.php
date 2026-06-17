@@ -28,7 +28,8 @@ $peek_close_label = (string) ($settings['close_label'] ?? __('Close', 'peek'));
             </button>
         <?php endif; ?>
         <?php do_action( 'peek_quick_view_modal_dialog_start' ); ?>
-        <div class="peek-quick-view-content" data-peek-quick-view-content aria-live="polite">
+        <p class="peek-quick-view-status-msg" data-peek-quick-view-status role="status" aria-live="polite"><?php echo esc_html($loading_text); ?></p>
+        <div class="peek-quick-view-content" data-peek-quick-view-content>
             <?php if ($show_modal_label) : ?>
                 <p class="peek-quick-view-content__label"><?php echo esc_html($peek_modal_title); ?></p>
             <?php endif; ?>
