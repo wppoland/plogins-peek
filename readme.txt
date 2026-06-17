@@ -80,6 +80,10 @@ Yes. Use `[peek_quick_view id="123"]` or `[peek id="123"]` to add a product quic
 1. The quick-view modal showing the product gallery, price and add-to-cart form.
 2. The Peek settings screen.
 
+== External Services ==
+
+Peek does not connect to any external services. The quick-view modal fetches its product fragment from your own site over WordPress' `admin-ajax.php` (the `peek_quick_view` action), so no shopper or product data ever leaves your server. Peek's only stored data is two WordPress options it creates — `peek_settings` (your modal and button configuration) and `peek_db_version` — both removed when the plugin is deleted. Peek sends no email and loads no third-party scripts, fonts or analytics.
+
 == Changelog ==
 
 = 0.3.0 =
