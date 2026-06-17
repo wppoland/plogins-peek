@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const config = window.peekQuickView;
   const modal = document.querySelector('[data-peek-quick-view-modal]');
   const content = document.querySelector('[data-peek-quick-view-content]');
+  // Small, dedicated polite live region for loading/error announcements. The
+  // product fragment is injected into `content` (not a live region) so screen
+  // readers don't re-announce the whole product + add-to-cart form on open.
+  const statusRegion = document.querySelector('[data-peek-quick-view-status]');
 
   if (!config || !modal || !content) {
     return;
@@ -41,9 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const text = document.createElement('p');
     text.textContent = message || '';
+    // The visible status text is decorative for SR users — the dedicated
+    // live region below carries the announcement.
+    text.setAttribute('aria-hidden', 'true');
     wrap.appendChild(text);
 
     content.appendChild(wrap);
+
+    // Announce loading/error via the small dedicated polite live region only.
+    if (statusRegion) {
+      statusRegion.textContent = message || '';
+    }
   };
 
   const FOCUSABLE = [
@@ -202,6 +214,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       content.innerHTML = payload.data.html;
+      // Clear the loading announcement; focus moves into the dialog so the
+      // product itself does not need to be announced via the live region.
+      if (statusRegion) {
+        statusRegion.textContent = '';
+      }
       initVariations();
       // Move focus into the freshly loaded content if the modal is still open.
       focusFirst();
