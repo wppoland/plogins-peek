@@ -1,5 +1,5 @@
 === Peek - Quick View for WooCommerce ===
-Contributors: wppoland
+Contributors: motylanogha
 Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.0
