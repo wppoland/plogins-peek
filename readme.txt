@@ -16,6 +16,15 @@ Peek adds a product quick view button to your WooCommerce shop and archive produ
 
 The modal shows the featured image and gallery thumbnails, title, SKU, price, stock status, short description, the native add-to-cart form (including variable products), and a link to the full product page. Each part can be toggled from the settings screen.
 
+= Documentation and links =
+
+* **Documentation** - https://plogins.com/peek/docs/
+* **Plugin page** - https://plogins.com/peek/
+* **Source code** - https://github.com/wppoland/peek
+* **Bug reports and feature requests** - https://github.com/wppoland/peek/issues
+* **Discussions and questions** - https://github.com/wppoland/peek/discussions
+
+
 = Built for speed and accessibility =
 
 * **No jQuery** in the plugin's own front-end code — the script is vanilla JS, deferred, and loaded in the footer.
