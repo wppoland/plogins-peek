@@ -27,7 +27,7 @@ The modal shows the featured image and gallery thumbnails, title, SKU, price, st
 
 = Built for speed and accessibility =
 
-* **No jQuery** in the plugin's own front-end code — the script is vanilla JS, deferred, and loaded in the footer.
+* **No jQuery** in the plugin's own front-end code, the script is vanilla JS, deferred, and loaded in the footer.
 * **No layout shift (CLS).** The modal is fully hidden until opened and scrolls internally, so it never reflows the page.
 * **Focus-trapped & keyboard friendly.** Focus moves into the dialog on open, is trapped while it is open, closes on Escape or backdrop click, and returns to the trigger button on close. The dialog uses `role="dialog"` with `aria-modal`.
 * **Variation aware.** The add-to-cart form supports variable products via WooCommerce's own variation script.
@@ -46,7 +46,7 @@ A WooCommerce-capability settings page (Peek menu) lets you:
 
 Place a quick-view trigger anywhere with `[peek_quick_view id="123"]`, or the shorter `[peek id="123"]` alias. Optional attributes: `text` (custom label) and `style` (`text`, `icon`, or `icon_text`). The modal and its assets load automatically wherever the shortcode appears.
 
-Peek is developed in the open. The code, open issues and release history live at https://github.com/wppoland/peek — bug reports and patches are welcome there.
+Peek is developed in the open. The code, open issues and release history live at https://github.com/wppoland/peek, bug reports and patches are welcome there.
 
 == Installation ==
 
@@ -91,20 +91,20 @@ Yes. Use `[peek_quick_view id="123"]` or `[peek id="123"]` to add a product quic
 
 == External Services ==
 
-Peek does not connect to any external services. The quick-view modal fetches its product fragment from your own site over WordPress' `admin-ajax.php` (the `peek_quick_view` action), so no shopper or product data ever leaves your server. Peek's only stored data is two WordPress options it creates — `peek_settings` (your modal and button configuration) and `peek_db_version` — both removed when the plugin is deleted. Peek sends no email and loads no third-party scripts, fonts or analytics.
+Peek does not connect to any external services. The quick-view modal fetches its product fragment from your own site over WordPress' `admin-ajax.php` (the `peek_quick_view` action), so no shopper or product data ever leaves your server. Peek's only stored data is two WordPress options it creates, `peek_settings` (your modal and button configuration) and `peek_db_version`, both removed when the plugin is deleted. Peek sends no email and loads no third-party scripts, fonts or analytics.
 
 == Changelog ==
 
 = 0.3.0 =
-* New: loop button placement — below the card or overlay on the thumbnail (hover/focus).
+* New: loop button placement, below the card or overlay on the thumbnail (hover/focus).
 * New: `[peek]` shortcode as an alias for `[peek_quick_view]`.
 
 = 0.2.0 =
 * New: `[peek_quick_view]` shortcode to place a quick-view trigger anywhere, with optional `id`, `text` and `style` attributes.
 * New: stock status row in the modal, with a toggle.
 * New: configurable gallery thumbnail count (0–12).
-* New: trigger button style — text, icon, or icon + text (icon-only keeps an accessible name).
-* New: display scope — load on shop/archives only, or also single-product related/up-sell loops.
+* New: trigger button style, text, icon, or icon + text (icon-only keeps an accessible name).
+* New: display scope, load on shop/archives only, or also single-product related/up-sell loops.
 * New: modal chrome controls in the settings page (title, close-button label, loading/error text, view-product link text, SKU label, and toggles for the modal heading, close button and backdrop-click close).
 * New: `uninstall.php` removes the plugin's options on delete.
 * Added Domain Path for translations.
