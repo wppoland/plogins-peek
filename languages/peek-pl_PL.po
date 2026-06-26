@@ -30,10 +30,10 @@ msgstr "https://plogins.com/peek/"
 #. Description of the plugin
 #: peek.php
 msgid ""
-"Fast, accessible WooCommerce quick view — AJAX product modal (gallery, "
+"Fast, accessible WooCommerce quick view, AJAX product modal (gallery, "
 "price, stock, add-to-cart, variations), no jQuery, focus-trapped"
 msgstr ""
-"Szybki, dostępny podgląd produktów WooCommerce — okno modalne AJAX (galeria, "
+"Szybki, dostępny podgląd produktów WooCommerce, okno modalne AJAX (galeria, "
 "cena, dostępność, dodawanie do koszyka, warianty), bez jQuery, z pułapką "
 "fokusu"
 
@@ -68,12 +68,12 @@ msgid ""
 "Peek adds a quick-view button to your shop loops. Clicking it opens an "
 "accessible, focus-trapped modal with the image gallery, price, stock, add-to-"
 "cart form (variations included) and a link to the full product. Tune "
-"everything below — hover a “?” for a quick explanation."
+"everything below, hover a “?” for a quick explanation."
 msgstr ""
 "Peek dodaje przycisk szybkiego podglądu do pętli produktów w sklepie. "
 "Kliknięcie otwiera dostępne okno modalne z pułapką fokusu, zawierające "
 "galerię zdjęć, cenę, dostępność, formularz dodawania do koszyka (wraz z "
-"wariantami) oraz link do pełnej strony produktu. Dostosuj wszystko poniżej — "
+"wariantami) oraz link do pełnej strony produktu. Dostosuj wszystko poniżej, "
 "najedź na „?”, aby uzyskać krótkie wyjaśnienie."
 
 #: src/Admin/Settings.php:116
@@ -158,12 +158,12 @@ msgstr "Umiejscowienie przycisku"
 #: src/Admin/Settings.php:161
 msgid ""
 "Below the card is the safest default. On-image overlay keeps grids compact "
-"and reveals the button when shoppers hover or focus the product — ideal for "
+"and reveals the button when shoppers hover or focus the product, ideal for "
 "image-led catalogues."
 msgstr ""
 "Pod kartą to najbezpieczniejsza wartość domyślna. Nakładka na zdjęciu "
 "utrzymuje siatki zwarte i odsłania przycisk, gdy klient najedzie na produkt "
-"lub ustawi na nim fokus — idealne dla katalogów opartych na zdjęciach."
+"lub ustawi na nim fokus, idealne dla katalogów opartych na zdjęciach."
 
 #: src/Admin/Settings.php:166
 msgid "Below product card"
@@ -362,11 +362,11 @@ msgstr "Zamknij okno modalne po kliknięciu tła."
 
 #: src/Admin/Settings.php:205
 msgid ""
-"Lets shoppers dismiss the modal by clicking the dimmed area around it — a "
+"Lets shoppers dismiss the modal by clicking the dimmed area around it, a "
 "familiar pattern most users expect."
 msgstr ""
 "Pozwala klientom zamknąć okno modalne przez kliknięcie przyciemnionego "
-"obszaru wokół niego — znany wzorzec, którego oczekuje większość użytkowników."
+"obszaru wokół niego, znany wzorzec, którego oczekuje większość użytkowników."
 
 #: src/Admin/Settings.php:214
 msgid "Modal content"
@@ -499,10 +499,10 @@ msgstr "Pokaż krótki opis produktu."
 
 #: src/Admin/Settings.php:227
 msgid ""
-"The product’s short/excerpt description — the perfect length for a quick "
+"The product’s short/excerpt description, the perfect length for a quick "
 "preview. Hidden when empty."
 msgstr ""
-"Krótki opis produktu — idealna długość na szybki podgląd. Ukrywany, gdy jest "
+"Krótki opis produktu, idealna długość na szybki podgląd. Ukrywany, gdy jest "
 "pusty."
 
 #: src/Admin/Settings.php:228

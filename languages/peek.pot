@@ -26,7 +26,7 @@ msgstr ""
 
 #. Description of the plugin
 #: peek.php
-msgid "Fast, accessible WooCommerce quick view — AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped"
+msgid "Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped"
 msgstr ""
 
 #. Author of the plugin
@@ -56,7 +56,7 @@ msgid "Let shoppers preview products without leaving the page"
 msgstr ""
 
 #: src/Admin/Settings.php:108
-msgid "Peek adds a quick-view button to your shop loops. Clicking it opens an accessible, focus-trapped modal with the image gallery, price, stock, add-to-cart form (variations included) and a link to the full product. Tune everything below — hover a “?” for a quick explanation."
+msgid "Peek adds a quick-view button to your shop loops. Clicking it opens an accessible, focus-trapped modal with the image gallery, price, stock, add-to-cart form (variations included) and a link to the full product. Tune everything below, hover a “?” for a quick explanation."
 msgstr ""
 
 #: src/Admin/Settings.php:116
@@ -120,7 +120,7 @@ msgid "Button placement"
 msgstr ""
 
 #: src/Admin/Settings.php:161
-msgid "Below the card is the safest default. On-image overlay keeps grids compact and reveals the button when shoppers hover or focus the product — ideal for image-led catalogues."
+msgid "Below the card is the safest default. On-image overlay keeps grids compact and reveals the button when shoppers hover or focus the product, ideal for image-led catalogues."
 msgstr ""
 
 #: src/Admin/Settings.php:166
@@ -268,7 +268,7 @@ msgid "Close the modal when the backdrop is clicked."
 msgstr ""
 
 #: src/Admin/Settings.php:205
-msgid "Lets shoppers dismiss the modal by clicking the dimmed area around it — a familiar pattern most users expect."
+msgid "Lets shoppers dismiss the modal by clicking the dimmed area around it, a familiar pattern most users expect."
 msgstr ""
 
 #: src/Admin/Settings.php:214
@@ -373,7 +373,7 @@ msgid "Show the product short description."
 msgstr ""
 
 #: src/Admin/Settings.php:227
-msgid "The product’s short/excerpt description — the perfect length for a quick preview. Hidden when empty."
+msgid "The product’s short/excerpt description, the perfect length for a quick preview. Hidden when empty."
 msgstr ""
 
 #: src/Admin/Settings.php:228
