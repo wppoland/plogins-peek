@@ -105,7 +105,7 @@ final class Settings implements HasHooks
                 </span>
                 <div class="peek-admin__intro-text">
                     <h2><?php esc_html_e('Let shoppers preview products without leaving the page', 'peek'); ?></h2>
-                    <p><?php esc_html_e('Peek adds a quick-view button to your shop loops. Clicking it opens an accessible, focus-trapped modal with the image gallery, price, stock, add-to-cart form (variations included) and a link to the full product. Tune everything below — hover a “?” for a quick explanation.', 'peek'); ?></p>
+                    <p><?php esc_html_e('Peek adds a quick-view button to your shop loops. Clicking it opens an accessible, focus-trapped modal with the image gallery, price, stock, add-to-cart form (variations included) and a link to the full product. Tune everything below, hover a “?” for a quick explanation.', 'peek'); ?></p>
                 </div>
             </div>
 
@@ -158,7 +158,7 @@ final class Settings implements HasHooks
                             <tr>
                                 <th scope="row">
                                     <label for="peek_loop_button_placement"><?php esc_html_e('Button placement', 'peek'); ?></label>
-                                    <?php $this->helpTip('loop_button_placement', __('Below the card is the safest default. On-image overlay keeps grids compact and reveals the button when shoppers hover or focus the product — ideal for image-led catalogues.', 'peek')); ?>
+                                    <?php $this->helpTip('loop_button_placement', __('Below the card is the safest default. On-image overlay keeps grids compact and reveals the button when shoppers hover or focus the product, ideal for image-led catalogues.', 'peek')); ?>
                                 </th>
                                 <td>
                                     <?php $peek_placement = (string) ($settings['loop_button_placement'] ?? 'below'); ?>
@@ -202,7 +202,7 @@ final class Settings implements HasHooks
                             $this->textRow('sku_label', __('SKU label', 'peek'), __('Prefix shown before the SKU value.', 'peek'), $settings, __('The prefix before the SKU, e.g. “SKU”, “Item no.” or “Ref”. Hidden automatically when a product has no SKU.', 'peek'));
                             $this->checkboxRow('show_modal_label', __('Modal heading', 'peek'), __('Show the modal title above the loaded product.', 'peek'), $settings, __('Prints the modal title as a visible heading inside the dialog. Turn off for a cleaner, image-led layout.', 'peek'));
                             $this->checkboxRow('show_close_button', __('Close button', 'peek'), __('Show the close (×) button.', 'peek'), $settings, __('Keep this on for usability. The modal can always be closed with the Escape key regardless of this setting.', 'peek'));
-                            $this->checkboxRow('show_backdrop_close', __('Close on backdrop click', 'peek'), __('Close the modal when the backdrop is clicked.', 'peek'), $settings, __('Lets shoppers dismiss the modal by clicking the dimmed area around it — a familiar pattern most users expect.', 'peek'));
+                            $this->checkboxRow('show_backdrop_close', __('Close on backdrop click', 'peek'), __('Close the modal when the backdrop is clicked.', 'peek'), $settings, __('Lets shoppers dismiss the modal by clicking the dimmed area around it, a familiar pattern most users expect.', 'peek'));
                             ?>
                         </tbody>
                     </table>
@@ -224,7 +224,7 @@ final class Settings implements HasHooks
                             $this->checkboxRow('show_sku', __('SKU', 'peek'), __('Show the product SKU.', 'peek'), $settings, __('The stock-keeping unit. Useful for catalogues and B2B; hidden when the product has none.', 'peek'));
                             $this->checkboxRow('show_price', __('Price', 'peek'), __('Show the product price.', 'peek'), $settings, __('The formatted price, including any sale price, exactly as WooCommerce renders it elsewhere.', 'peek'));
                             $this->checkboxRow('show_stock', __('Stock status', 'peek'), __('Show the stock availability.', 'peek'), $settings, __('Availability such as “In stock”, “Only 3 left” or “Out of stock”, based on your WooCommerce inventory settings.', 'peek'));
-                            $this->checkboxRow('show_short_description', __('Short description', 'peek'), __('Show the product short description.', 'peek'), $settings, __('The product’s short/excerpt description — the perfect length for a quick preview. Hidden when empty.', 'peek'));
+                            $this->checkboxRow('show_short_description', __('Short description', 'peek'), __('Show the product short description.', 'peek'), $settings, __('The product’s short/excerpt description, the perfect length for a quick preview. Hidden when empty.', 'peek'));
                             $this->checkboxRow('show_add_to_cart', __('Add to cart', 'peek'), __('Show the add-to-cart form (with variations).', 'peek'), $settings, __('Lets shoppers buy straight from the modal. Variable products get the full variation picker. Hidden for products that aren’t purchasable.', 'peek'));
                             $this->checkboxRow('show_view_product_link', __('View full product link', 'peek'), __('Show a link to the full product page.', 'peek'), $settings, __('A button to the complete product page. Recommended so shoppers can reach reviews and full details.', 'peek'));
                             ?>
