@@ -16,8 +16,8 @@ declare(strict_types=1);
 
 defined('ABSPATH') || exit;
 
-$peek_modal_title = (string) ($settings['modal_title'] ?? __('Product quick view', 'peek'));
-$peek_close_label = (string) ($settings['close_label'] ?? __('Close', 'peek'));
+$peek_modal_title = (string) ($settings['modal_title'] ?? __('Product quick view', 'plogins-peek'));
+$peek_close_label = (string) ($settings['close_label'] ?? __('Close', 'plogins-peek'));
 ?>
 <div class="peek-quick-view-modal" data-peek-quick-view-modal hidden>
     <div class="peek-quick-view-backdrop" data-peek-quick-view-backdrop></div>

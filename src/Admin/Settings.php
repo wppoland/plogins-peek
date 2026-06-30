@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Peek\Admin;
+namespace Plogins\Peek\Admin;
 
 defined('ABSPATH') || exit;
 
-use Peek\Contract\HasHooks;
+use Plogins\Peek\Contract\HasHooks;
 
 /**
  * Admin settings page registered as a top-level "Peek" menu.
@@ -40,16 +40,16 @@ final class Settings implements HasHooks
 
         wp_enqueue_style(
             'peek-admin',
-            \Peek\Plugin::instance()->url('assets/css/admin.css'),
+            \Plogins\Peek\Plugin::instance()->url('assets/css/admin.css'),
             [],
-            \Peek\VERSION,
+            \Plogins\Peek\VERSION,
         );
 
         wp_enqueue_script(
             'peek-admin',
-            \Peek\Plugin::instance()->url('assets/js/admin.js'),
+            \Plogins\Peek\Plugin::instance()->url('assets/js/admin.js'),
             [],
-            \Peek\VERSION,
+            \Plogins\Peek\VERSION,
             ['in_footer' => true, 'strategy' => 'defer'],
         );
     }
@@ -57,8 +57,8 @@ final class Settings implements HasHooks
     public function addMenuPage(): void
     {
         add_menu_page(
-            __('Peek Settings', 'peek'),
-            __('Peek', 'peek'),
+            __('Peek Settings', 'plogins-peek'),
+            __('Peek', 'plogins-peek'),
             'manage_woocommerce',
             self::PAGE,
             [$this, 'renderPage'],
@@ -104,8 +104,8 @@ final class Settings implements HasHooks
                     </svg>
                 </span>
                 <div class="peek-admin__intro-text">
-                    <h2><?php esc_html_e('Let shoppers preview products without leaving the page', 'peek'); ?></h2>
-                    <p><?php esc_html_e('Peek adds a quick-view button to your shop loops. Clicking it opens an accessible, focus-trapped modal with the image gallery, price, stock, add-to-cart form (variations included) and a link to the full product. Tune everything below, hover a “?” for a quick explanation.', 'peek'); ?></p>
+                    <h2><?php esc_html_e('Let shoppers preview products without leaving the page', 'plogins-peek'); ?></h2>
+                    <p><?php esc_html_e('Peek adds a quick-view button to your shop loops. Clicking it opens an accessible, focus-trapped modal with the image gallery, price, stock, add-to-cart form (variations included) and a link to the full product. Tune everything below, hover a “?” for a quick explanation.', 'plogins-peek'); ?></p>
                 </div>
             </div>
 
@@ -113,15 +113,15 @@ final class Settings implements HasHooks
                 <?php settings_fields(self::PAGE); ?>
 
                 <div class="peek-admin__section">
-                    <h2><?php esc_html_e('Trigger button', 'peek'); ?></h2>
-                    <p class="peek-admin__section-intro"><?php esc_html_e('Controls the quick-view button shown in your product loops.', 'peek'); ?></p>
+                    <h2><?php esc_html_e('Trigger button', 'plogins-peek'); ?></h2>
+                    <p class="peek-admin__section-intro"><?php esc_html_e('Controls the quick-view button shown in your product loops.', 'plogins-peek'); ?></p>
 
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
                                 <th scope="row">
-                                    <?php esc_html_e('Enable quick view', 'peek'); ?>
-                                    <?php $this->helpTip('enabled', __('Master switch. When off, no button or modal is loaded anywhere and the storefront is completely unaffected.', 'peek')); ?>
+                                    <?php esc_html_e('Enable quick view', 'plogins-peek'); ?>
+                                    <?php $this->helpTip('enabled', __('Master switch. When off, no button or modal is loaded anywhere and the storefront is completely unaffected.', 'plogins-peek')); ?>
                                 </th>
                                 <td>
                                     <label for="peek_enabled">
@@ -133,54 +133,54 @@ final class Settings implements HasHooks
                                             aria-describedby="peek-tip-enabled"
                                             <?php checked((bool) ($settings['enabled'] ?? false), true); ?>
                                         />
-                                        <?php esc_html_e('Show the quick-view button on shop and archive product loops.', 'peek'); ?>
+                                        <?php esc_html_e('Show the quick-view button on shop and archive product loops.', 'plogins-peek'); ?>
                                     </label>
                                 </td>
                             </tr>
                             <?php
-                            $this->textRow('button_text', __('Button label', 'peek'), __('Text shown on the quick-view trigger button.', 'peek'), $settings, __('The clickable label, e.g. “Quick view” or “Peek inside”. With the icon-only style this becomes the button’s accessible name for screen readers.', 'peek'));
+                            $this->textRow('button_text', __('Button label', 'plogins-peek'), __('Text shown on the quick-view trigger button.', 'plogins-peek'), $settings, __('The clickable label, e.g. “Quick view” or “Peek inside”. With the icon-only style this becomes the button’s accessible name for screen readers.', 'plogins-peek'));
                             ?>
                             <tr>
                                 <th scope="row">
-                                    <label for="peek_button_style"><?php esc_html_e('Button style', 'peek'); ?></label>
-                                    <?php $this->helpTip('button_style', __('Text only is the safest match for most themes. Icon only saves space in tight grids (the eye icon). Icon + text gives the clearest call to action.', 'peek')); ?>
+                                    <label for="peek_button_style"><?php esc_html_e('Button style', 'plogins-peek'); ?></label>
+                                    <?php $this->helpTip('button_style', __('Text only is the safest match for most themes. Icon only saves space in tight grids (the eye icon). Icon + text gives the clearest call to action.', 'plogins-peek')); ?>
                                 </th>
                                 <td>
                                     <?php $peek_style = (string) ($settings['button_style'] ?? 'text'); ?>
                                     <select id="peek_button_style" name="<?php echo esc_attr(self::OPTION); ?>[button_style]" aria-describedby="peek-tip-button_style">
-                                        <option value="text" <?php selected($peek_style, 'text'); ?>><?php esc_html_e('Text only', 'peek'); ?></option>
-                                        <option value="icon" <?php selected($peek_style, 'icon'); ?>><?php esc_html_e('Icon only', 'peek'); ?></option>
-                                        <option value="icon_text" <?php selected($peek_style, 'icon_text'); ?>><?php esc_html_e('Icon and text', 'peek'); ?></option>
+                                        <option value="text" <?php selected($peek_style, 'text'); ?>><?php esc_html_e('Text only', 'plogins-peek'); ?></option>
+                                        <option value="icon" <?php selected($peek_style, 'icon'); ?>><?php esc_html_e('Icon only', 'plogins-peek'); ?></option>
+                                        <option value="icon_text" <?php selected($peek_style, 'icon_text'); ?>><?php esc_html_e('Icon and text', 'plogins-peek'); ?></option>
                                     </select>
-                                    <p class="description"><?php esc_html_e('How the trigger appears in the product loop. The icon-only style keeps the label as its accessible name.', 'peek'); ?></p>
+                                    <p class="description"><?php esc_html_e('How the trigger appears in the product loop. The icon-only style keeps the label as its accessible name.', 'plogins-peek'); ?></p>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">
-                                    <label for="peek_loop_button_placement"><?php esc_html_e('Button placement', 'peek'); ?></label>
-                                    <?php $this->helpTip('loop_button_placement', __('Below the card is the safest default. On-image overlay keeps grids compact and reveals the button when shoppers hover or focus the product, ideal for image-led catalogues.', 'peek')); ?>
+                                    <label for="peek_loop_button_placement"><?php esc_html_e('Button placement', 'plogins-peek'); ?></label>
+                                    <?php $this->helpTip('loop_button_placement', __('Below the card is the safest default. On-image overlay keeps grids compact and reveals the button when shoppers hover or focus the product, ideal for image-led catalogues.', 'plogins-peek')); ?>
                                 </th>
                                 <td>
                                     <?php $peek_placement = (string) ($settings['loop_button_placement'] ?? 'below'); ?>
                                     <select id="peek_loop_button_placement" name="<?php echo esc_attr(self::OPTION); ?>[loop_button_placement]" aria-describedby="peek-tip-loop_button_placement">
-                                        <option value="below" <?php selected($peek_placement, 'below'); ?>><?php esc_html_e('Below product card', 'peek'); ?></option>
-                                        <option value="overlay" <?php selected($peek_placement, 'overlay'); ?>><?php esc_html_e('On image (hover / focus)', 'peek'); ?></option>
+                                        <option value="below" <?php selected($peek_placement, 'below'); ?>><?php esc_html_e('Below product card', 'plogins-peek'); ?></option>
+                                        <option value="overlay" <?php selected($peek_placement, 'overlay'); ?>><?php esc_html_e('On image (hover / focus)', 'plogins-peek'); ?></option>
                                     </select>
-                                    <p class="description"><?php esc_html_e('Where the quick-view trigger sits in shop loops. Overlay mode never shifts card height.', 'peek'); ?></p>
+                                    <p class="description"><?php esc_html_e('Where the quick-view trigger sits in shop loops. Overlay mode never shifts card height.', 'plogins-peek'); ?></p>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">
-                                    <label for="peek_display_scope"><?php esc_html_e('Where to load', 'peek'); ?></label>
-                                    <?php $this->helpTip('display_scope', __('Loading only where needed keeps pages fast. The second option also covers the “Related products” and “You may also like” loops on single product pages.', 'peek')); ?>
+                                    <label for="peek_display_scope"><?php esc_html_e('Where to load', 'plogins-peek'); ?></label>
+                                    <?php $this->helpTip('display_scope', __('Loading only where needed keeps pages fast. The second option also covers the “Related products” and “You may also like” loops on single product pages.', 'plogins-peek')); ?>
                                 </th>
                                 <td>
                                     <?php $peek_scope = (string) ($settings['display_scope'] ?? 'shop'); ?>
                                     <select id="peek_display_scope" name="<?php echo esc_attr(self::OPTION); ?>[display_scope]" aria-describedby="peek-tip-display_scope">
-                                        <option value="shop" <?php selected($peek_scope, 'shop'); ?>><?php esc_html_e('Shop and product archives', 'peek'); ?></option>
-                                        <option value="shop_single" <?php selected($peek_scope, 'shop_single'); ?>><?php esc_html_e('Archives + single-product related/upsell loops', 'peek'); ?></option>
+                                        <option value="shop" <?php selected($peek_scope, 'shop'); ?>><?php esc_html_e('Shop and product archives', 'plogins-peek'); ?></option>
+                                        <option value="shop_single" <?php selected($peek_scope, 'shop_single'); ?>><?php esc_html_e('Archives + single-product related/upsell loops', 'plogins-peek'); ?></option>
                                     </select>
-                                    <p class="description"><?php esc_html_e('Choose whether the quick-view button also appears in the related and up-sell loops on single product pages.', 'peek'); ?></p>
+                                    <p class="description"><?php esc_html_e('Choose whether the quick-view button also appears in the related and up-sell loops on single product pages.', 'plogins-peek'); ?></p>
                                 </td>
                             </tr>
                         </tbody>
@@ -188,21 +188,21 @@ final class Settings implements HasHooks
                 </div>
 
                 <div class="peek-admin__section">
-                    <h2><?php esc_html_e('Modal chrome', 'peek'); ?></h2>
-                    <p class="peek-admin__section-intro"><?php esc_html_e('Labels and behaviour for the modal dialog itself. Empty text fields fall back to the built-in defaults.', 'peek'); ?></p>
+                    <h2><?php esc_html_e('Modal chrome', 'plogins-peek'); ?></h2>
+                    <p class="peek-admin__section-intro"><?php esc_html_e('Labels and behaviour for the modal dialog itself. Empty text fields fall back to the built-in defaults.', 'plogins-peek'); ?></p>
 
                     <table class="form-table" role="presentation">
                         <tbody>
                             <?php
-                            $this->textRow('modal_title', __('Modal title', 'peek'), __('Heading announced for the dialog.', 'peek'), $settings, __('Read out to screen-reader users when the dialog opens, and shown as a heading if “Modal heading” is on. Keep it short and descriptive.', 'peek'));
-                            $this->textRow('close_label', __('Close button label', 'peek'), __('Accessible label for the close button.', 'peek'), $settings, __('The “×” button is visual only; this text is its accessible name for screen readers and keyboard users.', 'peek'));
-                            $this->textRow('loading_text', __('Loading text', 'peek'), __('Shown while the product is fetched.', 'peek'), $settings, __('Displayed for the brief moment between opening the modal and the product fragment arriving over AJAX.', 'peek'));
-                            $this->textRow('error_text', __('Error text', 'peek'), __('Shown if the product fails to load.', 'peek'), $settings, __('A friendly message shown if the request fails (network error, product removed). Reassure the shopper they can try again or open the full page.', 'peek'));
-                            $this->textRow('view_product_text', __('View product link text', 'peek'), __('Label for the link to the full product page.', 'peek'), $settings, __('Label for the button that takes the shopper to the complete product page for reviews, full description and more.', 'peek'));
-                            $this->textRow('sku_label', __('SKU label', 'peek'), __('Prefix shown before the SKU value.', 'peek'), $settings, __('The prefix before the SKU, e.g. “SKU”, “Item no.” or “Ref”. Hidden automatically when a product has no SKU.', 'peek'));
-                            $this->checkboxRow('show_modal_label', __('Modal heading', 'peek'), __('Show the modal title above the loaded product.', 'peek'), $settings, __('Prints the modal title as a visible heading inside the dialog. Turn off for a cleaner, image-led layout.', 'peek'));
-                            $this->checkboxRow('show_close_button', __('Close button', 'peek'), __('Show the close (×) button.', 'peek'), $settings, __('Keep this on for usability. The modal can always be closed with the Escape key regardless of this setting.', 'peek'));
-                            $this->checkboxRow('show_backdrop_close', __('Close on backdrop click', 'peek'), __('Close the modal when the backdrop is clicked.', 'peek'), $settings, __('Lets shoppers dismiss the modal by clicking the dimmed area around it, a familiar pattern most users expect.', 'peek'));
+                            $this->textRow('modal_title', __('Modal title', 'plogins-peek'), __('Heading announced for the dialog.', 'plogins-peek'), $settings, __('Read out to screen-reader users when the dialog opens, and shown as a heading if “Modal heading” is on. Keep it short and descriptive.', 'plogins-peek'));
+                            $this->textRow('close_label', __('Close button label', 'plogins-peek'), __('Accessible label for the close button.', 'plogins-peek'), $settings, __('The “×” button is visual only; this text is its accessible name for screen readers and keyboard users.', 'plogins-peek'));
+                            $this->textRow('loading_text', __('Loading text', 'plogins-peek'), __('Shown while the product is fetched.', 'plogins-peek'), $settings, __('Displayed for the brief moment between opening the modal and the product fragment arriving over AJAX.', 'plogins-peek'));
+                            $this->textRow('error_text', __('Error text', 'plogins-peek'), __('Shown if the product fails to load.', 'plogins-peek'), $settings, __('A friendly message shown if the request fails (network error, product removed). Reassure the shopper they can try again or open the full page.', 'plogins-peek'));
+                            $this->textRow('view_product_text', __('View product link text', 'plogins-peek'), __('Label for the link to the full product page.', 'plogins-peek'), $settings, __('Label for the button that takes the shopper to the complete product page for reviews, full description and more.', 'plogins-peek'));
+                            $this->textRow('sku_label', __('SKU label', 'plogins-peek'), __('Prefix shown before the SKU value.', 'plogins-peek'), $settings, __('The prefix before the SKU, e.g. “SKU”, “Item no.” or “Ref”. Hidden automatically when a product has no SKU.', 'plogins-peek'));
+                            $this->checkboxRow('show_modal_label', __('Modal heading', 'plogins-peek'), __('Show the modal title above the loaded product.', 'plogins-peek'), $settings, __('Prints the modal title as a visible heading inside the dialog. Turn off for a cleaner, image-led layout.', 'plogins-peek'));
+                            $this->checkboxRow('show_close_button', __('Close button', 'plogins-peek'), __('Show the close (×) button.', 'plogins-peek'), $settings, __('Keep this on for usability. The modal can always be closed with the Escape key regardless of this setting.', 'plogins-peek'));
+                            $this->checkboxRow('show_backdrop_close', __('Close on backdrop click', 'plogins-peek'), __('Close the modal when the backdrop is clicked.', 'plogins-peek'), $settings, __('Lets shoppers dismiss the modal by clicking the dimmed area around it, a familiar pattern most users expect.', 'plogins-peek'));
                             ?>
                         </tbody>
                     </table>
@@ -211,22 +211,22 @@ final class Settings implements HasHooks
                 <?php do_action( 'peek_admin_settings_after_general_table', $settings ); ?>
 
                 <div class="peek-admin__section">
-                    <h2><?php esc_html_e('Modal content', 'peek'); ?></h2>
-                    <p class="peek-admin__section-intro"><?php esc_html_e('Choose what the quick-view modal shows for each product. Anything a product is missing (no SKU, no gallery, etc.) is hidden automatically.', 'peek'); ?></p>
+                    <h2><?php esc_html_e('Modal content', 'plogins-peek'); ?></h2>
+                    <p class="peek-admin__section-intro"><?php esc_html_e('Choose what the quick-view modal shows for each product. Anything a product is missing (no SKU, no gallery, etc.) is hidden automatically.', 'plogins-peek'); ?></p>
 
                     <table class="form-table" role="presentation">
                         <tbody>
                             <?php
-                            $this->checkboxRow('show_image', __('Product image', 'peek'), __('Show the featured image.', 'peek'), $settings, __('The main product photo. Products with no image fall back to the WooCommerce placeholder so the layout never breaks.', 'peek'));
-                            $this->checkboxRow('show_gallery', __('Gallery thumbnails', 'peek'), __('Show gallery thumbnails.', 'peek'), $settings, __('Extra product photos shown as a thumbnail strip beneath the main image. Hidden when a product has no gallery.', 'peek'));
-                            $this->numberRow('gallery_limit', __('Gallery thumbnail count', 'peek'), __('Maximum gallery thumbnails to show (0–12).', 'peek'), $settings, 0, 12, __('Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to show the main image only.', 'peek'));
-                            $this->checkboxRow('show_title', __('Title', 'peek'), __('Show the product title.', 'peek'), $settings, __('The product name as a heading at the top of the summary column.', 'peek'));
-                            $this->checkboxRow('show_sku', __('SKU', 'peek'), __('Show the product SKU.', 'peek'), $settings, __('The stock-keeping unit. Useful for catalogues and B2B; hidden when the product has none.', 'peek'));
-                            $this->checkboxRow('show_price', __('Price', 'peek'), __('Show the product price.', 'peek'), $settings, __('The formatted price, including any sale price, exactly as WooCommerce renders it elsewhere.', 'peek'));
-                            $this->checkboxRow('show_stock', __('Stock status', 'peek'), __('Show the stock availability.', 'peek'), $settings, __('Availability such as “In stock”, “Only 3 left” or “Out of stock”, based on your WooCommerce inventory settings.', 'peek'));
-                            $this->checkboxRow('show_short_description', __('Short description', 'peek'), __('Show the product short description.', 'peek'), $settings, __('The product’s short/excerpt description, the perfect length for a quick preview. Hidden when empty.', 'peek'));
-                            $this->checkboxRow('show_add_to_cart', __('Add to cart', 'peek'), __('Show the add-to-cart form (with variations).', 'peek'), $settings, __('Lets shoppers buy straight from the modal. Variable products get the full variation picker. Hidden for products that aren’t purchasable.', 'peek'));
-                            $this->checkboxRow('show_view_product_link', __('View full product link', 'peek'), __('Show a link to the full product page.', 'peek'), $settings, __('A button to the complete product page. Recommended so shoppers can reach reviews and full details.', 'peek'));
+                            $this->checkboxRow('show_image', __('Product image', 'plogins-peek'), __('Show the featured image.', 'plogins-peek'), $settings, __('The main product photo. Products with no image fall back to the WooCommerce placeholder so the layout never breaks.', 'plogins-peek'));
+                            $this->checkboxRow('show_gallery', __('Gallery thumbnails', 'plogins-peek'), __('Show gallery thumbnails.', 'plogins-peek'), $settings, __('Extra product photos shown as a thumbnail strip beneath the main image. Hidden when a product has no gallery.', 'plogins-peek'));
+                            $this->numberRow('gallery_limit', __('Gallery thumbnail count', 'plogins-peek'), __('Maximum gallery thumbnails to show (0–12).', 'plogins-peek'), $settings, 0, 12, __('Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to show the main image only.', 'plogins-peek'));
+                            $this->checkboxRow('show_title', __('Title', 'plogins-peek'), __('Show the product title.', 'plogins-peek'), $settings, __('The product name as a heading at the top of the summary column.', 'plogins-peek'));
+                            $this->checkboxRow('show_sku', __('SKU', 'plogins-peek'), __('Show the product SKU.', 'plogins-peek'), $settings, __('The stock-keeping unit. Useful for catalogues and B2B; hidden when the product has none.', 'plogins-peek'));
+                            $this->checkboxRow('show_price', __('Price', 'plogins-peek'), __('Show the product price.', 'plogins-peek'), $settings, __('The formatted price, including any sale price, exactly as WooCommerce renders it elsewhere.', 'plogins-peek'));
+                            $this->checkboxRow('show_stock', __('Stock status', 'plogins-peek'), __('Show the stock availability.', 'plogins-peek'), $settings, __('Availability such as “In stock”, “Only 3 left” or “Out of stock”, based on your WooCommerce inventory settings.', 'plogins-peek'));
+                            $this->checkboxRow('show_short_description', __('Short description', 'plogins-peek'), __('Show the product short description.', 'plogins-peek'), $settings, __('The product’s short/excerpt description, the perfect length for a quick preview. Hidden when empty.', 'plogins-peek'));
+                            $this->checkboxRow('show_add_to_cart', __('Add to cart', 'plogins-peek'), __('Show the add-to-cart form (with variations).', 'plogins-peek'), $settings, __('Lets shoppers buy straight from the modal. Variable products get the full variation picker. Hidden for products that aren’t purchasable.', 'plogins-peek'));
+                            $this->checkboxRow('show_view_product_link', __('View full product link', 'plogins-peek'), __('Show a link to the full product page.', 'plogins-peek'), $settings, __('A button to the complete product page. Recommended so shoppers can reach reviews and full details.', 'plogins-peek'));
                             ?>
                         </tbody>
                     </table>
@@ -255,7 +255,7 @@ final class Settings implements HasHooks
             type="button"
             class="peek-help"
             data-peek-tip="<?php echo esc_attr($tipId); ?>"
-            aria-label="<?php esc_attr_e('More information', 'peek'); ?>"
+            aria-label="<?php esc_attr_e('More information', 'plogins-peek'); ?>"
             aria-describedby="<?php echo esc_attr($tipId); ?>"
             title="<?php echo esc_attr($text); ?>"
         >?</button>
@@ -392,7 +392,7 @@ final class Settings implements HasHooks
 
         $sanitized = array_merge($defaults, [
             'enabled'                => ! empty($raw['enabled']),
-            'button_text'            => $buttonText !== '' ? $buttonText : (string) ($defaults['button_text'] ?? __('Quick view', 'peek')),
+            'button_text'            => $buttonText !== '' ? $buttonText : (string) ($defaults['button_text'] ?? __('Quick view', 'plogins-peek')),
             'button_style'           => $buttonStyle,
             'loop_button_placement'  => $loopPlacement,
             'display_scope'          => $displayScope,

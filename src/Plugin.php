@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Peek;
+namespace Plogins\Peek;
 
-use Peek\Contract\HasHooks;
+use Plogins\Peek\Contract\HasHooks;
 
 defined('ABSPATH') || exit;
 
