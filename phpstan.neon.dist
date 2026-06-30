@@ -4,7 +4,7 @@ includes:
 parameters:
     level: 6
     paths:
-        - plogins-peek.php
+        - peek.php
         - uninstall.php
         - src
         - config

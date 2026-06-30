@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Plogins\Peek;
+namespace Peek;
 
 defined('ABSPATH') || exit;
 
@@ -21,7 +21,7 @@ if (is_readable($peek_composer)) {
 
 spl_autoload_register(static function (string $class): void {
     $prefixes = [
-        'Plogins\\Peek\\'           => __DIR__ . '/src/',
+        'Peek\\'           => __DIR__ . '/src/',
         'WPPoland\\StorefrontKit\\'    => __DIR__ . '/lib/storefront-kit/',
     ];
 

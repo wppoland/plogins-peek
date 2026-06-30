@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Plogins\Peek\Contract;
+namespace Peek\Contract;
 
 defined('ABSPATH') || exit;
 
