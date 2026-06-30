@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 defined('ABSPATH') || exit;
 
-$peek_button_text  = (string) ($settings['button_text'] ?? __('Quick view', 'peek'));
+$peek_button_text  = (string) ($settings['button_text'] ?? __('Quick view', 'plogins-peek'));
 $peek_button_style = (string) ($settings['button_style'] ?? 'text');
 
 if (! in_array($peek_button_style, ['text', 'icon', 'icon_text'], true)) {
