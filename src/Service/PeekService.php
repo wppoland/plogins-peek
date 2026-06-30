@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Plogins\Peek\Service;
+namespace Peek\Service;
 
-use Plogins\Peek\Contract\HasHooks;
+use Peek\Contract\HasHooks;
 use WPPoland\StorefrontKit\QuickView\QuickViewEngine;
 
 defined('ABSPATH') || exit;
 
 /**
- * Wires {@see QuickViewEngine} with this plugin's text-domain ('plogins-peek'), option
+ * Wires {@see QuickViewEngine} with this plugin's text-domain ('peek'), option
  * prefix ('peek_'), asset URLs and labels, and supplies the two closures it
  * needs: one to render templates (loop button + modal shell) and one to build
  * the per-product quick-view HTML fragment served over AJAX. This class supplies
@@ -43,15 +43,15 @@ final class PeekService implements HasHooks
             nonceAction: 'peek_quick_view',
             scriptObjectName: 'peekQuickView',
             assetHandle: 'peek',
-            styleUrl: \Plogins\Peek\Plugin::instance()->url('assets/css/quick-view.css'),
-            scriptUrl: \Plogins\Peek\Plugin::instance()->url('assets/js/quick-view.js'),
-            version: \Plogins\Peek\VERSION,
+            styleUrl: \Peek\Plugin::instance()->url('assets/css/quick-view.css'),
+            scriptUrl: \Peek\Plugin::instance()->url('assets/js/quick-view.js'),
+            version: \Peek\VERSION,
             buttonTemplate: 'quick-view-button',
             modalTemplate: 'quick-view-modal',
             labels: [
-                'loading'   => __('Loading product…', 'plogins-peek'),
-                'error'     => __('Failed to load the product preview.', 'plogins-peek'),
-                'not_found' => __('Product not found.', 'plogins-peek'),
+                'loading'   => __('Loading product…', 'peek'),
+                'error'     => __('Failed to load the product preview.', 'peek'),
+                'not_found' => __('Product not found.', 'peek'),
             ],
             isEnabled: fn (): bool => $this->isEnabled(),
             shouldRender: fn (): bool => $this->shouldRenderOnCurrentPage(),

@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       Plogins Peek for WooCommerce
- * Plugin URI:        https://plogins.com/plogins-peek/
+ * Plugin Name:       Peek - Quick View for WooCommerce
+ * Plugin URI:        https://plogins.com/peek/
  * Description:        Fast, accessible WooCommerce quick view — AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped
- * Version:           0.3.1
+ * Version:           0.3.0
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -11,7 +11,7 @@
  * Author URI:        https://wppoland.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       plogins-peek
+ * Text Domain:       peek
  * Domain Path:       /languages
  * WC requires at least: 8.0
  *
@@ -20,11 +20,11 @@
 
 declare(strict_types=1);
 
-namespace Plogins\Peek;
+namespace Peek;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '0.3.1';
+const VERSION     = '0.3.0';
 const PLUGIN_FILE = __FILE__;
 
 define('PEEK_DIR', plugin_dir_path(__FILE__));
@@ -44,7 +44,7 @@ add_action('plugins_loaded', static function (): void {
     if (! class_exists('WooCommerce')) {
         add_action('admin_notices', static function (): void {
             echo '<div class="notice notice-error"><p>';
-            echo esc_html__('Peek requires WooCommerce to be active.', 'plogins-peek');
+            echo esc_html__('Peek requires WooCommerce to be active.', 'peek');
             echo '</p></div>';
         });
         return;

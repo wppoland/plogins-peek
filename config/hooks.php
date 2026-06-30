@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-use Plogins\Peek\Admin\Settings;
-use Plogins\Peek\Service\PeekService;
-use Plogins\Peek\Service\ShortcodeService;
+use Peek\Admin\Settings;
+use Peek\Service\PeekService;
+use Peek\Service\ShortcodeService;
 
 defined('ABSPATH') || exit;
 

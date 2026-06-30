@@ -19,7 +19,7 @@ $peek_sku          = (bool) ($settings['show_sku'] ?? true) ? (string) $product-
 $peek_description  = (bool) ($settings['show_short_description'] ?? true)
     ? wpautop(wp_kses_post($product->get_short_description()))
     : '';
-$peek_sku_label    = (string) ($settings['sku_label'] ?? __('SKU', 'plogins-peek'));
+$peek_sku_label    = (string) ($settings['sku_label'] ?? __('SKU', 'peek'));
 $peek_stock_html   = (bool) ($settings['show_stock'] ?? true)
     ? wc_get_stock_html($product)
     : '';
@@ -99,7 +99,7 @@ $peek_has_summary = ((bool) ($settings['show_title'] ?? true) && trim((string) $
                     class="button alt peek-quick-view-link"
                     href="<?php echo esc_url(get_permalink($product->get_id()) ?: ''); ?>"
                 >
-                    <?php echo esc_html((string) ($settings['view_product_text'] ?? __('View full product', 'plogins-peek'))); ?>
+                    <?php echo esc_html((string) ($settings['view_product_text'] ?? __('View full product', 'peek'))); ?>
                 </a>
             <?php endif; ?>
 
@@ -107,13 +107,13 @@ $peek_has_summary = ((bool) ($settings['show_title'] ?? true) && trim((string) $
                 <div class="peek-quick-view-status">
                     <span class="peek-quick-view-status__icon" aria-hidden="true">👁</span>
                     <p>
-                        <?php echo esc_html($product->get_name() !== '' ? $product->get_name() : __('Product preview', 'plogins-peek')); ?>
+                        <?php echo esc_html($product->get_name() !== '' ? $product->get_name() : __('Product preview', 'peek')); ?>
                     </p>
                     <a
                         class="button alt peek-quick-view-link"
                         href="<?php echo esc_url(get_permalink($product->get_id()) ?: ''); ?>"
                     >
-                        <?php echo esc_html((string) ($settings['view_product_text'] ?? __('View full product', 'plogins-peek'))); ?>
+                        <?php echo esc_html((string) ($settings['view_product_text'] ?? __('View full product', 'peek'))); ?>
                     </a>
                 </div>
             <?php endif; ?>

@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-use Plogins\Peek\Admin\Settings;
-use Plogins\Peek\Container;
-use Plogins\Peek\Migrator;
-use Plogins\Peek\Service\PeekService;
-use Plogins\Peek\Service\ShortcodeService;
+use Peek\Admin\Settings;
+use Peek\Container;
+use Peek\Migrator;
+use Peek\Service\PeekService;
+use Peek\Service\ShortcodeService;
 
 defined('ABSPATH') || exit;
 
