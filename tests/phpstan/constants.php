@@ -24,6 +24,6 @@ namespace Peek {
         define('Peek\\VERSION', '0.1.0');
     }
     if (! defined('Peek\\PLUGIN_FILE')) {
-        define('Peek\\PLUGIN_FILE', '/tmp/peek/peek.php');
+        define('Peek\\PLUGIN_FILE', '/tmp/peek/plogins-peek.php');
     }
 }
