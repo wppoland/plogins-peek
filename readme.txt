@@ -1,10 +1,10 @@
-=== Peek - Quick View for WooCommerce ===
+=== Plogins Peek for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,9 +20,8 @@ The modal shows the featured image and gallery thumbnails, title, SKU, price, st
 
 * **Documentation** - https://plogins.com/peek/docs/
 * **Plugin page** - https://plogins.com/peek/
-* **Source code** - https://github.com/wppoland/peek
-* **Bug reports and feature requests** - https://github.com/wppoland/peek/issues
-* **Discussions and questions** - https://github.com/wppoland/peek/discussions
+* **Source code** - https://github.com/wppoland/plogins-peek
+* **Bug reports and feature requests** - https://github.com/wppoland/plogins-peek/issues
 
 
 = Built for speed and accessibility =
@@ -46,11 +45,11 @@ A WooCommerce-capability settings page (Peek menu) lets you:
 
 Place a quick-view trigger anywhere with `[peek_quick_view id="123"]`, or the shorter `[peek id="123"]` alias. Optional attributes: `text` (custom label) and `style` (`text`, `icon`, or `icon_text`). The modal and its assets load automatically wherever the shortcode appears.
 
-Peek is developed in the open. The code, open issues and release history live at https://github.com/wppoland/peek, bug reports and patches are welcome there.
+Peek is developed in the open. The code, open issues and release history live at https://github.com/wppoland/plogins-peek, bug reports and patches are welcome there.
 
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/peek`, or install via Plugins → Add New.
+1. Upload the plugin to `/wp-content/plugins/plogins-peek`, or install via Plugins → Add New.
 2. Activate it. WooCommerce must be active.
 3. Visit the **Peek** menu in wp-admin to configure the button label and modal contents.
 
@@ -94,6 +93,9 @@ Yes. Use `[peek_quick_view id="123"]` or `[peek id="123"]` to add a product quic
 Peek does not connect to any external services. The quick-view modal fetches its product fragment from your own site over WordPress' `admin-ajax.php` (the `peek_quick_view` action), so no shopper or product data ever leaves your server. Peek's only stored data is two WordPress options it creates, `peek_settings` (your modal and button configuration) and `peek_db_version`, both removed when the plugin is deleted. Peek sends no email and loads no third-party scripts, fonts or analytics.
 
 == Changelog ==
+
+= 0.3.1 =
+* Renamed to Plogins Peek for WooCommerce for a more distinctive plugin name.
 
 = 0.3.0 =
 * New: loop button placement, below the card or overlay on the thumbnail (hover/focus).
