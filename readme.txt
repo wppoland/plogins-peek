@@ -83,6 +83,11 @@ No. The modal is hidden until opened and overlays the page, so opening it never 
 
 Yes. Use `[peek_quick_view id="123"]` or `[peek id="123"]` to add a product quick view trigger in custom layouts.
 
+
+= Does this plugin work on WordPress Multisite? =
+
+Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data.
+
 == Screenshots ==
 
 1. The quick-view modal showing the product gallery, price and add-to-cart form.
