@@ -1,4 +1,4 @@
-=== Plogins Peek for WooCommerce ===
+=== Plogins Peek - Quick View for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
