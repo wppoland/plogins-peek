@@ -2,29 +2,29 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: plogins-peek 0.3.1\n"
+"Project-Id-Version: Plogins Peek for WooCommerce 0.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plogins-peek\n"
 "POT-Creation-Date: 2026-06-16T20:25:09+00:00\n"
-"PO-Revision-Date: 2026-06-15 00:00+0000\n"
-"Last-Translator: WPPoland <hello@wppoland.com>\n"
-"Language-Team: Polish <hello@wppoland.com>\n"
-"Language: pl_PL\n"
+"PO-Revision-Date: 2026-06-16T20:25:09+00:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: plogins-peek\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
 #: plogins-peek.php
 msgid "Plogins Peek for WooCommerce"
-msgstr "Plogins Peek dla WooCommerce"
+msgstr "Plogins Peek für WooCommerce"
 
 #. Plugin URI of the plugin
 #: plogins-peek.php
 msgid "https://plogins.com/plogins-peek/"
-msgstr "https://plogins.com/pl/plogins-peek/"
+msgstr "https://plogins.com/de/plogins-peek/"
 
 #. Description of the plugin
 #: plogins-peek.php
@@ -32,9 +32,9 @@ msgid ""
 "Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price,"
 " stock, add-to-cart, variations), no jQuery, focus-trapped"
 msgstr ""
-"Szybki, dostępny podgląd produktów WooCommerce, okno modalne AJAX (galeria, "
-"cena, dostępność, dodawanie do koszyka, warianty), bez jQuery, z pułapką "
-"fokusu"
+"Schnelle, zugängliche WooCommerce-Schnellansicht, AJAX-Produktmodalität "
+"(Galerie, Preis, Lagerbestand, Add-to-Cart, Variationen), kein jQuery, "
+"Fokus-Trapping"
 
 #. Author of the plugin
 #: plogins-peek.php
@@ -48,11 +48,11 @@ msgstr "https://plogins.com/"
 
 #: plogins-peek.php:47
 msgid "Peek requires WooCommerce to be active."
-msgstr "Peek wymaga aktywnego WooCommerce."
+msgstr "Peek erfordert, dass WooCommerce aktiv ist."
 
 #: src/Admin/Settings.php:60
 msgid "Peek Settings"
-msgstr "Ustawienia Peek"
+msgstr "Peek-Einstellungen"
 
 #: src/Admin/Settings.php:61
 msgid "Peek"
@@ -60,7 +60,8 @@ msgstr "Peek"
 
 #: src/Admin/Settings.php:107
 msgid "Let shoppers preview products without leaving the page"
-msgstr "Pozwól klientom podglądać produkty bez opuszczania strony"
+msgstr ""
+"Ermögliche Käufern eine Vorschau der Produkte, ohne die Seite zu verlassen"
 
 #: src/Admin/Settings.php:108
 msgid ""
@@ -69,90 +70,95 @@ msgid ""
 "to-cart form (variations included) and a link to the full product. Tune "
 "everything below, hover a “?” for a quick explanation."
 msgstr ""
-"Peek dodaje przycisk szybkiego podglądu do pętli produktów w sklepie. "
-"Kliknięcie otwiera dostępne okno modalne z pułapką fokusu, zawierające "
-"galerię zdjęć, cenę, dostępność, formularz dodawania do koszyka (wraz z "
-"wariantami) oraz link do pełnej strony produktu. Dostosuj wszystko poniżej, "
-"najedź na „?”, aby uzyskać krótkie wyjaśnienie."
+"Peek fügt deinen Shop-Loops eine Schnellansichtsschaltfläche hinzu. Wenn du "
+"darauf klicken, wird ein zugängliches, fokussiertes Modal mit der "
+"Bildergalerie, dem Preis, dem Lagerbestand, dem Formular zum Hinzufügen zum "
+"Warenkorb (einschließlich Variationen) und einem Link zum vollständigen "
+"Produkt geöffnet. Stelle alles unten ein und bewege den Mauszeiger über ein "
+"„?“ für eine kurze Erklärung."
 
 #: src/Admin/Settings.php:116
 msgid "Trigger button"
-msgstr "Przycisk wyzwalający"
+msgstr "Auslöseknopf"
 
 #: src/Admin/Settings.php:117
 msgid "Controls the quick-view button shown in your product loops."
 msgstr ""
-"Steruje przyciskiem szybkiego podglądu wyświetlanym w pętlach produktów."
+"Steuert die Schnellansichtsschaltfläche, die in deinen Produktschleifen "
+"angezeigt wird."
 
 #: src/Admin/Settings.php:123
 msgid "Enable quick view"
-msgstr "Włącz szybki podgląd"
+msgstr "Aktiviere die Schnellansicht"
 
 #: src/Admin/Settings.php:124
 msgid ""
 "Master switch. When off, no button or modal is loaded anywhere and the "
 "storefront is completely unaffected."
 msgstr ""
-"Główny przełącznik. Gdy wyłączony, żaden przycisk ani okno modalne nie są "
-"nigdzie wczytywane, a sklep pozostaje całkowicie nienaruszony."
+"Hauptschalter. Wenn die Option deaktiviert ist, wird nirgendwo eine "
+"Schaltfläche oder ein Modal geladen und die Storefront bleibt völlig "
+"unberührt."
 
 #: src/Admin/Settings.php:136
 msgid "Show the quick-view button on shop and archive product loops."
 msgstr ""
-"Pokaż przycisk szybkiego podglądu w pętlach produktów sklepu i archiwów."
+"Zeige die Schnellansichtsschaltfläche in Shop- und Archivproduktschleifen "
+"an."
 
 #: src/Admin/Settings.php:141
 msgid "Button label"
-msgstr "Etykieta przycisku"
+msgstr "Button-Beschriftung"
 
 #: src/Admin/Settings.php:141
 msgid "Text shown on the quick-view trigger button."
-msgstr "Tekst wyświetlany na przycisku wyzwalającym szybki podgląd."
+msgstr "Text, der auf der Schnellansicht-Auslöseschaltfläche angezeigt wird."
 
 #: src/Admin/Settings.php:141
 msgid ""
 "The clickable label, e.g. “Quick view” or “Peek inside”. With the icon-only "
 "style this becomes the button’s accessible name for screen readers."
 msgstr ""
-"Klikalna etykieta, np. „Szybki podgląd” lub „Zajrzyj”. W stylu samej ikony "
-"staje się dostępną nazwą przycisku dla czytników ekranu."
+"Die anklickbare Beschriftung, z.B. „Schnellansicht“ oder „Blick hinein“. "
+"Beim Nur-Symbol-Stil wird dies zum barrierefreien Namen der Schaltfläche für"
+" Screenreader."
 
 #: src/Admin/Settings.php:145
 msgid "Button style"
-msgstr "Styl przycisku"
+msgstr "Button-Stil"
 
 #: src/Admin/Settings.php:146
 msgid ""
 "Text only is the safest match for most themes. Icon only saves space in "
 "tight grids (the eye icon). Icon + text gives the clearest call to action."
 msgstr ""
-"Sam tekst to najbezpieczniejsze dopasowanie do większości motywów. Sama "
-"ikona oszczędza miejsce w ciasnych siatkach (ikona oka). Ikona + tekst daje "
-"najczytelniejsze wezwanie do działania."
+"Nur Text ist für die meisten Themen die sicherste Übereinstimmung. Das "
+"Symbol spart nur Platz in engen Rastern (das Augensymbol). Symbol + Text "
+"geben den klarsten Aufruf zum Handeln."
 
 #: src/Admin/Settings.php:151
 msgid "Text only"
-msgstr "Tylko tekst"
+msgstr "Nur Beschriftung"
 
 #: src/Admin/Settings.php:152
 msgid "Icon only"
-msgstr "Tylko ikona"
+msgstr "Nur Symbol"
 
 #: src/Admin/Settings.php:153
 msgid "Icon and text"
-msgstr "Ikona i tekst"
+msgstr "Symbol und Beschriftung"
 
 #: src/Admin/Settings.php:155
 msgid ""
 "How the trigger appears in the product loop. The icon-only style keeps the "
 "label as its accessible name."
 msgstr ""
-"Jak przycisk wyzwalający wygląda w pętli produktów. Styl samej ikony "
-"zachowuje etykietę jako swoją dostępną nazwę."
+"Wie der Auslöser in der Produktschleife erscheint. Der Nur-Symbol-Stil "
+"behält die Bezeichnung als zugänglichen Namen bei."
 
 #: src/Admin/Settings.php:160
 msgid "Button placement"
-msgstr "Umiejscowienie przycisku"
+msgstr "Platzierung der Knöpfe"
 
 #: src/Admin/Settings.php:161
 msgid ""
@@ -160,29 +166,30 @@ msgid ""
 "and reveals the button when shoppers hover or focus the product, ideal for "
 "image-led catalogues."
 msgstr ""
-"Pod kartą to najbezpieczniejsza wartość domyślna. Nakładka na zdjęciu "
-"utrzymuje siatki zwarte i odsłania przycisk, gdy klient najedzie na produkt "
-"lub ustawi na nim fokus, idealne dla katalogów opartych na zdjęciach."
+"Unterhalb der Karte befindet sich die sicherste Standardeinstellung. Durch "
+"die On-Image-Überlagerung bleiben die Raster kompakt und die Schaltfläche "
+"wird sichtbar, wenn Käufer mit der Maus darüber fahren oder das Produkt "
+"fokussieren – ideal für bildgeführte Kataloge."
 
 #: src/Admin/Settings.php:166
 msgid "Below product card"
-msgstr "Pod kartą produktu"
+msgstr "Unten auf der Produktkarte"
 
 #: src/Admin/Settings.php:167
 msgid "On image (hover / focus)"
-msgstr "Na zdjęciu (najechanie / fokus)"
+msgstr "Auf dem Bild (schweben/fokussieren)"
 
 #: src/Admin/Settings.php:169
 msgid ""
 "Where the quick-view trigger sits in shop loops. Overlay mode never shifts "
 "card height."
 msgstr ""
-"Gdzie znajduje się przycisk szybkiego podglądu w pętlach sklepu. Tryb "
-"nakładki nigdy nie zmienia wysokości karty."
+"Wo der Schnellansicht-Trigger in Shop-Loops sitzt. Im Overlay-Modus wird die"
+" Kartenhöhe nie verschoben."
 
 #: src/Admin/Settings.php:174
 msgid "Where to load"
-msgstr "Gdzie wczytywać"
+msgstr "Wohin geladen werden soll"
 
 #: src/Admin/Settings.php:175
 msgid ""
@@ -190,392 +197,389 @@ msgid ""
 "the “Related products” and “You may also like” loops on single product "
 "pages."
 msgstr ""
-"Wczytywanie tylko tam, gdzie potrzeba, utrzymuje szybkość stron. Druga opcja"
-" obejmuje także pętle „Produkty powiązane” i „Może Ci się spodobać” na "
-"stronach pojedynczych produktów."
+"Durch das Laden nur dort, wo es benötigt wird, bleiben die Seiten schnell. "
+"Die zweite Option deckt auch die Schleifen „Ähnliche Produkte“ und „Das "
+"könnte dir auch gefallen“ auf einzelnen Produktseiten ab."
 
 #: src/Admin/Settings.php:180
 msgid "Shop and product archives"
-msgstr "Sklep i archiwa produktów"
+msgstr "Shop- und Produktarchive"
 
 #: src/Admin/Settings.php:181
 msgid "Archives + single-product related/upsell loops"
-msgstr "Archiwa + pętle powiązanych / dosprzedaży na stronie produktu"
+msgstr "Archive + einzelproduktbezogene/Upselling-Schleifen"
 
 #: src/Admin/Settings.php:183
 msgid ""
 "Choose whether the quick-view button also appears in the related and up-sell"
 " loops on single product pages."
 msgstr ""
-"Wybierz, czy przycisk szybkiego podglądu ma pojawiać się także w pętlach "
-"produktów powiązanych i dosprzedaży na stronach pojedynczych produktów."
+"Wähle aus, ob die Schnellansichtsschaltfläche auch in den zugehörigen und "
+"Up-Selling-Schleifen auf einzelnen Produktseiten angezeigt werden soll."
 
 #: src/Admin/Settings.php:191
 msgid "Modal chrome"
-msgstr "Elementy okna modalnego"
+msgstr "Modales Chrom"
 
 #: src/Admin/Settings.php:192
 msgid ""
 "Labels and behaviour for the modal dialog itself. Empty text fields fall "
 "back to the built-in defaults."
 msgstr ""
-"Etykiety i zachowanie samego okna modalnego. Puste pola tekstowe przyjmują "
-"wbudowane wartości domyślne."
+"Beschriftungen und Verhalten für den modalen Dialog selbst. Leere Textfelder"
+" greifen auf die integrierten Standardeinstellungen zurück."
 
 #: src/Admin/Settings.php:197
 msgid "Modal title"
-msgstr "Tytuł okna modalnego"
+msgstr "Modaler Titel"
 
 #: src/Admin/Settings.php:197
 msgid "Heading announced for the dialog."
-msgstr "Nagłówek odczytywany dla okna dialogowego."
+msgstr "Überschrift für den Dialog angekündigt."
 
 #: src/Admin/Settings.php:197
 msgid ""
 "Read out to screen-reader users when the dialog opens, and shown as a "
 "heading if “Modal heading” is on. Keep it short and descriptive."
 msgstr ""
-"Odczytywany użytkownikom czytników ekranu po otwarciu okna i wyświetlany "
-"jako nagłówek, gdy „Nagłówek okna modalnego” jest włączony. Niech będzie "
-"krótki i opisowy."
+"Wird den Benutzern von Bildschirmleseprogrammen beim Öffnen des Dialogs "
+"vorgelesen und als Überschrift angezeigt, wenn „Modale Überschrift“ "
+"aktiviert ist. Halte es kurz und beschreibend."
 
 #: src/Admin/Settings.php:198
 msgid "Close button label"
-msgstr "Etykieta przycisku zamykania"
+msgstr "Beschriftung der Schaltfläche „Schließen“."
 
 #: src/Admin/Settings.php:198
 msgid "Accessible label for the close button."
-msgstr "Dostępna etykieta przycisku zamykania."
+msgstr "Zugängliche Beschriftung für die Schaltfläche „Schließen“."
 
 #: src/Admin/Settings.php:198
 msgid ""
 "The “×” button is visual only; this text is its accessible name for screen "
 "readers and keyboard users."
 msgstr ""
-"Przycisk „×” jest wyłącznie wizualny; ten tekst jest jego dostępną nazwą dla"
-" czytników ekranu i użytkowników klawiatury."
+"Die Schaltfläche „×“ ist nur visuell; Dieser Text ist der für "
+"Bildschirmleser und Tastaturbenutzer zugängliche Name."
 
 #: src/Admin/Settings.php:199
 msgid "Loading text"
-msgstr "Tekst wczytywania"
+msgstr "Ladehinweis"
 
 #: src/Admin/Settings.php:199
 msgid "Shown while the product is fetched."
-msgstr "Wyświetlany podczas pobierania produktu."
+msgstr "Wird angezeigt, während das Produkt abgeholt wird."
 
 #: src/Admin/Settings.php:199
 msgid ""
 "Displayed for the brief moment between opening the modal and the product "
 "fragment arriving over AJAX."
 msgstr ""
-"Wyświetlany przez krótką chwilę między otwarciem okna modalnego a nadejściem"
-" fragmentu produktu przez AJAX."
+"Wird für den kurzen Moment zwischen dem Öffnen des Modals und dem Eintreffen"
+" des Produktfragments über AJAX angezeigt."
 
 #: src/Admin/Settings.php:200
 msgid "Error text"
-msgstr "Tekst błędu"
+msgstr "Fehlertext"
 
 #: src/Admin/Settings.php:200
 msgid "Shown if the product fails to load."
-msgstr "Wyświetlany, gdy nie uda się wczytać produktu."
+msgstr "Wird angezeigt, wenn das Produkt nicht geladen werden kann."
 
 #: src/Admin/Settings.php:200
 msgid ""
 "A friendly message shown if the request fails (network error, product "
 "removed). Reassure the shopper they can try again or open the full page."
 msgstr ""
-"Przyjazny komunikat wyświetlany, gdy żądanie się nie powiedzie (błąd sieci, "
-"usunięty produkt). Zapewnij klienta, że może spróbować ponownie lub otworzyć"
-" pełną stronę."
+"Eine freundliche Nachricht wird angezeigt, wenn die Anfrage fehlschlägt "
+"(Netzwerkfehler, Produkt entfernt). Versichern Sie dem Käufer, dass er es "
+"noch einmal versuchen oder die ganze Seite öffnen kann."
 
 #: src/Admin/Settings.php:201
 msgid "View product link text"
-msgstr "Tekst linku do produktu"
+msgstr "Produktlinktext anzeigen"
 
 #: src/Admin/Settings.php:201
 msgid "Label for the link to the full product page."
-msgstr "Etykieta linku do pełnej strony produktu."
+msgstr "Beschriftung für den Link zur vollständigen Produktseite."
 
 #: src/Admin/Settings.php:201
 msgid ""
 "Label for the button that takes the shopper to the complete product page for"
 " reviews, full description and more."
 msgstr ""
-"Etykieta przycisku przenoszącego klienta na pełną stronę produktu z "
-"opiniami, pełnym opisem i nie tylko."
+"Beschriftung für die Schaltfläche, die den Käufer zur vollständigen "
+"Produktseite mit Rezensionen, ausführlicher Beschreibung und mehr "
+"weiterleitet."
 
 #: src/Admin/Settings.php:202
 msgid "SKU label"
-msgstr "Etykieta SKU"
+msgstr "SKU-Bezeichnung"
 
 #: src/Admin/Settings.php:202
 msgid "Prefix shown before the SKU value."
-msgstr "Przedrostek wyświetlany przed wartością SKU."
+msgstr "Präfix wird vor dem SKU-Wert angezeigt."
 
 #: src/Admin/Settings.php:202
 msgid ""
 "The prefix before the SKU, e.g. “SKU”, “Item no.” or “Ref”. Hidden "
 "automatically when a product has no SKU."
 msgstr ""
-"Przedrostek przed SKU, np. „SKU”, „Nr produktu” lub „Ref”. Ukrywany "
-"automatycznie, gdy produkt nie ma SKU."
+"Das Präfix vor der SKU, z. B. „SKU“, „Artikelnr.“ oder „Ref“. Wird "
+"automatisch ausgeblendet, wenn ein Produkt keine SKU hat."
 
 #: src/Admin/Settings.php:203
 msgid "Modal heading"
-msgstr "Nagłówek okna modalnego"
+msgstr "Modale Überschrift"
 
 #: src/Admin/Settings.php:203
 msgid "Show the modal title above the loaded product."
-msgstr "Pokaż tytuł okna modalnego nad wczytanym produktem."
+msgstr "Zeige den modalen Titel über dem geladenen Produkt an."
 
 #: src/Admin/Settings.php:203
 msgid ""
 "Prints the modal title as a visible heading inside the dialog. Turn off for "
 "a cleaner, image-led layout."
 msgstr ""
-"Wyświetla tytuł okna modalnego jako widoczny nagłówek wewnątrz okna "
-"dialogowego. Wyłącz, aby uzyskać czystszy układ oparty na zdjęciach."
+"Druckt den modalen Titel als sichtbare Überschrift im Dialog. Schalte die "
+"Option aus, um ein übersichtlicheres, bildgesteuertes Layout zu erhalten."
 
 #: src/Admin/Settings.php:204
 msgid "Close button"
-msgstr "Przycisk zamykania"
+msgstr "Schaltfläche „Schließen“."
 
 #: src/Admin/Settings.php:204
 msgid "Show the close (×) button."
-msgstr "Pokaż przycisk zamykania (×)."
+msgstr "Zeige die Schaltfläche „Schließen“ (×) an."
 
 #: src/Admin/Settings.php:204
 msgid ""
 "Keep this on for usability. The modal can always be closed with the Escape "
 "key regardless of this setting."
 msgstr ""
-"Pozostaw włączone dla wygody użytkowania. Okno modalne zawsze można zamknąć "
-"klawiszem Escape, niezależnie od tego ustawienia."
+"Behalte dies aus Gründen der Benutzerfreundlichkeit bei. Unabhängig von "
+"dieser Einstellung kann das Modal immer mit der Escape-Taste geschlossen "
+"werden."
 
 #: src/Admin/Settings.php:205
 msgid "Close on backdrop click"
-msgstr "Zamknij po kliknięciu tła"
+msgstr "Beim Klicken auf den Hintergrund schließen"
 
 #: src/Admin/Settings.php:205
 msgid "Close the modal when the backdrop is clicked."
-msgstr "Zamknij okno modalne po kliknięciu tła."
+msgstr "Schließe das Modal, wenn auf den Hintergrund geklickt wird."
 
 #: src/Admin/Settings.php:205
 msgid ""
 "Lets shoppers dismiss the modal by clicking the dimmed area around it, a "
 "familiar pattern most users expect."
 msgstr ""
-"Pozwala klientom zamknąć okno modalne przez kliknięcie przyciemnionego "
-"obszaru wokół niego, znany wzorzec, którego oczekuje większość użytkowników."
+"Ermöglicht es Käufern, das Modal zu schließen, indem sie auf den "
+"abgeblendeten Bereich um es herum klicken, ein vertrautes Muster, das die "
+"meisten Benutzer erwarten."
 
 #: src/Admin/Settings.php:214
 msgid "Modal content"
-msgstr "Zawartość okna modalnego"
+msgstr "Modaler Inhalt"
 
 #: src/Admin/Settings.php:215
 msgid ""
 "Choose what the quick-view modal shows for each product. Anything a product "
 "is missing (no SKU, no gallery, etc.) is hidden automatically."
 msgstr ""
-"Wybierz, co okno szybkiego podglądu pokazuje dla każdego produktu. Wszystko,"
-" czego produktowi brakuje (brak SKU, brak galerii itp.), jest ukrywane "
-"automatycznie."
+"Wähle aus, was das Schnellansichtsmodal für jedes Produkt anzeigt. Alles, "
+"was einem Produkt fehlt (keine SKU, keine Galerie usw.), wird automatisch "
+"ausgeblendet."
 
 #: src/Admin/Settings.php:220
 msgid "Product image"
-msgstr "Zdjęcie produktu"
+msgstr "Produktbild"
 
 #: src/Admin/Settings.php:220
 msgid "Show the featured image."
-msgstr "Pokaż obrazek wyróżniający."
+msgstr "Zeige das ausgewählte Bild an."
 
 #: src/Admin/Settings.php:220
 msgid ""
 "The main product photo. Products with no image fall back to the WooCommerce "
 "placeholder so the layout never breaks."
 msgstr ""
-"Główne zdjęcie produktu. Produkty bez zdjęcia używają domyślnego obrazka "
-"zastępczego WooCommerce, dzięki czemu układ nigdy się nie psuje."
+"Das Hauptproduktfoto. Produkte ohne Bild greifen auf den WooCommerce-"
+"Platzhalter zurück, sodass das Layout nie beschädigt wird."
 
 #: src/Admin/Settings.php:221
 msgid "Gallery thumbnails"
-msgstr "Miniatury galerii"
+msgstr "Miniaturansichten der Galerie"
 
 #: src/Admin/Settings.php:221
 msgid "Show gallery thumbnails."
-msgstr "Pokaż miniatury galerii."
+msgstr "Miniaturansichten der Galerie anzeigen."
 
 #: src/Admin/Settings.php:221
 msgid ""
 "Extra product photos shown as a thumbnail strip beneath the main image. "
 "Hidden when a product has no gallery."
 msgstr ""
-"Dodatkowe zdjęcia produktu wyświetlane jako pasek miniatur pod głównym "
-"zdjęciem. Ukrywane, gdy produkt nie ma galerii."
+"Zusätzliche Produktfotos werden als Miniaturbildstreifen unter dem Hauptbild"
+" angezeigt. Ausgeblendet, wenn ein Produkt keine Galerie hat."
 
 #: src/Admin/Settings.php:222
 msgid "Gallery thumbnail count"
-msgstr "Liczba miniatur galerii"
+msgstr "Anzahl der Miniaturansichten der Galerie"
 
 #: src/Admin/Settings.php:222
 msgid "Maximum gallery thumbnails to show (0–12)."
-msgstr "Maksymalna liczba wyświetlanych miniatur galerii (0–12)."
+msgstr "Maximale Anzahl anzuzeigender Galerie-Miniaturansichten (0–12)."
 
 #: src/Admin/Settings.php:222
 msgid ""
 "Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to"
 " show the main image only."
 msgstr ""
-"Ogranicza liczbę wyświetlanych miniatur galerii, utrzymując okno modalne w "
-"porządku. Ustaw 0, aby pokazać tylko główne zdjęcie."
+"Begrenzt die Anzahl der angezeigten Galerie-Miniaturansichten und sorgt so "
+"für Ordnung im Modal. Auf 0 einstellen, um nur das Hauptbild anzuzeigen."
 
 #: src/Admin/Settings.php:223
 msgid "Title"
-msgstr "Tytuł"
+msgstr "Titel"
 
 #: src/Admin/Settings.php:223
 msgid "Show the product title."
-msgstr "Pokaż tytuł produktu."
+msgstr "Zeige den Produkttitel an."
 
 #: src/Admin/Settings.php:223
 msgid "The product name as a heading at the top of the summary column."
-msgstr "Nazwa produktu jako nagłówek na górze kolumny podsumowania."
+msgstr "Der Produktname als Überschrift oben in der Zusammenfassungsspalte."
 
 #: src/Admin/Settings.php:224 templates/quick-view-content.php:22
 msgid "SKU"
-msgstr "SKU"
+msgstr "Artikelnummer"
 
 #: src/Admin/Settings.php:224
 msgid "Show the product SKU."
-msgstr "Pokaż SKU produktu."
+msgstr "Zeige die Produkt-SKU an."
 
 #: src/Admin/Settings.php:224
 msgid ""
 "The stock-keeping unit. Useful for catalogues and B2B; hidden when the "
 "product has none."
 msgstr ""
-"Jednostka magazynowa (SKU). Przydatna dla katalogów i B2B; ukrywana, gdy "
-"produkt jej nie ma."
+"Die Lagereinheit. Nützlich für Kataloge und B2B; ausgeblendet, wenn das "
+"Produkt keine hat."
 
 #: src/Admin/Settings.php:225
 msgid "Price"
-msgstr "Cena"
+msgstr "Preis"
 
 #: src/Admin/Settings.php:225
 msgid "Show the product price."
-msgstr "Pokaż cenę produktu."
+msgstr "Zeige den Produktpreis an."
 
 #: src/Admin/Settings.php:225
 msgid ""
 "The formatted price, including any sale price, exactly as WooCommerce "
 "renders it elsewhere."
 msgstr ""
-"Sformatowana cena, wraz z ewentualną ceną promocyjną, dokładnie tak, jak "
-"WooCommerce renderuje ją w innych miejscach."
+"Der formatierte Preis, einschließlich aller Verkaufspreise, genau so, wie "
+"WooCommerce ihn anderswo darstellt."
 
 #: src/Admin/Settings.php:226
 msgid "Stock status"
-msgstr "Status zapasów"
+msgstr "Lagerstatus"
 
 #: src/Admin/Settings.php:226
 msgid "Show the stock availability."
-msgstr "Pokaż dostępność produktu."
+msgstr "Zeige die Lagerverfügbarkeit an."
 
 #: src/Admin/Settings.php:226
 msgid ""
 "Availability such as “In stock”, “Only 3 left” or “Out of stock”, based on "
 "your WooCommerce inventory settings."
 msgstr ""
-"Dostępność, taka jak „Dostępny”, „Zostały tylko 3 szt.” lub „Niedostępny”, "
-"na podstawie Twoich ustawień magazynu WooCommerce."
+"Verfügbarkeit wie „Auf Lager“, „Nur noch 3 verfügbar“ oder „Ausverkauft“, "
+"basierend auf deinen WooCommerce-Inventareinstellungen."
 
 #: src/Admin/Settings.php:227
 msgid "Short description"
-msgstr "Krótki opis"
+msgstr "Kurze Beschreibung"
 
 #: src/Admin/Settings.php:227
 msgid "Show the product short description."
-msgstr "Pokaż krótki opis produktu."
+msgstr "Zeige die Kurzbeschreibung des Produkts an."
 
 #: src/Admin/Settings.php:227
 msgid ""
 "The product’s short/excerpt description, the perfect length for a quick "
 "preview. Hidden when empty."
 msgstr ""
-"Krótki opis produktu, idealna długość na szybki podgląd. Ukrywany, gdy jest "
-"pusty."
+"Die Kurz-/Auszugsbeschreibung des Produkts, die perfekte Länge für eine "
+"schnelle Vorschau. Im leeren Zustand ausgeblendet."
 
 #: src/Admin/Settings.php:228
 msgid "Add to cart"
-msgstr "Dodaj do koszyka"
+msgstr "In den Warenkorb legen"
 
 #: src/Admin/Settings.php:228
 msgid "Show the add-to-cart form (with variations)."
-msgstr "Pokaż formularz dodawania do koszyka (z wariantami)."
+msgstr "Zeige das Add-to-Cart-Formular (mit Variationen) an."
 
 #: src/Admin/Settings.php:228
 msgid ""
 "Lets shoppers buy straight from the modal. Variable products get the full "
 "variation picker. Hidden for products that aren’t purchasable."
 msgstr ""
-"Pozwala klientom kupować bezpośrednio z okna modalnego. Produkty z "
-"wariantami otrzymują pełny selektor wariantów. Ukrywany dla produktów, "
-"których nie można kupić."
+"Ermöglicht Käufern, direkt im Modal einzukaufen. Variable Produkte erhalten "
+"die vollständige Variationsauswahl. Ausgeblendet für Produkte, die nicht "
+"käuflich sind."
 
 #: src/Admin/Settings.php:229
 msgid "View full product link"
-msgstr "Link do pełnej strony produktu"
+msgstr "Vollständigen Produktlink anzeigen"
 
 #: src/Admin/Settings.php:229
 msgid "Show a link to the full product page."
-msgstr "Pokaż link do pełnej strony produktu."
+msgstr "Zeige einen Link zur vollständigen Produktseite an."
 
 #: src/Admin/Settings.php:229
 msgid ""
 "A button to the complete product page. Recommended so shoppers can reach "
 "reviews and full details."
 msgstr ""
-"Przycisk prowadzący do pełnej strony produktu. Zalecany, aby klienci mogli "
-"dotrzeć do opinii i pełnych szczegółów."
+"Ein Button zur vollständigen Produktseite. Empfohlen, damit Käufer "
+"Bewertungen und vollständige Details erhalten können."
 
 #: src/Admin/Settings.php:258
 msgid "More information"
-msgstr "Więcej informacji"
+msgstr "Weitere Informationen"
 
 #: src/Admin/Settings.php:395 templates/quick-view-button.php:17
 msgid "Quick view"
-msgstr "Szybki podgląd"
+msgstr "Schnellansicht"
 
 #: src/Service/PeekService.php:52
 msgid "Loading product…"
-msgstr "Wczytywanie produktu…"
+msgstr "Produkt wird geladen…"
 
 #: src/Service/PeekService.php:53
 msgid "Failed to load the product preview."
-msgstr "Nie udało się wczytać podglądu produktu."
+msgstr "Die Produktvorschau konnte nicht geladen werden."
 
 #: src/Service/PeekService.php:54
 msgid "Product not found."
-msgstr "Nie znaleziono produktu."
+msgstr "Produkt nicht gefunden."
 
 #: templates/quick-view-content.php:102 templates/quick-view-content.php:116
 msgid "View full product"
-msgstr "Zobacz pełny produkt"
+msgstr "Vollständiges Produkt ansehen"
 
 #: templates/quick-view-content.php:110
 msgid "Product preview"
-msgstr "Podgląd produktu"
+msgstr "Produktvorschau"
 
 #: templates/quick-view-modal.php:19
 msgid "Product quick view"
-msgstr "Szybki podgląd produktu"
+msgstr "Produkt-Schnellansicht"
 
 #: templates/quick-view-modal.php:20
 msgid "Close"
-msgstr "Zamknij"
-
-#~ msgid "Peek - Quick View for WooCommerce"
-#~ msgstr "Peek - Szybki podgląd dla WooCommerce"
-
-#~ msgid "https://plogins.com/peek/"
-#~ msgstr "https://plogins.com/peek/"
+msgstr "Schließen"
