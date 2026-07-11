@@ -1,57 +1,57 @@
-=== Plogins Peek - Quick View for WooCommerce ===
+=== Plogins Peek - Product Preview for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Schnelle Produkt-Schnellansicht für WooCommerce: ein AJAX-Produktmodal mit Galerie, Preis, SKU und Add-to-Cart. Kein jQuery.
+Schnelle Produkt-Schnellansicht für WooCommerce: ein AJAX-Produktmodal mit Galerie, Preis, SKU und In-den-Warenkorb-Funktion. Kein jQuery.
 
 == Description ==
 
-Peek fügt deinem WooCommerce-Shop eine Produkt-Schnellansichtsschaltfläche hinzu und archiviert Produktschleifen. Wenn du darauf klicken, wird ein zugängliches AJAX-Produktmodal geöffnet, sodass Käufer eine Vorschau der Produkte anzeigen, Optionen auswählen und in den Warenkorb legen können, ohne das Angebot zu verlassen.
+Peek fügt den Produktschleifen in deinem WooCommerce-Shop und auf den Archivseiten eine Schaltfläche für die Produkt-Schnellansicht hinzu. Ein Klick darauf öffnet ein barrierefreies AJAX-Produktmodal, sodass deine Kundschaft Produkte in der Vorschau ansehen, Optionen wählen und in den Warenkorb legen kann, ohne die Liste zu verlassen.
 
-Das Modal zeigt die vorgestellten Bilder und Miniaturansichten der Galerie, Titel, SKU, Preis, Lagerstatus, Kurzbeschreibung, das native Add-to-Cart-Formular (einschließlich variabler Produkte) und einen Link zur vollständigen Produktseite. Jeder Teil kann über den Einstellungsbildschirm umgeschaltet werden.
+Das Modal zeigt das Beitragsbild und die Galerie-Miniaturbilder, den Titel, die SKU, den Preis, den Lagerstatus, die Kurzbeschreibung, das native In-den-Warenkorb-Formular (einschließlich variabler Produkte) und einen Link zur vollständigen Produktseite. Jeder Teil lässt sich im Einstellungsbildschirm ein- und ausschalten.
 
 = Documentation and links =
 
 * <strong>Dokumentation</strong> - https://plogins.com/de/plogins-peek/docs/
 * <strong>Plugin-Seite</strong> - https://plogins.com/de/plogins-peek/
-* <strong>Quellcode</strong> – https://github.com/wppoland/plogins-peek
-* <strong>Fehlerberichte und Funktionsanfragen</strong> – https://github.com/wppoland/plogins-peek/issues
+* <strong>Quellcode</strong> - https://github.com/wppoland/plogins-peek
+* <strong>Fehlerberichte und Funktionswünsche</strong> - https://github.com/wppoland/plogins-peek/issues
 
 
 = Built for speed and accessibility =
 
-* <strong>Kein jQuery</strong> im eigenen Front-End-Code des Plugins, das Skript ist Vanilla JS, verzögert und wird in der Fußzeile geladen.
-* <strong>Keine Layoutverschiebung (CLS).</strong> Das Modal ist bis zum Öffnen vollständig ausgeblendet und scrollt intern, sodass die Seite nie neu umfließt.
-* <strong>Fokus-gefangen und tastaturfreundlich.</strong> Der Fokus bewegt sich beim Öffnen in den Dialog, bleibt beim Öffnen gefangen, schließt sich beim Escape- oder Hintergrundklick und kehrt beim Schließen zur Auslöseschaltfläche zurück. Der Dialog verwendet „role="dialog"` mit `aria-modal`.
-* <strong>Variationsbewusst.</strong> Das Add-to-Cart-Formular unterstützt variable Produkte über WooCommerces eigenes Variationsskript.
+* <strong>Kein jQuery</strong> im eigenen Frontend-Code des Plugins – das Skript ist reines JavaScript, verzögert und im Footer geladen.
+* <strong>Keine Layout-Verschiebung (CLS).</strong> Das Modal ist bis zum Öffnen vollständig ausgeblendet und scrollt intern, sodass es die Seite nie neu umbricht.
+* <strong>Fokus-Falle und tastaturfreundlich.</strong> Beim Öffnen wandert der Fokus in den Dialog und bleibt dort gefangen, der Dialog schließt sich mit Escape oder per Klick auf den Hintergrund und kehrt beim Schließen zum auslösenden Button zurück. Der Dialog nutzt `role="dialog"` mit `aria-modal`.
+* <strong>Varianten-fähig.</strong> Das In-den-Warenkorb-Formular unterstützt variable Produkte über WooCommerces eigenes Variations-Skript.
 
 = Settings =
 
-Auf einer Einstellungsseite für die WooCommerce-Funktionalität (Peek-Menü) kannst du:
+Eine Einstellungsseite (Menü „Peek“, für WooCommerce-Berechtigungen) lässt dich:
 
-* Aktivieren oder deaktiviere die Schnellansicht.
-* Lege die Beschriftung und den Stil der Auslöseschaltfläche fest (Text, Symbol oder Symbol + Text).
-* Wähle, wo geladen werden soll: nur Shop- und Produktarchive oder auch die zugehörigen/Up-Selling-Schleifen auf einzelnen Produktseiten.
-* Konfiguriere das modale Chrome: Titel, Beschriftung der Schaltfläche „Schließen“, Lade- und Fehlertext, Linktext „Produkt anzeigen“ und SKU-Beschriftung sowie Umschalter für die modale Überschrift, die Schaltfläche „Schließen“ und das Schließen per Hintergrundklick.
-* Wähle aus, welche Teile im Modal angezeigt werden sollen (Bild, Galerie mit konfigurierbarer Anzahl von Miniaturansichten, Titel, SKU, Preis, Lagerstatus, Kurzbeschreibung, Add-to-Cart, Link zum vollständigen Produkt).
+* Die Schnellansicht aktivieren oder deaktivieren.
+* Beschriftung und Stil des auslösenden Buttons festlegen (Text, Icon oder Icon + Text).
+* Wählen, wo geladen wird: nur auf Shop- und Produktarchiven oder auch in den Verwandt-/Up-Sell-Schleifen auf einzelnen Produktseiten.
+* Die Modal-Oberfläche konfigurieren: Titel, Beschriftung des Schließen-Buttons, Lade- und Fehlertext, den Linktext „Produkt ansehen“ und die SKU-Beschriftung sowie Schalter für die Modal-Überschrift, den Schließen-Button und das Schließen per Klick auf den Hintergrund.
+* Wählen, welche Teile im Modal erscheinen (Bild, Galerie mit konfigurierbarer Anzahl an Miniaturbildern, Titel, SKU, Preis, Lagerstatus, Kurzbeschreibung, In-den-Warenkorb, Link zur vollständigen Produktseite).
 
 = Shortcode =
 
-Platziere einen Schnellansicht-Trigger an einer beliebigen Stelle mit „[peek_quick_view id="123"]“ oder dem kürzeren Alias ​​„[peek id="123"]“. Optionale Attribute: „text“ (benutzerdefinierte Beschriftung) und „style“ („text“, „icon“ oder „icon_text“). Das Modal und seine Assets werden automatisch geladen, wann immer der Shortcode erscheint.
+Platziere mit `[peek_quick_view id="123"]` oder dem kürzeren Alias `[peek id="123"]` an beliebiger Stelle einen Schnellansicht-Auslöser. Optionale Attribute: `text` (eigene Beschriftung) und `style` (`text`, `icon` oder `icon_text`). Das Modal und seine Assets werden automatisch geladen, wo immer der Shortcode erscheint.
 
-Peek wird im Freien entwickelt. Der Code, offene Probleme und der Release-Verlauf sind live unter https://github.com/wppoland/plogins-peek zu sehen, Fehlerberichte und Patches sind dort willkommen.
+Peek wird quelloffen entwickelt. Der Code, offene Issues und der Release-Verlauf liegen unter https://github.com/wppoland/plogins-peek – Fehlerberichte und Patches sind dort willkommen.
 
 == Installation ==
 
-1. Lade das Plugin nach „/wp-content/plugins/plogins-peek“ hoch oder installiere es über Plugins → Neu hinzufügen.
+1. Lade das Plugin nach `/wp-content/plugins/plogins-peek` hoch oder installiere es über Plugins → Installieren.
 2. Aktiviere es. WooCommerce muss aktiv sein.
-3. Besuche das <strong>Peek</strong>-Menü in wp-admin, um die Schaltflächenbeschriftung und den modalen Inhalt zu konfigurieren.
+3. Öffne das Menü <strong>Peek</strong> in wp-admin, um Button-Beschriftung und Modal-Inhalt zu konfigurieren.
 
 == Frequently Asked Questions ==
 
@@ -61,63 +61,70 @@ Ja. Peek erfordert eine aktive WooCommerce-Installation.
 
 = Does it use jQuery? =
 
-Das eigene Front-End-Skript des Plugins ist Vanilla-JavaScript ohne jQuery-Abhängigkeit. Wenn ein Produkt Variationen hat, wird das gebündelte Variationsskript von WooCommerce (das selbst jQuery verwendet) in die Warteschlange gestellt, damit das Variationsformular wie erwartet funktioniert.
+Das eigene Frontend-Skript des Plugins ist reines JavaScript ohne jQuery-Abhängigkeit. Hat ein Produkt Varianten, wird das mitgelieferte Variations-Skript von WooCommerce (das selbst jQuery nutzt) eingebunden, damit das Variationsformular wie erwartet funktioniert.
 
 = Where does the quick-view button appear? =
 
-Auf der Shop-Seite und den Produktarchivschleifen (Kategorien, Tags, Taxonomien) nach jedem Produkt. Einzelne Produktseiten werden dadurch nicht verändert.
+Auf der Shop-Seite und in den Produktarchiv-Schleifen (Kategorien, Tags, Taxonomien), nach jedem Produkt. Einzelne Produktseiten werden nicht verändert.
 
 = Does the modal support add to cart? =
 
-Ja. Peek stellt das native Add-to-Cart-Formular von WooCommerce innerhalb des Quick-Shop-Modals dar, einschließlich Mengen- und variabler Produktauswahl.
+Ja. Peek stellt das native In-den-Warenkorb-Formular von WooCommerce im Quick-Shop-Modal dar, inklusive Menge und Auswahl variabler Produkte.
 
 = Does it work with variable products? =
 
-Ja. Variable Produkte verwenden WooCommerces eigenes Variationsformular innerhalb des Produktmodals, sodass Käufer eine Variation auswählen können, bevor sie sie in den Warenkorb legen.
+Ja. Variable Produkte nutzen WooCommerces eigenes Variationsformular im Produktmodal, sodass die Kundschaft eine Variante wählen kann, bevor sie in den Warenkorb legt.
 
 = Will it cause layout shift? =
 
-Nein. Das Modal ist ausgeblendet, bis es geöffnet wird, und überlagert die Seite, sodass beim Öffnen niemals vorhandene Inhalte neu angezeigt werden.
+Nein. Das Modal ist bis zum Öffnen ausgeblendet und legt sich über die Seite, sodass das Öffnen bestehende Inhalte nie neu umbricht.
 
 = Can I place a quick-view button manually? =
 
-Ja. Verwende „[peek_quick_view id="123"]“ oder „[peek id="123"]“, um in benutzerdefinierten Layouts einen Auslöser für die Produktschnellansicht hinzuzufügen.
+Ja. Verwende `[peek_quick_view id="123"]` oder `[peek id="123"]`, um in eigenen Layouts einen Auslöser für die Produkt-Schnellansicht hinzuzufügen.
 
 
 = Does this plugin work on WordPress Multisite? =
 
-Ja. Dieses Plugin ist mit WordPress Multisite kompatibel. Aktiviere es im Netzwerk oder auf einzelnen Websites. Jede Site behält ihre eigenen Einstellungen und Daten.
+Ja. Dieses Plugin ist mit WordPress Multisite kompatibel. Aktiviere es netzwerkweit oder auf einzelnen Websites; jede Website behält ihre eigenen Einstellungen und Daten.
 
 == Screenshots ==
 
-1. Das Schnellansichtsmodal mit der Produktgalerie, dem Preis und dem Formular zum Hinzufügen zum Warenkorb.
+1. Das Schnellansicht-Modal mit Produktgalerie, Preis und In-den-Warenkorb-Formular.
 2. Der Peek-Einstellungsbildschirm.
 
 == External Services ==
 
-Peek stellt keine Verbindung zu externen Diensten her. Das Quick-View-Modal ruft sein Produktfragment von deiner eigenen Website über WordPress „admin-ajax.php“ (die „peek_quick_view“-Aktion) ab, sodass keine Käufer- oder Produktdaten jemals deinen Server verlassen. Die einzigen gespeicherten Daten von Peek sind zwei von ihm erstellte WordPress-Optionen, „peek_settings“ (deine Modal- und Schaltflächenkonfiguration) und „peek_db_version“, die beide entfernt werden, wenn das Plugin gelöscht wird. Peek sendet keine E-Mails und lädt keine Skripte, Schriftarten oder Analysen von Drittanbietern.
+Peek stellt keine Verbindung zu externen Diensten her. Das Schnellansicht-Modal ruft sein Produktfragment von deiner eigenen Website über die `admin-ajax.php` von WordPress ab (die Aktion `peek_quick_view`), sodass keine Kunden- oder Produktdaten jemals deinen Server verlassen. Die einzigen von Peek gespeicherten Daten sind zwei von ihm angelegte WordPress-Optionen, `peek_settings` (deine Modal- und Button-Konfiguration) und `peek_db_version`, die beide beim Löschen des Plugins entfernt werden. Peek sendet keine E-Mails und lädt keine Skripte, Schriften oder Analyse-Tools von Dritten.
+
+== Translations ==
+
+Plogins Peek enthält deutsche, polnische und spanische Übersetzungen für die Plugin-Oberfläche. Die Textdomain ist `plogins-peek`, sodass Sprachpakete von WordPress.org diese mitgelieferten Übersetzungen ebenfalls überschreiben oder erweitern können.
 
 == Changelog ==
+
+= 1.0.2 =
+* Deutsche, polnische und spanische Übersetzungen für die Plugin-Oberfläche mitgeliefert.
 
 = 1.0.1 =
 * Erste stabile Version.
 
 = 0.3.1 =
-* Für einen eindeutigeren Plugin-Namen in Plogins Peek für WooCommerce umbenannt.
+* In Plogins Peek für WooCommerce umbenannt, für einen unverwechselbareren Plugin-Namen.
 
 = 0.3.0 =
-* Neu: Platzierung der Loop-Schaltfläche, unterhalb der Karte oder Overlay auf dem Miniaturbild (Hover/Fokus).
-* Neu: Shortcode „[peek]“ als Alias ​​für „[peek_quick_view]“.
+* Neu: Platzierung des Buttons in der Schleife, unterhalb der Karte oder als Overlay auf dem Miniaturbild (bei Hover/Fokus).
+* Neu: Shortcode `[peek]` als Alias für `[peek_quick_view]`.
 
 = 0.2.0 =
-* Neu: „[peek_quick_view]“-Shortcode zum Platzieren eines Schnellansicht-Triggers an einer beliebigen Stelle, mit optionalen Attributen „id“, „text“ und „style“.
-* Neu: Bestandsstatuszeile im Modal, mit Umschaltfunktion.
-* Neu: konfigurierbare Anzahl der Miniaturansichten der Galerie (0–12).
-* Neu: Stil der Auslöseschaltfläche, Text, Symbol oder Symbol + Text (nur Symbol behält einen zugänglichen Namen bei).
-* Neu: Anzeigeumfang, Laden nur auf Shop/Archive, oder auch auf einzelne Produkte bezogene/Up-Selling-Schleifen.
-* Neu: Modale Chrome-Steuerelemente auf der Einstellungsseite (Titel, Beschriftung der Schaltfläche „Schließen“, Lade-/Fehlertext, Linktext zum Anzeigen des Produkts, Beschriftung der Artikelnummer und Umschalter für die modale Überschrift, die Schaltfläche „Schließen“ und das Schließen per Hintergrundklick).
-* Neu: „uninstall.php“ entfernt die Optionen des Plugins beim Löschen.
-* Domänenpfad für Übersetzungen hinzugefügt.
+* Neu: Shortcode `[peek_quick_view]`, um an beliebiger Stelle einen Schnellansicht-Auslöser zu platzieren, mit optionalen Attributen `id`, `text` und `style`.
+* Neu: Zeile mit Lagerstatus im Modal, mit Schalter.
+* Neu: konfigurierbare Anzahl an Galerie-Miniaturbildern (0–12).
+* Neu: Stil des auslösenden Buttons, Text, Icon oder Icon + Text (nur Icon behält einen barrierefreien Namen).
+* Neu: Anzeigebereich, nur auf Shop/Archiven laden oder auch in Verwandt-/Up-Sell-Schleifen einzelner Produkte.
+* Neu: Steuerelemente für die Modal-Oberfläche auf der Einstellungsseite (Titel, Beschriftung des Schließen-Buttons, Lade-/Fehlertext, Linktext „Produkt ansehen“, SKU-Beschriftung und Schalter für Modal-Überschrift, Schließen-Button und Schließen per Klick auf den Hintergrund).
+* Neu: `uninstall.php` entfernt die Optionen des Plugins beim Löschen.
+* Domain Path für Übersetzungen hinzugefügt.
 
 = 0.1.0 =
-* Erstveröffentlichung: Zugängliches AJAX-Schnellansichtsmodal für WooCommerce-Shop- und Archivschleifen, mit einer Einstellungsseite für die Schaltflächenbezeichnung und modale Inhalte.
+* Erste Veröffentlichung: barrierefreies AJAX-Schnellansicht-Modal für WooCommerce-Shop- und Archiv-Schleifen, mit einer Einstellungsseite für die Button-Beschriftung und die Modal-Inhalte.
