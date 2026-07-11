@@ -9,77 +9,83 @@ msgstr ""
 "X-Generator: plogins-i18n\n"
 
 msgid "Fast product quick view for WooCommerce: an AJAX product modal with gallery, price, SKU and add-to-cart. No jQuery."
-msgstr "Schnelle Produkt-Schnellansicht für WooCommerce: ein AJAX-Produktmodal mit Galerie, Preis, SKU und Add-to-Cart. Kein jQuery."
+msgstr "Schnelle Produkt-Schnellansicht für WooCommerce: ein AJAX-Produktmodal mit Galerie, Preis, SKU und In-den-Warenkorb-Funktion. Kein jQuery."
 
 msgid "Peek adds a product quick view button to your WooCommerce shop and archive product loops. Clicking it opens an accessible AJAX product modal, so shoppers can preview products, choose options and add to cart without leaving the listing."
-msgstr "Peek fügt deinem WooCommerce-Shop eine Produkt-Schnellansichtsschaltfläche hinzu und archiviert Produktschleifen. Wenn du darauf klicken, wird ein zugängliches AJAX-Produktmodal geöffnet, sodass Käufer eine Vorschau der Produkte anzeigen, Optionen auswählen und in den Warenkorb legen können, ohne das Angebot zu verlassen."
+msgstr "Peek fügt den Produktschleifen in deinem WooCommerce-Shop und auf den Archivseiten eine Schaltfläche für die Produkt-Schnellansicht hinzu. Ein Klick darauf öffnet ein barrierefreies AJAX-Produktmodal, sodass deine Kundschaft Produkte in der Vorschau ansehen, Optionen wählen und in den Warenkorb legen kann, ohne die Liste zu verlassen."
 
 msgid "The modal shows the featured image and gallery thumbnails, title, SKU, price, stock status, short description, the native add-to-cart form (including variable products), and a link to the full product page. Each part can be toggled from the settings screen."
-msgstr "Das Modal zeigt die vorgestellten Bilder und Miniaturansichten der Galerie, Titel, SKU, Preis, Lagerstatus, Kurzbeschreibung, das native Add-to-Cart-Formular (einschließlich variabler Produkte) und einen Link zur vollständigen Produktseite. Jeder Teil kann über den Einstellungsbildschirm umgeschaltet werden."
+msgstr "Das Modal zeigt das Beitragsbild und die Galerie-Miniaturbilder, den Titel, die SKU, den Preis, den Lagerstatus, die Kurzbeschreibung, das native In-den-Warenkorb-Formular (einschließlich variabler Produkte) und einen Link zur vollständigen Produktseite. Jeder Teil lässt sich im Einstellungsbildschirm ein- und ausschalten."
 
 msgid "* <strong>Documentation</strong> - https://plogins.com/plogins-peek/docs/\n* <strong>Plugin page</strong> - https://plogins.com/plogins-peek/\n* <strong>Source code</strong> - https://github.com/wppoland/plogins-peek\n* <strong>Bug reports and feature requests</strong> - https://github.com/wppoland/plogins-peek/issues"
-msgstr "* <strong>Dokumentation</strong> - https://plogins.com/de/plogins-peek/docs/\n* <strong>Plugin-Seite</strong> - https://plogins.com/de/plogins-peek/\n* <strong>Quellcode</strong> – https://github.com/wppoland/plogins-peek\n* <strong>Fehlerberichte und Funktionsanfragen</strong> – https://github.com/wppoland/plogins-peek/issues"
+msgstr "* <strong>Dokumentation</strong> - https://plogins.com/de/plogins-peek/docs/\n* <strong>Plugin-Seite</strong> - https://plogins.com/de/plogins-peek/\n* <strong>Quellcode</strong> - https://github.com/wppoland/plogins-peek\n* <strong>Fehlerberichte und Funktionswünsche</strong> - https://github.com/wppoland/plogins-peek/issues"
 
 msgid "* <strong>No jQuery</strong> in the plugin's own front-end code, the script is vanilla JS, deferred, and loaded in the footer.\n* <strong>No layout shift (CLS).</strong> The modal is fully hidden until opened and scrolls internally, so it never reflows the page.\n* <strong>Focus-trapped & keyboard friendly.</strong> Focus moves into the dialog on open, is trapped while it is open, closes on Escape or backdrop click, and returns to the trigger button on close. The dialog uses `role=\"dialog\"` with `aria-modal`.\n* <strong>Variation aware.</strong> The add-to-cart form supports variable products via WooCommerce's own variation script."
-msgstr "* <strong>Kein jQuery</strong> im eigenen Front-End-Code des Plugins, das Skript ist Vanilla JS, verzögert und wird in der Fußzeile geladen.\n* <strong>Keine Layoutverschiebung (CLS).</strong> Das Modal ist bis zum Öffnen vollständig ausgeblendet und scrollt intern, sodass die Seite nie neu umfließt.\n* <strong>Fokus-gefangen und tastaturfreundlich.</strong> Der Fokus bewegt sich beim Öffnen in den Dialog, bleibt beim Öffnen gefangen, schließt sich beim Escape- oder Hintergrundklick und kehrt beim Schließen zur Auslöseschaltfläche zurück. Der Dialog verwendet „role=\"dialog\"` mit `aria-modal`.\n* <strong>Variationsbewusst.</strong> Das Add-to-Cart-Formular unterstützt variable Produkte über WooCommerces eigenes Variationsskript."
+msgstr "* <strong>Kein jQuery</strong> im eigenen Frontend-Code des Plugins – das Skript ist reines JavaScript, verzögert und im Footer geladen.\n* <strong>Keine Layout-Verschiebung (CLS).</strong> Das Modal ist bis zum Öffnen vollständig ausgeblendet und scrollt intern, sodass es die Seite nie neu umbricht.\n* <strong>Fokus-Falle und tastaturfreundlich.</strong> Beim Öffnen wandert der Fokus in den Dialog und bleibt dort gefangen, der Dialog schließt sich mit Escape oder per Klick auf den Hintergrund und kehrt beim Schließen zum auslösenden Button zurück. Der Dialog nutzt `role=\"dialog\"` mit `aria-modal`.\n* <strong>Varianten-fähig.</strong> Das In-den-Warenkorb-Formular unterstützt variable Produkte über WooCommerces eigenes Variations-Skript."
 
 msgid "A WooCommerce-capability settings page (Peek menu) lets you:"
-msgstr "Auf einer Einstellungsseite für die WooCommerce-Funktionalität (Peek-Menü) kannst du:"
+msgstr "Eine Einstellungsseite (Menü „Peek“, für WooCommerce-Berechtigungen) lässt dich:"
 
 msgid "* Enable or disable the quick view.\n* Set the trigger button label and style (text, icon, or icon + text).\n* Choose where it loads: shop and product archives only, or also the related/up-sell loops on single product pages.\n* Configure the modal chrome: title, close-button label, loading and error text, the \"view product\" link text and the SKU label, plus toggles for the modal heading, close button and backdrop-click close.\n* Choose which parts render in the modal (image, gallery with a configurable thumbnail count, title, SKU, price, stock status, short description, add-to-cart, full-product link)."
-msgstr "* Aktivieren oder deaktiviere die Schnellansicht.\n* Lege die Beschriftung und den Stil der Auslöseschaltfläche fest (Text, Symbol oder Symbol + Text).\n* Wähle, wo geladen werden soll: nur Shop- und Produktarchive oder auch die zugehörigen/Up-Selling-Schleifen auf einzelnen Produktseiten.\n* Konfiguriere das modale Chrome: Titel, Beschriftung der Schaltfläche „Schließen“, Lade- und Fehlertext, Linktext „Produkt anzeigen“ und SKU-Beschriftung sowie Umschalter für die modale Überschrift, die Schaltfläche „Schließen“ und das Schließen per Hintergrundklick.\n* Wähle aus, welche Teile im Modal angezeigt werden sollen (Bild, Galerie mit konfigurierbarer Anzahl von Miniaturansichten, Titel, SKU, Preis, Lagerstatus, Kurzbeschreibung, Add-to-Cart, Link zum vollständigen Produkt)."
+msgstr "* Die Schnellansicht aktivieren oder deaktivieren.\n* Beschriftung und Stil des auslösenden Buttons festlegen (Text, Icon oder Icon + Text).\n* Wählen, wo geladen wird: nur auf Shop- und Produktarchiven oder auch in den Verwandt-/Up-Sell-Schleifen auf einzelnen Produktseiten.\n* Die Modal-Oberfläche konfigurieren: Titel, Beschriftung des Schließen-Buttons, Lade- und Fehlertext, den Linktext „Produkt ansehen“ und die SKU-Beschriftung sowie Schalter für die Modal-Überschrift, den Schließen-Button und das Schließen per Klick auf den Hintergrund.\n* Wählen, welche Teile im Modal erscheinen (Bild, Galerie mit konfigurierbarer Anzahl an Miniaturbildern, Titel, SKU, Preis, Lagerstatus, Kurzbeschreibung, In-den-Warenkorb, Link zur vollständigen Produktseite)."
 
 msgid "Place a quick-view trigger anywhere with `[peek_quick_view id=\"123\"]`, or the shorter `[peek id=\"123\"]` alias. Optional attributes: `text` (custom label) and `style` (`text`, `icon`, or `icon_text`). The modal and its assets load automatically wherever the shortcode appears."
-msgstr "Platziere einen Schnellansicht-Trigger an einer beliebigen Stelle mit „[peek_quick_view id=\"123\"]“ oder dem kürzeren Alias ​​„[peek id=\"123\"]“. Optionale Attribute: „text“ (benutzerdefinierte Beschriftung) und „style“ („text“, „icon“ oder „icon_text“). Das Modal und seine Assets werden automatisch geladen, wann immer der Shortcode erscheint."
+msgstr "Platziere mit `[peek_quick_view id=\"123\"]` oder dem kürzeren Alias `[peek id=\"123\"]` an beliebiger Stelle einen Schnellansicht-Auslöser. Optionale Attribute: `text` (eigene Beschriftung) und `style` (`text`, `icon` oder `icon_text`). Das Modal und seine Assets werden automatisch geladen, wo immer der Shortcode erscheint."
 
 msgid "Peek is developed in the open. The code, open issues and release history live at https://github.com/wppoland/plogins-peek, bug reports and patches are welcome there."
-msgstr "Peek wird im Freien entwickelt. Der Code, offene Probleme und der Release-Verlauf sind live unter https://github.com/wppoland/plogins-peek zu sehen, Fehlerberichte und Patches sind dort willkommen."
+msgstr "Peek wird quelloffen entwickelt. Der Code, offene Issues und der Release-Verlauf liegen unter https://github.com/wppoland/plogins-peek – Fehlerberichte und Patches sind dort willkommen."
 
 msgid "1. Upload the plugin to `/wp-content/plugins/plogins-peek`, or install via Plugins → Add New.\n2. Activate it. WooCommerce must be active.\n3. Visit the <strong>Peek</strong> menu in wp-admin to configure the button label and modal contents."
-msgstr "1. Lade das Plugin nach „/wp-content/plugins/plogins-peek“ hoch oder installiere es über Plugins → Neu hinzufügen.\n2. Aktiviere es. WooCommerce muss aktiv sein.\n3. Besuche das <strong>Peek</strong>-Menü in wp-admin, um die Schaltflächenbeschriftung und den modalen Inhalt zu konfigurieren."
+msgstr "1. Lade das Plugin nach `/wp-content/plugins/plogins-peek` hoch oder installiere es über Plugins → Installieren.\n2. Aktiviere es. WooCommerce muss aktiv sein.\n3. Öffne das Menü <strong>Peek</strong> in wp-admin, um Button-Beschriftung und Modal-Inhalt zu konfigurieren."
 
 msgid "Yes. Peek requires an active WooCommerce installation."
 msgstr "Ja. Peek erfordert eine aktive WooCommerce-Installation."
 
 msgid "The plugin's own front-end script is vanilla JavaScript with no jQuery dependency. When a product has variations, WooCommerce's bundled variation script (which itself uses jQuery) is enqueued so the variation form works as expected."
-msgstr "Das eigene Front-End-Skript des Plugins ist Vanilla-JavaScript ohne jQuery-Abhängigkeit. Wenn ein Produkt Variationen hat, wird das gebündelte Variationsskript von WooCommerce (das selbst jQuery verwendet) in die Warteschlange gestellt, damit das Variationsformular wie erwartet funktioniert."
+msgstr "Das eigene Frontend-Skript des Plugins ist reines JavaScript ohne jQuery-Abhängigkeit. Hat ein Produkt Varianten, wird das mitgelieferte Variations-Skript von WooCommerce (das selbst jQuery nutzt) eingebunden, damit das Variationsformular wie erwartet funktioniert."
 
 msgid "On the shop page and product archive loops (categories, tags, taxonomies), after each product. It does not change single product pages."
-msgstr "Auf der Shop-Seite und den Produktarchivschleifen (Kategorien, Tags, Taxonomien) nach jedem Produkt. Einzelne Produktseiten werden dadurch nicht verändert."
+msgstr "Auf der Shop-Seite und in den Produktarchiv-Schleifen (Kategorien, Tags, Taxonomien), nach jedem Produkt. Einzelne Produktseiten werden nicht verändert."
 
 msgid "Yes. Peek renders WooCommerce's native add-to-cart form inside the quick shop modal, including quantity and variable-product choices."
-msgstr "Ja. Peek stellt das native Add-to-Cart-Formular von WooCommerce innerhalb des Quick-Shop-Modals dar, einschließlich Mengen- und variabler Produktauswahl."
+msgstr "Ja. Peek stellt das native In-den-Warenkorb-Formular von WooCommerce im Quick-Shop-Modal dar, inklusive Menge und Auswahl variabler Produkte."
 
 msgid "Yes. Variable products use WooCommerce's own variation form inside the product modal, so shoppers can choose a variation before adding to cart."
-msgstr "Ja. Variable Produkte verwenden WooCommerces eigenes Variationsformular innerhalb des Produktmodals, sodass Käufer eine Variation auswählen können, bevor sie sie in den Warenkorb legen."
+msgstr "Ja. Variable Produkte nutzen WooCommerces eigenes Variationsformular im Produktmodal, sodass die Kundschaft eine Variante wählen kann, bevor sie in den Warenkorb legt."
 
 msgid "No. The modal is hidden until opened and overlays the page, so opening it never reflows existing content."
-msgstr "Nein. Das Modal ist ausgeblendet, bis es geöffnet wird, und überlagert die Seite, sodass beim Öffnen niemals vorhandene Inhalte neu angezeigt werden."
+msgstr "Nein. Das Modal ist bis zum Öffnen ausgeblendet und legt sich über die Seite, sodass das Öffnen bestehende Inhalte nie neu umbricht."
 
 msgid "Yes. Use `[peek_quick_view id=\"123\"]` or `[peek id=\"123\"]` to add a product quick view trigger in custom layouts."
-msgstr "Ja. Verwende „[peek_quick_view id=\"123\"]“ oder „[peek id=\"123\"]“, um in benutzerdefinierten Layouts einen Auslöser für die Produktschnellansicht hinzuzufügen."
+msgstr "Ja. Verwende `[peek_quick_view id=\"123\"]` oder `[peek id=\"123\"]`, um in eigenen Layouts einen Auslöser für die Produkt-Schnellansicht hinzuzufügen."
 
 msgid "Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data."
-msgstr "Ja. Dieses Plugin ist mit WordPress Multisite kompatibel. Aktiviere es im Netzwerk oder auf einzelnen Websites. Jede Site behält ihre eigenen Einstellungen und Daten."
+msgstr "Ja. Dieses Plugin ist mit WordPress Multisite kompatibel. Aktiviere es netzwerkweit oder auf einzelnen Websites; jede Website behält ihre eigenen Einstellungen und Daten."
 
 msgid "1. The quick-view modal showing the product gallery, price and add-to-cart form.\n2. The Peek settings screen."
-msgstr "1. Das Schnellansichtsmodal mit der Produktgalerie, dem Preis und dem Formular zum Hinzufügen zum Warenkorb.\n2. Der Peek-Einstellungsbildschirm."
+msgstr "1. Das Schnellansicht-Modal mit Produktgalerie, Preis und In-den-Warenkorb-Formular.\n2. Der Peek-Einstellungsbildschirm."
 
 msgid "Peek does not connect to any external services. The quick-view modal fetches its product fragment from your own site over WordPress' `admin-ajax.php` (the `peek_quick_view` action), so no shopper or product data ever leaves your server. Peek's only stored data is two WordPress options it creates, `peek_settings` (your modal and button configuration) and `peek_db_version`, both removed when the plugin is deleted. Peek sends no email and loads no third-party scripts, fonts or analytics."
-msgstr "Peek stellt keine Verbindung zu externen Diensten her. Das Quick-View-Modal ruft sein Produktfragment von deiner eigenen Website über WordPress „admin-ajax.php“ (die „peek_quick_view“-Aktion) ab, sodass keine Käufer- oder Produktdaten jemals deinen Server verlassen. Die einzigen gespeicherten Daten von Peek sind zwei von ihm erstellte WordPress-Optionen, „peek_settings“ (deine Modal- und Schaltflächenkonfiguration) und „peek_db_version“, die beide entfernt werden, wenn das Plugin gelöscht wird. Peek sendet keine E-Mails und lädt keine Skripte, Schriftarten oder Analysen von Drittanbietern."
+msgstr "Peek stellt keine Verbindung zu externen Diensten her. Das Schnellansicht-Modal ruft sein Produktfragment von deiner eigenen Website über die `admin-ajax.php` von WordPress ab (die Aktion `peek_quick_view`), sodass keine Kunden- oder Produktdaten jemals deinen Server verlassen. Die einzigen von Peek gespeicherten Daten sind zwei von ihm angelegte WordPress-Optionen, `peek_settings` (deine Modal- und Button-Konfiguration) und `peek_db_version`, die beide beim Löschen des Plugins entfernt werden. Peek sendet keine E-Mails und lädt keine Skripte, Schriften oder Analyse-Tools von Dritten."
+
+msgid "Plogins Peek includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-peek`, so WordPress.org language packs can also override or extend these bundled translations."
+msgstr "Plogins Peek enthält deutsche, polnische und spanische Übersetzungen für die Plugin-Oberfläche. Die Textdomain ist `plogins-peek`, sodass Sprachpakete von WordPress.org diese mitgelieferten Übersetzungen ebenfalls überschreiben oder erweitern können."
+
+msgid "* Added bundled Polish, German and Spanish translations for the plugin interface."
+msgstr "* Deutsche, polnische und spanische Übersetzungen für die Plugin-Oberfläche mitgeliefert."
 
 msgid "* First stable release."
 msgstr "* Erste stabile Version."
 
 msgid "* Renamed to Plogins Peek for WooCommerce for a more distinctive plugin name."
-msgstr "* Für einen eindeutigeren Plugin-Namen in Plogins Peek für WooCommerce umbenannt."
+msgstr "* In Plogins Peek für WooCommerce umbenannt, für einen unverwechselbareren Plugin-Namen."
 
 msgid "* New: loop button placement, below the card or overlay on the thumbnail (hover/focus).\n* New: `[peek]` shortcode as an alias for `[peek_quick_view]`."
-msgstr "* Neu: Platzierung der Loop-Schaltfläche, unterhalb der Karte oder Overlay auf dem Miniaturbild (Hover/Fokus).\n* Neu: Shortcode „[peek]“ als Alias ​​für „[peek_quick_view]“."
+msgstr "* Neu: Platzierung des Buttons in der Schleife, unterhalb der Karte oder als Overlay auf dem Miniaturbild (bei Hover/Fokus).\n* Neu: Shortcode `[peek]` als Alias für `[peek_quick_view]`."
 
 msgid "* New: `[peek_quick_view]` shortcode to place a quick-view trigger anywhere, with optional `id`, `text` and `style` attributes.\n* New: stock status row in the modal, with a toggle.\n* New: configurable gallery thumbnail count (0–12).\n* New: trigger button style, text, icon, or icon + text (icon-only keeps an accessible name).\n* New: display scope, load on shop/archives only, or also single-product related/up-sell loops.\n* New: modal chrome controls in the settings page (title, close-button label, loading/error text, view-product link text, SKU label, and toggles for the modal heading, close button and backdrop-click close).\n* New: `uninstall.php` removes the plugin's options on delete.\n* Added Domain Path for translations."
-msgstr "* Neu: „[peek_quick_view]“-Shortcode zum Platzieren eines Schnellansicht-Triggers an einer beliebigen Stelle, mit optionalen Attributen „id“, „text“ und „style“.\n* Neu: Bestandsstatuszeile im Modal, mit Umschaltfunktion.\n* Neu: konfigurierbare Anzahl der Miniaturansichten der Galerie (0–12).\n* Neu: Stil der Auslöseschaltfläche, Text, Symbol oder Symbol + Text (nur Symbol behält einen zugänglichen Namen bei).\n* Neu: Anzeigeumfang, Laden nur auf Shop/Archive, oder auch auf einzelne Produkte bezogene/Up-Selling-Schleifen.\n* Neu: Modale Chrome-Steuerelemente auf der Einstellungsseite (Titel, Beschriftung der Schaltfläche „Schließen“, Lade-/Fehlertext, Linktext zum Anzeigen des Produkts, Beschriftung der Artikelnummer und Umschalter für die modale Überschrift, die Schaltfläche „Schließen“ und das Schließen per Hintergrundklick).\n* Neu: „uninstall.php“ entfernt die Optionen des Plugins beim Löschen.\n* Domänenpfad für Übersetzungen hinzugefügt."
+msgstr "* Neu: Shortcode `[peek_quick_view]`, um an beliebiger Stelle einen Schnellansicht-Auslöser zu platzieren, mit optionalen Attributen `id`, `text` und `style`.\n* Neu: Zeile mit Lagerstatus im Modal, mit Schalter.\n* Neu: konfigurierbare Anzahl an Galerie-Miniaturbildern (0–12).\n* Neu: Stil des auslösenden Buttons, Text, Icon oder Icon + Text (nur Icon behält einen barrierefreien Namen).\n* Neu: Anzeigebereich, nur auf Shop/Archiven laden oder auch in Verwandt-/Up-Sell-Schleifen einzelner Produkte.\n* Neu: Steuerelemente für die Modal-Oberfläche auf der Einstellungsseite (Titel, Beschriftung des Schließen-Buttons, Lade-/Fehlertext, Linktext „Produkt ansehen“, SKU-Beschriftung und Schalter für Modal-Überschrift, Schließen-Button und Schließen per Klick auf den Hintergrund).\n* Neu: `uninstall.php` entfernt die Optionen des Plugins beim Löschen.\n* Domain Path für Übersetzungen hinzugefügt."
 
 msgid "* Initial release: accessible AJAX quick-view modal for WooCommerce shop and archive loops, with a settings page for the button label and modal contents."
-msgstr "* Erstveröffentlichung: Zugängliches AJAX-Schnellansichtsmodal für WooCommerce-Shop- und Archivschleifen, mit einer Einstellungsseite für die Schaltflächenbezeichnung und modale Inhalte."
+msgstr "* Erste Veröffentlichung: barrierefreies AJAX-Schnellansicht-Modal für WooCommerce-Shop- und Archiv-Schleifen, mit einer Einstellungsseite für die Button-Beschriftung und die Modal-Inhalte."
 
