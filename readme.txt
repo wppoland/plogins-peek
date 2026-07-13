@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,29 @@ A WooCommerce-capability settings page (Peek menu) lets you:
 Place a quick-view trigger anywhere with `[peek_quick_view id="123"]`, or the shorter `[peek id="123"]` alias. Optional attributes: `text` (custom label) and `style` (`text`, `icon`, or `icon_text`). The modal and its assets load automatically wherever the shortcode appears.
 
 Peek is developed in the open. The code, open issues and release history live at https://github.com/wppoland/plogins-peek, bug reports and patches are welcome there.
+
+= Upgrade to Peek PRO =
+
+Peek PRO extends the free quick view with:
+
+* Recently viewed products.
+* A related-products carousel inside the modal.
+* Colour and label variation swatches.
+* Custom modal sections.
+* Previous / next navigation between products without closing the modal.
+* Extra styling controls.
+* Quick-view analytics.
+
+Learn more at https://plogins.com/plogins-peek-pro/
+
+= More WooCommerce plugins by Plogins =
+
+* **Reel** - hover zoom, an accessible lightbox and product video for WooCommerce galleries: https://plogins.com/plogins-reel/
+* **Sizer** - accessible size guides and tables in a modal: https://plogins.com/plogins-sizer/
+* **Marks** - automatic and manual product badges, CSS-only: https://plogins.com/plogins-marks/
+* **Swatch** - accessible colour and label variation swatches, no jQuery: https://plogins.com/plogins-swatch/
+
+Browse the full family at https://plogins.com/
 
 == Installation ==
 
@@ -102,6 +125,9 @@ Peek does not connect to any external services. The quick-view modal fetches its
 Plogins Peek includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-peek`, so WordPress.org language packs can also override or extend these bundled translations.
 
 == Changelog ==
+
+= 1.0.4 =
+* Readme: added Peek PRO and related Plogins plugins links.
 
 = 1.0.3 =
 * Clearer name: Plogins Peek - Product Preview for WooCommerce.
