@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1544px; height:500px; overflow:hidden; }
+  .banner {
+    width:1544px; height:500px; display:flex;
+    font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* LEFT */
+  .left {
+    width:748px; height:100%;
+    background:linear-gradient(135deg,#eef3ff 0%,#f7f9ff 60%,#eaf0ff 100%);
+    padding:52px 50px; display:flex; flex-direction:column; justify-content:center;
+    position:relative;
+  }
+  .brand { display:flex; align-items:center; gap:16px; }
+  .brand img { width:66px; height:66px; border-radius:15px; }
+  .brand h1 { font-size:70px; font-weight:800; color:#0b1533; letter-spacing:-2px; line-height:1; }
+  .sub { font-size:28px; color:#46557a; font-weight:600; margin:12px 0 30px 2px; }
+  ul { list-style:none; display:flex; flex-direction:column; gap:18px; }
+  li { display:flex; align-items:center; gap:18px; }
+  .ic { flex:0 0 auto; width:46px; height:46px; border-radius:50%; background:#1e6bff;
+        display:flex; align-items:center; justify-content:center;
+        box-shadow:0 4px 12px rgba(30,107,255,.28); }
+  .ic svg { width:24px; height:24px; stroke:#fff; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+  li span { font-size:22px; color:#1a2540; font-weight:600; line-height:1.22; }
+  .squiggle { position:absolute; right:38px; top:238px; opacity:.8; }
+  /* RIGHT */
+  .right {
+    width:796px; height:100%;
+    background:linear-gradient(135deg,#d7e4ff 0%,#eaf1ff 55%,#e3ecff 100%);
+    display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+  }
+  .card {
+    width:712px; border-radius:18px; overflow:hidden;
+    box-shadow:0 30px 70px rgba(20,40,90,.30), 0 4px 14px rgba(20,40,90,.16);
+    background:#fff; transform:rotate(-1deg);
+  }
+  .card img { width:100%; display:block; object-fit:cover; object-position:center 16%; height:392px; }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="left">
+      <div class="brand">
+        <img src="icon-256x256.png" alt="Peek">
+        <h1>Peek</h1>
+      </div>
+      <div class="sub">Quick view for WooCommerce</div>
+      <ul>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></svg></span><span>Quick product preview<br>without leaving the page</span></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><span>Image gallery, details,<br>price &amp; add to cart</span></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/><path d="M2 3h3l2.4 12.3a1.6 1.6 0 001.6 1.3h8.8a1.6 1.6 0 001.6-1.2L22 8H6"/></svg></span><span>Boost conversions<br>and save time</span></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><rect x="6.5" y="3" width="11" height="18" rx="2.2"/><path d="M11 18h2"/></svg></span><span>Fully responsive<br>and user friendly</span></li>
+      </ul>
+      <svg class="squiggle" width="120" height="26" viewBox="0 0 120 26"><path d="M2 14 C 18 2, 32 26, 48 14 S 82 2, 98 14 S 118 20, 118 14" stroke="#3b82f6" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+    </div>
+    <div class="right">
+      <div class="card"><img src="screenshot-1.png" alt="Peek quick view modal"></div>
+    </div>
+  </div>
+</body>
+</html>
