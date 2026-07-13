@@ -20,6 +20,7 @@
     --peek-card-border: #dcdcde;
     --peek-card-radius: 10px;
     --peek-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+    --peek-fg: #1d2327;
     --peek-muted: #50575e;
     --peek-tip-bg: #1d2327;
     --peek-tip-fg: #fff;
@@ -67,6 +68,7 @@
 .peek-admin__intro-text h2 {
     margin: 0 0 0.25rem;
     font-size: 1.05rem;
+    color: var(--peek-fg);
 }
 
 .peek-admin__intro-text p {
@@ -89,6 +91,7 @@
     margin-block: 0 0.25rem;
     padding-block-end: 0.5rem;
     border-block-end: 1px solid var(--peek-card-border);
+    color: var(--peek-fg);
 }
 
 .peek-admin__section-intro {
@@ -100,6 +103,7 @@
 .peek-admin .form-table th {
     position: relative;
     inline-size: clamp(160px, 26%, 240px);
+    color: var(--peek-fg);
 }
 
 /* Accessible "?" help affordance + tooltip. */
@@ -181,6 +185,7 @@
         --peek-card-bg: #1e1e1e;
         --peek-card-border: #3c3c3c;
         --peek-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        --peek-fg: #e8e8ea;
         --peek-muted: #bdc1c6;
         --peek-tip-bg: #f0f0f1;
         --peek-tip-fg: #1d2327;
