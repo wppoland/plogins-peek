@@ -20,11 +20,19 @@ final class Settings implements HasHooks
     private const OPTION = 'peek_settings';
     private const PAGE   = 'peek-settings';
 
+    private ?ProUpsell $upsell = null;
+
+    private function upsell(): ProUpsell
+    {
+        return $this->upsell ??= new ProUpsell();
+    }
+
     public function registerHooks(): void
     {
         add_action('admin_menu', [$this, 'addMenuPage']);
         add_action('admin_init', [$this, 'registerSettings']);
         add_action('admin_enqueue_scripts', [$this, 'enqueueAssets']);
+        add_action('admin_post_' . ProUpsell::ACTION, [$this->upsell(), 'handleDismiss']);
     }
 
     /**
@@ -96,6 +104,8 @@ final class Settings implements HasHooks
         ?>
         <div class="wrap peek-admin">
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+
+            <?php $this->upsell()->banner(); ?>
 
             <div class="peek-admin__intro">
                 <span class="peek-admin__intro-icon" aria-hidden="true">
@@ -236,6 +246,8 @@ final class Settings implements HasHooks
 
                 <?php submit_button(); ?>
             </form>
+
+            <?php $this->upsell()->cards(); ?>
         </div>
         <?php
     }

@@ -191,3 +191,126 @@
         --peek-tip-fg: #1d2327;
     }
 }
+
+/* -------------------------------------------------------------------------
+   PRO upsell (dismissible banner + "what PRO adds" locked cards). Pure
+   advertising, scoped to the Peek screen. Reuses the accent + card tokens
+   above, so it adapts to the dark-mode pass automatically.
+   ------------------------------------------------------------------------- */
+.peek-admin .peek-pro-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-block: 1rem 1.5rem;
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, var(--peek-accent) 8%, var(--peek-card-bg));
+    border: 1px solid color-mix(in srgb, var(--peek-accent) 30%, var(--peek-card-border));
+    border-inline-start: 4px solid var(--peek-accent);
+    border-radius: var(--peek-card-radius);
+    box-shadow: var(--peek-card-shadow);
+}
+
+.peek-admin .peek-pro-banner__tag,
+.peek-admin .peek-pro-card__badge {
+    flex: 0 0 auto;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: #fff;
+    background: var(--peek-accent-hover);
+    padding: 3px 7px;
+    border-radius: 4px;
+}
+
+.peek-admin .peek-pro-banner__text {
+    flex: 1 1 16rem;
+    min-inline-size: 0;
+    margin: 0;
+    color: var(--peek-fg);
+    font-size: 13px;
+}
+
+.peek-admin .peek-pro-banner__sub {
+    color: var(--peek-muted);
+}
+
+.peek-admin .peek-pro-banner__price {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.peek-admin .peek-pro-banner__cta.button.button-primary {
+    flex: 0 0 auto;
+    background: var(--peek-accent-hover);
+    border-color: var(--peek-accent-hover);
+    color: #fff;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.peek-admin .peek-pro-banner__cta.button.button-primary:hover,
+.peek-admin .peek-pro-banner__cta.button.button-primary:focus {
+    background: var(--peek-accent);
+    border-color: var(--peek-accent);
+    color: #fff;
+}
+
+.peek-admin .peek-pro-banner__dismiss {
+    flex: 0 0 auto;
+    color: var(--peek-muted);
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1;
+    padding: 0 4px;
+}
+
+.peek-admin .peek-pro-banner__dismiss:hover,
+.peek-admin .peek-pro-banner__dismiss:focus {
+    color: var(--peek-fg);
+}
+
+.peek-admin .peek-pro-cards {
+    margin-block-start: 2rem;
+}
+
+.peek-admin .peek-pro-cards__title {
+    font-size: 1.05rem;
+    color: var(--peek-fg);
+    margin-block-end: 0.75rem;
+}
+
+.peek-admin .peek-pro-cards__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--peek-gap);
+}
+
+.peek-admin .peek-pro-card {
+    position: relative;
+    padding: clamp(0.75rem, 1.5vw, 1rem);
+    background: var(--peek-card-bg);
+    border: 1px solid var(--peek-card-border);
+    border-radius: var(--peek-card-radius);
+    box-shadow: var(--peek-card-shadow);
+}
+
+.peek-admin .peek-pro-card__badge {
+    position: absolute;
+    inset-block-start: 0.75rem;
+    inset-inline-end: 0.75rem;
+}
+
+.peek-admin .peek-pro-card__title {
+    margin: 0 3rem 0.35rem 0;
+    font-size: 0.95rem;
+    color: var(--peek-fg);
+}
+
+.peek-admin .peek-pro-card__desc {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--peek-muted);
+    line-height: 1.4;
+}
