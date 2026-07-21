@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,10 +18,10 @@ The modal shows the featured image and gallery thumbnails, title, SKU, price, st
 
 = Documentation and links =
 
-* **Documentation** - https://plogins.com/plogins-peek/docs/
-* **Plugin page** - https://plogins.com/plogins-peek/
-* **Source code** - https://github.com/wppoland/plogins-peek
-* **Bug reports and feature requests** - https://github.com/wppoland/plogins-peek/issues
+* **Documentation** - [plogins.com/plogins-peek/docs](https://plogins.com/plogins-peek/docs/)
+* **Plugin page** - [plogins.com/plogins-peek](https://plogins.com/plogins-peek/)
+* **Source code** - [github.com/wppoland/plogins-peek](https://github.com/wppoland/plogins-peek)
+* **Bug reports and feature requests** - [GitHub issues](https://github.com/wppoland/plogins-peek/issues)
 
 
 = Built for speed and accessibility =
@@ -45,7 +45,7 @@ A WooCommerce-capability settings page (Peek menu) lets you:
 
 Place a quick-view trigger anywhere with `[peek_quick_view id="123"]`, or the shorter `[peek id="123"]` alias. Optional attributes: `text` (custom label) and `style` (`text`, `icon`, or `icon_text`). The modal and its assets load automatically wherever the shortcode appears.
 
-Peek is developed in the open. The code, open issues and release history live at https://github.com/wppoland/plogins-peek, bug reports and patches are welcome there.
+Peek is developed in the open. The code, open issues and release history live at [GitHub](https://github.com/wppoland/plogins-peek), bug reports and patches are welcome there.
 
 = Upgrade to Peek PRO =
 
@@ -59,16 +59,16 @@ Peek PRO extends the free quick view with:
 * Extra styling controls.
 * Quick-view analytics.
 
-Learn more at https://plogins.com/plogins-peek-pro/
+Learn more at [plogins.com/plogins-peek-pro](https://plogins.com/plogins-peek-pro/)
 
 = More WooCommerce plugins by Plogins =
 
-* **Reel** - hover zoom, an accessible lightbox and product video for WooCommerce galleries: https://plogins.com/plogins-reel/
-* **Sizer** - accessible size guides and tables in a modal: https://plogins.com/plogins-sizer/
-* **Marks** - automatic and manual product badges, CSS-only: https://plogins.com/plogins-marks/
-* **Swatch** - accessible colour and label variation swatches, no jQuery: https://plogins.com/plogins-swatch/
+* **Reel** - hover zoom, an accessible lightbox and product video for WooCommerce galleries: [plogins.com/plogins-reel](https://plogins.com/plogins-reel/)
+* **Sizer** - accessible size guides and tables in a modal: [plogins.com/plogins-sizer](https://plogins.com/plogins-sizer/)
+* **Marks** - automatic and manual product badges, CSS-only: [plogins.com/plogins-marks](https://plogins.com/plogins-marks/)
+* **Swatch** - accessible colour and label variation swatches, no jQuery: [plogins.com/plogins-swatch](https://plogins.com/plogins-swatch/)
 
-Browse the full family at https://plogins.com/
+Browse the full family at [plogins.com](https://plogins.com/)
 
 == Installation ==
 
@@ -125,6 +125,9 @@ Peek does not connect to any external services. The quick-view modal fetches its
 Plogins Peek includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-peek`, so WordPress.org language packs can also override or extend these bundled translations.
 
 == Changelog ==
+
+= 1.0.9 =
+* Description: converted the links in the readme to proper anchors (documentation, plugin page, source, related plugins).
 
 = 1.0.8 =
 * Added an in-plugin Peek PRO upsell (dismissible banner + feature cards) on the settings screen.
