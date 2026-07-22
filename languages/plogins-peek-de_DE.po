@@ -108,7 +108,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:141
 msgid "Button label"
-msgstr "Button-Beschriftung"
+msgstr "Knopfbeschriftung"
 
 #: src/Admin/Settings.php:141
 msgid "Text shown on the quick-view trigger button."
@@ -125,7 +125,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:145
 msgid "Button style"
-msgstr "Button-Stil"
+msgstr "Knopfstil"
 
 #: src/Admin/Settings.php:146
 msgid ""
