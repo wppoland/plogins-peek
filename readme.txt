@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,6 +125,9 @@ Peek does not connect to any external services. The quick-view modal fetches its
 Plogins Peek includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-peek`, so WordPress.org language packs can also override or extend these bundled translations.
 
 == Changelog ==
+
+= 1.0.10 =
+* Declared compatibility with WooCommerce 10.9.
 
 = 1.0.9 =
 * Description: converted the links in the readme to proper anchors (documentation, plugin page, source, related plugins).
