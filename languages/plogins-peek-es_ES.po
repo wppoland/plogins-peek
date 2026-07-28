@@ -29,8 +29,8 @@ msgstr "https://plogins.com/es/plogins-peek/"
 #. Description of the plugin
 #: plogins-peek.php
 msgid ""
-"Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price,"
-" stock, add-to-cart, variations), no jQuery, focus-trapped"
+"Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price, "
+"stock, add-to-cart, variations), no jQuery, focus-trapped"
 msgstr ""
 "Vista rápida de WooCommerce rápida y accesible, modo de producto AJAX "
 "(galería, precio, existencias, añadir al carrito, variaciones), sin jQuery, "
@@ -67,15 +67,15 @@ msgstr ""
 #: src/Admin/Settings.php:108
 msgid ""
 "Peek adds a quick-view button to your shop loops. Clicking it opens an "
-"accessible, focus-trapped modal with the image gallery, price, stock, add-"
-"to-cart form (variations included) and a link to the full product. Tune "
+"accessible, focus-trapped modal with the image gallery, price, stock, add-to-"
+"cart form (variations included) and a link to the full product. Tune "
 "everything below, hover a “?” for a quick explanation."
 msgstr ""
-"Peek añade un botón de vista rápida a los bucles de su tienda. Al hacer clic"
-" en él, se abre un modal accesible y enfocado con la galería de imágenes, el"
-" precio, el stock, el formulario para añadir al carrito (variaciones "
-"incluidas) y un enlace al producto completo. Sintonice todo lo que aparece a"
-" continuación, coloque un \"?\" para una explicación rápida."
+"Peek añade un botón de vista rápida a los bucles de su tienda. Al hacer clic "
+"en él, se abre un modal accesible y enfocado con la galería de imágenes, el "
+"precio, el stock, el formulario para añadir al carrito (variaciones "
+"incluidas) y un enlace al producto completo. Sintonice todo lo que aparece a "
+"continuación, coloque un \"?\" para una explicación rápida."
 
 #: src/Admin/Settings.php:116
 msgid "Trigger button"
@@ -152,8 +152,8 @@ msgid ""
 "How the trigger appears in the product loop. The icon-only style keeps the "
 "label as its accessible name."
 msgstr ""
-"Cómo aparece el disparador en el bucle del producto. El estilo de solo icono"
-" mantiene la etiqueta como nombre accesible."
+"Cómo aparece el disparador en el bucle del producto. El estilo de solo icono "
+"mantiene la etiqueta como nombre accesible."
 
 #: src/Admin/Settings.php:160
 msgid "Button placement"
@@ -167,8 +167,8 @@ msgid ""
 msgstr ""
 "Debajo de la tarjeta se encuentra el valor predeterminado más seguro. La "
 "superposición en la imagen mantiene las cuadrículas compactas y revela el "
-"botón cuando los compradores pasan el cursor sobre el producto o lo enfocan,"
-" ideal para catálogos basados ​​en imágenes."
+"botón cuando los compradores pasan el cursor sobre el producto o lo enfocan, "
+"ideal para catálogos basados ​​en imágenes."
 
 #: src/Admin/Settings.php:166
 msgid "Below product card"
@@ -183,8 +183,8 @@ msgid ""
 "Where the quick-view trigger sits in shop loops. Overlay mode never shifts "
 "card height."
 msgstr ""
-"Donde se encuentra el disparador de vista rápida en los bucles de tienda. El"
-" modo de superposición nunca cambia la altura de la tarjeta."
+"Donde se encuentra el disparador de vista rápida en los bucles de tienda. El "
+"modo de superposición nunca cambia la altura de la tarjeta."
 
 #: src/Admin/Settings.php:174
 msgid "Where to load"
@@ -193,8 +193,7 @@ msgstr "donde cargar"
 #: src/Admin/Settings.php:175
 msgid ""
 "Loading only where needed keeps pages fast. The second option also covers "
-"the “Related products” and “You may also like” loops on single product "
-"pages."
+"the “Related products” and “You may also like” loops on single product pages."
 msgstr ""
 "Cargar sólo donde sea necesario mantiene las páginas rápidas. La segunda "
 "opción también cubre los bucles \"Productos relacionados\" y \"También te "
@@ -211,11 +210,11 @@ msgstr ""
 
 #: src/Admin/Settings.php:183
 msgid ""
-"Choose whether the quick-view button also appears in the related and up-sell"
-" loops on single product pages."
+"Choose whether the quick-view button also appears in the related and up-sell "
+"loops on single product pages."
 msgstr ""
-"Elija si el botón de vista rápida también aparece en los bucles relacionados"
-" y de ventas adicionales en las páginas de un solo producto."
+"Elija si el botón de vista rápida también aparece en los bucles relacionados "
+"y de ventas adicionales en las páginas de un solo producto."
 
 #: src/Admin/Settings.php:191
 msgid "Modal chrome"
@@ -243,8 +242,8 @@ msgid ""
 "heading if “Modal heading” is on. Keep it short and descriptive."
 msgstr ""
 "Se lee en voz alta a los usuarios del lector de pantalla cuando se abre el "
-"cuadro de diálogo y se muestra como un encabezado si el \"Encabezado modal\""
-" está activado. Sea breve y descriptivo."
+"cuadro de diálogo y se muestra como un encabezado si el \"Encabezado modal\" "
+"está activado. Sea breve y descriptivo."
 
 #: src/Admin/Settings.php:198
 msgid "Close button label"
@@ -259,8 +258,8 @@ msgid ""
 "The “×” button is visual only; this text is its accessible name for screen "
 "readers and keyboard users."
 msgstr ""
-"El botón “×” es sólo visual; este texto es su nombre accesible para lectores"
-" de pantalla y usuarios de teclado."
+"El botón “×” es sólo visual; este texto es su nombre accesible para lectores "
+"de pantalla y usuarios de teclado."
 
 #: src/Admin/Settings.php:199
 msgid "Loading text"
@@ -291,8 +290,8 @@ msgid ""
 "A friendly message shown if the request fails (network error, product "
 "removed). Reassure the shopper they can try again or open the full page."
 msgstr ""
-"Se muestra un mensaje amigable si la solicitud falla (error de red, producto"
-" eliminado). Asegúrele al comprador que puede intentarlo nuevamente o abrir "
+"Se muestra un mensaje amigable si la solicitud falla (error de red, producto "
+"eliminado). Asegúrele al comprador que puede intentarlo nuevamente o abrir "
 "la página completa."
 
 #: src/Admin/Settings.php:201
@@ -305,8 +304,8 @@ msgstr "Etiqueta para el enlace a la página completa del producto."
 
 #: src/Admin/Settings.php:201
 msgid ""
-"Label for the button that takes the shopper to the complete product page for"
-" reviews, full description and more."
+"Label for the button that takes the shopper to the complete product page for "
+"reviews, full description and more."
 msgstr ""
 "Etiqueta para el botón que lleva al comprador a la página completa del "
 "producto para ver reseñas, descripción completa y más."
@@ -356,8 +355,8 @@ msgid ""
 "Keep this on for usability. The modal can always be closed with the Escape "
 "key regardless of this setting."
 msgstr ""
-"Mantén esto activado para mayor usabilidad. El modal siempre se puede cerrar"
-" con la tecla Escape independientemente de esta configuración."
+"Mantén esto activado para mayor usabilidad. El modal siempre se puede cerrar "
+"con la tecla Escape independientemente de esta configuración."
 
 #: src/Admin/Settings.php:205
 msgid "Close on backdrop click"
@@ -402,8 +401,8 @@ msgid ""
 "The main product photo. Products with no image fall back to the WooCommerce "
 "placeholder so the layout never breaks."
 msgstr ""
-"La foto principal del producto. Los productos sin imagen vuelven al marcador"
-" de posición de WooCommerce para que el diseño nunca se rompa."
+"La foto principal del producto. Los productos sin imagen vuelven al marcador "
+"de posición de WooCommerce para que el diseño nunca se rompa."
 
 #: src/Admin/Settings.php:221
 msgid "Gallery thumbnails"
@@ -431,8 +430,8 @@ msgstr "Miniaturas máximas de la galería para mostrar (0–12)."
 
 #: src/Admin/Settings.php:222
 msgid ""
-"Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to"
-" show the main image only."
+"Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to "
+"show the main image only."
 msgstr ""
 "Limita la cantidad de miniaturas de la galería que aparecen, manteniendo el "
 "modal ordenado. Establezca en 0 para mostrar solo la imagen principal."
@@ -448,8 +447,8 @@ msgstr "Mostrar el título del producto."
 #: src/Admin/Settings.php:223
 msgid "The product name as a heading at the top of the summary column."
 msgstr ""
-"El nombre del producto como encabezado en la parte superior de la columna de"
-" resumen."
+"El nombre del producto como encabezado en la parte superior de la columna de "
+"resumen."
 
 #: src/Admin/Settings.php:224 templates/quick-view-content.php:22
 msgid "SKU"
@@ -528,9 +527,9 @@ msgid ""
 "Lets shoppers buy straight from the modal. Variable products get the full "
 "variation picker. Hidden for products that aren’t purchasable."
 msgstr ""
-"Permite a los compradores comprar directamente desde el modal. Los productos"
-" variables obtienen el selector de variación completo. Oculto para productos"
-" que no se pueden comprar."
+"Permite a los compradores comprar directamente desde el modal. Los productos "
+"variables obtienen el selector de variación completo. Oculto para productos "
+"que no se pueden comprar."
 
 #: src/Admin/Settings.php:229
 msgid "View full product link"
@@ -583,3 +582,39 @@ msgstr "Vista rápida del producto"
 #: templates/quick-view-modal.php:20
 msgid "Close"
 msgstr "Cerrar"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:67
+#, php-format
+msgid "od %d zł/rok"
+msgstr "desde %d zł/año"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:72
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "desde %1$s%2$d/año"
+
+#: src/Admin/ProUpsell.php:104
+msgid "Permission denied."
+msgstr "Permiso denegado."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:130
+#, php-format
+msgid "Do more with %s"
+msgstr "Haz más con %s"
+
+#: src/Admin/ProUpsell.php:135
+msgid "Upgrade to PRO"
+msgstr "Mejora a PRO"
+
+#: src/Admin/ProUpsell.php:137
+msgid "Dismiss this notice"
+msgstr "Descartar este aviso"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:155
+#, php-format
+msgid "What %s adds"
+msgstr "Lo que añade %s"

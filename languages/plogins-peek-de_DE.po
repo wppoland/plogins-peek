@@ -29,12 +29,12 @@ msgstr "https://plogins.com/de/plogins-peek/"
 #. Description of the plugin
 #: plogins-peek.php
 msgid ""
-"Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price,"
-" stock, add-to-cart, variations), no jQuery, focus-trapped"
+"Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price, "
+"stock, add-to-cart, variations), no jQuery, focus-trapped"
 msgstr ""
 "Schnelle, zugängliche WooCommerce-Schnellansicht, AJAX-Produktmodalität "
-"(Galerie, Preis, Lagerbestand, Add-to-Cart, Variationen), kein jQuery, "
-"Fokus-Trapping"
+"(Galerie, Preis, Lagerbestand, Add-to-Cart, Variationen), kein jQuery, Fokus-"
+"Trapping"
 
 #. Author of the plugin
 #: plogins-peek.php
@@ -66,8 +66,8 @@ msgstr ""
 #: src/Admin/Settings.php:108
 msgid ""
 "Peek adds a quick-view button to your shop loops. Clicking it opens an "
-"accessible, focus-trapped modal with the image gallery, price, stock, add-"
-"to-cart form (variations included) and a link to the full product. Tune "
+"accessible, focus-trapped modal with the image gallery, price, stock, add-to-"
+"cart form (variations included) and a link to the full product. Tune "
 "everything below, hover a “?” for a quick explanation."
 msgstr ""
 "Peek fügt deinen Shop-Loops eine Schnellansichtsschaltfläche hinzu. Wenn du "
@@ -103,8 +103,7 @@ msgstr ""
 #: src/Admin/Settings.php:136
 msgid "Show the quick-view button on shop and archive product loops."
 msgstr ""
-"Zeige die Schnellansichtsschaltfläche in Shop- und Archivproduktschleifen "
-"an."
+"Zeige die Schnellansichtsschaltfläche in Shop- und Archivproduktschleifen an."
 
 #: src/Admin/Settings.php:141
 msgid "Button label"
@@ -120,8 +119,8 @@ msgid ""
 "style this becomes the button’s accessible name for screen readers."
 msgstr ""
 "Die anklickbare Beschriftung, z.B. „Schnellansicht“ oder „Blick hinein“. "
-"Beim Nur-Symbol-Stil wird dies zum barrierefreien Namen der Schaltfläche für"
-" Screenreader."
+"Beim Nur-Symbol-Stil wird dies zum barrierefreien Namen der Schaltfläche für "
+"Screenreader."
 
 #: src/Admin/Settings.php:145
 msgid "Button style"
@@ -184,8 +183,8 @@ msgid ""
 "Where the quick-view trigger sits in shop loops. Overlay mode never shifts "
 "card height."
 msgstr ""
-"Wo der Schnellansicht-Trigger in Shop-Loops sitzt. Im Overlay-Modus wird die"
-" Kartenhöhe nie verschoben."
+"Wo der Schnellansicht-Trigger in Shop-Loops sitzt. Im Overlay-Modus wird die "
+"Kartenhöhe nie verschoben."
 
 #: src/Admin/Settings.php:174
 msgid "Where to load"
@@ -194,8 +193,7 @@ msgstr "Wohin geladen werden soll"
 #: src/Admin/Settings.php:175
 msgid ""
 "Loading only where needed keeps pages fast. The second option also covers "
-"the “Related products” and “You may also like” loops on single product "
-"pages."
+"the “Related products” and “You may also like” loops on single product pages."
 msgstr ""
 "Durch das Laden nur dort, wo es benötigt wird, bleiben die Seiten schnell. "
 "Die zweite Option deckt auch die Schleifen „Ähnliche Produkte“ und „Das "
@@ -211,11 +209,11 @@ msgstr "Archive + einzelproduktbezogene/Upselling-Schleifen"
 
 #: src/Admin/Settings.php:183
 msgid ""
-"Choose whether the quick-view button also appears in the related and up-sell"
-" loops on single product pages."
+"Choose whether the quick-view button also appears in the related and up-sell "
+"loops on single product pages."
 msgstr ""
-"Wähle aus, ob die Schnellansichtsschaltfläche auch in den zugehörigen und "
-"Up-Selling-Schleifen auf einzelnen Produktseiten angezeigt werden soll."
+"Wähle aus, ob die Schnellansichtsschaltfläche auch in den zugehörigen und Up-"
+"Selling-Schleifen auf einzelnen Produktseiten angezeigt werden soll."
 
 #: src/Admin/Settings.php:191
 msgid "Modal chrome"
@@ -226,8 +224,8 @@ msgid ""
 "Labels and behaviour for the modal dialog itself. Empty text fields fall "
 "back to the built-in defaults."
 msgstr ""
-"Beschriftungen und Verhalten für den modalen Dialog selbst. Leere Textfelder"
-" greifen auf die integrierten Standardeinstellungen zurück."
+"Beschriftungen und Verhalten für den modalen Dialog selbst. Leere Textfelder "
+"greifen auf die integrierten Standardeinstellungen zurück."
 
 #: src/Admin/Settings.php:197
 msgid "Modal title"
@@ -275,8 +273,8 @@ msgid ""
 "Displayed for the brief moment between opening the modal and the product "
 "fragment arriving over AJAX."
 msgstr ""
-"Wird für den kurzen Moment zwischen dem Öffnen des Modals und dem Eintreffen"
-" des Produktfragments über AJAX angezeigt."
+"Wird für den kurzen Moment zwischen dem Öffnen des Modals und dem Eintreffen "
+"des Produktfragments über AJAX angezeigt."
 
 #: src/Admin/Settings.php:200
 msgid "Error text"
@@ -305,8 +303,8 @@ msgstr "Beschriftung für den Link zur vollständigen Produktseite."
 
 #: src/Admin/Settings.php:201
 msgid ""
-"Label for the button that takes the shopper to the complete product page for"
-" reviews, full description and more."
+"Label for the button that takes the shopper to the complete product page for "
+"reviews, full description and more."
 msgstr ""
 "Beschriftung für die Schaltfläche, die den Käufer zur vollständigen "
 "Produktseite mit Rezensionen, ausführlicher Beschreibung und mehr "
@@ -420,8 +418,8 @@ msgid ""
 "Extra product photos shown as a thumbnail strip beneath the main image. "
 "Hidden when a product has no gallery."
 msgstr ""
-"Zusätzliche Produktfotos werden als Miniaturbildstreifen unter dem Hauptbild"
-" angezeigt. Ausgeblendet, wenn ein Produkt keine Galerie hat."
+"Zusätzliche Produktfotos werden als Miniaturbildstreifen unter dem Hauptbild "
+"angezeigt. Ausgeblendet, wenn ein Produkt keine Galerie hat."
 
 #: src/Admin/Settings.php:222
 msgid "Gallery thumbnail count"
@@ -433,8 +431,8 @@ msgstr "Maximale Anzahl anzuzeigender Galerie-Miniaturansichten (0–12)."
 
 #: src/Admin/Settings.php:222
 msgid ""
-"Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to"
-" show the main image only."
+"Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to "
+"show the main image only."
 msgstr ""
 "Begrenzt die Anzahl der angezeigten Galerie-Miniaturansichten und sorgt so "
 "für Ordnung im Modal. Auf 0 einstellen, um nur das Hauptbild anzuzeigen."
@@ -583,3 +581,39 @@ msgstr "Produkt-Schnellansicht"
 #: templates/quick-view-modal.php:20
 msgid "Close"
 msgstr "Schließen"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:67
+#, php-format
+msgid "od %d zł/rok"
+msgstr "ab %d zł/Jahr"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:72
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "ab %1$s%2$d/Jahr"
+
+#: src/Admin/ProUpsell.php:104
+msgid "Permission denied."
+msgstr "Zugriff verweigert."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:130
+#, php-format
+msgid "Do more with %s"
+msgstr "Mehr erreichen mit %s"
+
+#: src/Admin/ProUpsell.php:135
+msgid "Upgrade to PRO"
+msgstr "Auf PRO upgraden"
+
+#: src/Admin/ProUpsell.php:137
+msgid "Dismiss this notice"
+msgstr "Diesen Hinweis ausblenden"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:155
+#, php-format
+msgid "What %s adds"
+msgstr "Was %s ergänzt"

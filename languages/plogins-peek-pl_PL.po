@@ -12,7 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
 "X-Domain: plogins-peek\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
@@ -29,8 +30,8 @@ msgstr "https://plogins.com/pl/plogins-peek/"
 #. Description of the plugin
 #: plogins-peek.php
 msgid ""
-"Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price,"
-" stock, add-to-cart, variations), no jQuery, focus-trapped"
+"Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price, "
+"stock, add-to-cart, variations), no jQuery, focus-trapped"
 msgstr ""
 "Szybki, dostępny podgląd produktów WooCommerce, okno modalne AJAX (galeria, "
 "cena, dostępność, dodawanie do koszyka, warianty), bez jQuery, z pułapką "
@@ -65,8 +66,8 @@ msgstr "Pozwól klientom podglądać produkty bez opuszczania strony"
 #: src/Admin/Settings.php:108
 msgid ""
 "Peek adds a quick-view button to your shop loops. Clicking it opens an "
-"accessible, focus-trapped modal with the image gallery, price, stock, add-"
-"to-cart form (variations included) and a link to the full product. Tune "
+"accessible, focus-trapped modal with the image gallery, price, stock, add-to-"
+"cart form (variations included) and a link to the full product. Tune "
 "everything below, hover a “?” for a quick explanation."
 msgstr ""
 "Peek dodaje przycisk szybkiego podglądu do pętli produktów w sklepie. "
@@ -187,11 +188,10 @@ msgstr "Gdzie wczytywać"
 #: src/Admin/Settings.php:175
 msgid ""
 "Loading only where needed keeps pages fast. The second option also covers "
-"the “Related products” and “You may also like” loops on single product "
-"pages."
+"the “Related products” and “You may also like” loops on single product pages."
 msgstr ""
-"Wczytywanie tylko tam, gdzie potrzeba, utrzymuje szybkość stron. Druga opcja"
-" obejmuje także pętle „Produkty powiązane” i „Może Ci się spodobać” na "
+"Wczytywanie tylko tam, gdzie potrzeba, utrzymuje szybkość stron. Druga opcja "
+"obejmuje także pętle „Produkty powiązane” i „Może Ci się spodobać” na "
 "stronach pojedynczych produktów."
 
 #: src/Admin/Settings.php:180
@@ -204,8 +204,8 @@ msgstr "Archiwa + pętle powiązanych / dosprzedaży na stronie produktu"
 
 #: src/Admin/Settings.php:183
 msgid ""
-"Choose whether the quick-view button also appears in the related and up-sell"
-" loops on single product pages."
+"Choose whether the quick-view button also appears in the related and up-sell "
+"loops on single product pages."
 msgstr ""
 "Wybierz, czy przycisk szybkiego podglądu ma pojawiać się także w pętlach "
 "produktów powiązanych i dosprzedaży na stronach pojedynczych produktów."
@@ -252,8 +252,8 @@ msgid ""
 "The “×” button is visual only; this text is its accessible name for screen "
 "readers and keyboard users."
 msgstr ""
-"Przycisk „×” jest wyłącznie wizualny; ten tekst jest jego dostępną nazwą dla"
-" czytników ekranu i użytkowników klawiatury."
+"Przycisk „×” jest wyłącznie wizualny; ten tekst jest jego dostępną nazwą dla "
+"czytników ekranu i użytkowników klawiatury."
 
 #: src/Admin/Settings.php:199
 msgid "Loading text"
@@ -268,8 +268,8 @@ msgid ""
 "Displayed for the brief moment between opening the modal and the product "
 "fragment arriving over AJAX."
 msgstr ""
-"Wyświetlany przez krótką chwilę między otwarciem okna modalnego a nadejściem"
-" fragmentu produktu przez AJAX."
+"Wyświetlany przez krótką chwilę między otwarciem okna modalnego a nadejściem "
+"fragmentu produktu przez AJAX."
 
 #: src/Admin/Settings.php:200
 msgid "Error text"
@@ -285,8 +285,8 @@ msgid ""
 "removed). Reassure the shopper they can try again or open the full page."
 msgstr ""
 "Przyjazny komunikat wyświetlany, gdy żądanie się nie powiedzie (błąd sieci, "
-"usunięty produkt). Zapewnij klienta, że może spróbować ponownie lub otworzyć"
-" pełną stronę."
+"usunięty produkt). Zapewnij klienta, że może spróbować ponownie lub otworzyć "
+"pełną stronę."
 
 #: src/Admin/Settings.php:201
 msgid "View product link text"
@@ -298,8 +298,8 @@ msgstr "Etykieta linku do pełnej strony produktu."
 
 #: src/Admin/Settings.php:201
 msgid ""
-"Label for the button that takes the shopper to the complete product page for"
-" reviews, full description and more."
+"Label for the button that takes the shopper to the complete product page for "
+"reviews, full description and more."
 msgstr ""
 "Etykieta przycisku przenoszącego klienta na pełną stronę produktu z "
 "opiniami, pełnym opisem i nie tylko."
@@ -377,8 +377,8 @@ msgid ""
 "Choose what the quick-view modal shows for each product. Anything a product "
 "is missing (no SKU, no gallery, etc.) is hidden automatically."
 msgstr ""
-"Wybierz, co okno szybkiego podglądu pokazuje dla każdego produktu. Wszystko,"
-" czego produktowi brakuje (brak SKU, brak galerii itp.), jest ukrywane "
+"Wybierz, co okno szybkiego podglądu pokazuje dla każdego produktu. Wszystko, "
+"czego produktowi brakuje (brak SKU, brak galerii itp.), jest ukrywane "
 "automatycznie."
 
 #: src/Admin/Settings.php:220
@@ -423,8 +423,8 @@ msgstr "Maksymalna liczba wyświetlanych miniatur galerii (0–12)."
 
 #: src/Admin/Settings.php:222
 msgid ""
-"Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to"
-" show the main image only."
+"Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to "
+"show the main image only."
 msgstr ""
 "Ogranicza liczbę wyświetlanych miniatur galerii, utrzymując okno modalne w "
 "porządku. Ustaw 0, aby pokazać tylko główne zdjęcie."
@@ -573,6 +573,42 @@ msgstr "Szybki podgląd produktu"
 #: templates/quick-view-modal.php:20
 msgid "Close"
 msgstr "Zamknij"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:67
+#, php-format
+msgid "od %d zł/rok"
+msgstr "od %d zł/rok"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:72
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "od %1$s%2$d/rok"
+
+#: src/Admin/ProUpsell.php:104
+msgid "Permission denied."
+msgstr "Brak uprawnień."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:130
+#, php-format
+msgid "Do more with %s"
+msgstr "Zrób więcej dzięki %s"
+
+#: src/Admin/ProUpsell.php:135
+msgid "Upgrade to PRO"
+msgstr "Przejdź na PRO"
+
+#: src/Admin/ProUpsell.php:137
+msgid "Dismiss this notice"
+msgstr "Odrzuć to powiadomienie"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:155
+#, php-format
+msgid "What %s adds"
+msgstr "Co dodaje %s"
 
 #~ msgid "Peek - Quick View for WooCommerce"
 #~ msgstr "Peek - Szybki podgląd dla WooCommerce"

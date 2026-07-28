@@ -26,7 +26,9 @@ msgstr ""
 
 #. Description of the plugin
 #: plogins-peek.php
-msgid "Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped"
+msgid ""
+"Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price, "
+"stock, add-to-cart, variations), no jQuery, focus-trapped"
 msgstr ""
 
 #. Author of the plugin
@@ -56,7 +58,11 @@ msgid "Let shoppers preview products without leaving the page"
 msgstr ""
 
 #: src/Admin/Settings.php:108
-msgid "Peek adds a quick-view button to your shop loops. Clicking it opens an accessible, focus-trapped modal with the image gallery, price, stock, add-to-cart form (variations included) and a link to the full product. Tune everything below, hover a “?” for a quick explanation."
+msgid ""
+"Peek adds a quick-view button to your shop loops. Clicking it opens an "
+"accessible, focus-trapped modal with the image gallery, price, stock, add-to-"
+"cart form (variations included) and a link to the full product. Tune "
+"everything below, hover a “?” for a quick explanation."
 msgstr ""
 
 #: src/Admin/Settings.php:116
@@ -72,7 +78,9 @@ msgid "Enable quick view"
 msgstr ""
 
 #: src/Admin/Settings.php:124
-msgid "Master switch. When off, no button or modal is loaded anywhere and the storefront is completely unaffected."
+msgid ""
+"Master switch. When off, no button or modal is loaded anywhere and the "
+"storefront is completely unaffected."
 msgstr ""
 
 #: src/Admin/Settings.php:136
@@ -88,7 +96,9 @@ msgid "Text shown on the quick-view trigger button."
 msgstr ""
 
 #: src/Admin/Settings.php:141
-msgid "The clickable label, e.g. “Quick view” or “Peek inside”. With the icon-only style this becomes the button’s accessible name for screen readers."
+msgid ""
+"The clickable label, e.g. “Quick view” or “Peek inside”. With the icon-only "
+"style this becomes the button’s accessible name for screen readers."
 msgstr ""
 
 #: src/Admin/Settings.php:145
@@ -96,7 +106,9 @@ msgid "Button style"
 msgstr ""
 
 #: src/Admin/Settings.php:146
-msgid "Text only is the safest match for most themes. Icon only saves space in tight grids (the eye icon). Icon + text gives the clearest call to action."
+msgid ""
+"Text only is the safest match for most themes. Icon only saves space in "
+"tight grids (the eye icon). Icon + text gives the clearest call to action."
 msgstr ""
 
 #: src/Admin/Settings.php:151
@@ -112,7 +124,9 @@ msgid "Icon and text"
 msgstr ""
 
 #: src/Admin/Settings.php:155
-msgid "How the trigger appears in the product loop. The icon-only style keeps the label as its accessible name."
+msgid ""
+"How the trigger appears in the product loop. The icon-only style keeps the "
+"label as its accessible name."
 msgstr ""
 
 #: src/Admin/Settings.php:160
@@ -120,7 +134,10 @@ msgid "Button placement"
 msgstr ""
 
 #: src/Admin/Settings.php:161
-msgid "Below the card is the safest default. On-image overlay keeps grids compact and reveals the button when shoppers hover or focus the product, ideal for image-led catalogues."
+msgid ""
+"Below the card is the safest default. On-image overlay keeps grids compact "
+"and reveals the button when shoppers hover or focus the product, ideal for "
+"image-led catalogues."
 msgstr ""
 
 #: src/Admin/Settings.php:166
@@ -132,7 +149,9 @@ msgid "On image (hover / focus)"
 msgstr ""
 
 #: src/Admin/Settings.php:169
-msgid "Where the quick-view trigger sits in shop loops. Overlay mode never shifts card height."
+msgid ""
+"Where the quick-view trigger sits in shop loops. Overlay mode never shifts "
+"card height."
 msgstr ""
 
 #: src/Admin/Settings.php:174
@@ -140,7 +159,9 @@ msgid "Where to load"
 msgstr ""
 
 #: src/Admin/Settings.php:175
-msgid "Loading only where needed keeps pages fast. The second option also covers the “Related products” and “You may also like” loops on single product pages."
+msgid ""
+"Loading only where needed keeps pages fast. The second option also covers "
+"the “Related products” and “You may also like” loops on single product pages."
 msgstr ""
 
 #: src/Admin/Settings.php:180
@@ -152,7 +173,9 @@ msgid "Archives + single-product related/upsell loops"
 msgstr ""
 
 #: src/Admin/Settings.php:183
-msgid "Choose whether the quick-view button also appears in the related and up-sell loops on single product pages."
+msgid ""
+"Choose whether the quick-view button also appears in the related and up-sell "
+"loops on single product pages."
 msgstr ""
 
 #: src/Admin/Settings.php:191
@@ -160,7 +183,9 @@ msgid "Modal chrome"
 msgstr ""
 
 #: src/Admin/Settings.php:192
-msgid "Labels and behaviour for the modal dialog itself. Empty text fields fall back to the built-in defaults."
+msgid ""
+"Labels and behaviour for the modal dialog itself. Empty text fields fall "
+"back to the built-in defaults."
 msgstr ""
 
 #: src/Admin/Settings.php:197
@@ -172,7 +197,9 @@ msgid "Heading announced for the dialog."
 msgstr ""
 
 #: src/Admin/Settings.php:197
-msgid "Read out to screen-reader users when the dialog opens, and shown as a heading if “Modal heading” is on. Keep it short and descriptive."
+msgid ""
+"Read out to screen-reader users when the dialog opens, and shown as a "
+"heading if “Modal heading” is on. Keep it short and descriptive."
 msgstr ""
 
 #: src/Admin/Settings.php:198
@@ -184,7 +211,9 @@ msgid "Accessible label for the close button."
 msgstr ""
 
 #: src/Admin/Settings.php:198
-msgid "The “×” button is visual only; this text is its accessible name for screen readers and keyboard users."
+msgid ""
+"The “×” button is visual only; this text is its accessible name for screen "
+"readers and keyboard users."
 msgstr ""
 
 #: src/Admin/Settings.php:199
@@ -196,7 +225,9 @@ msgid "Shown while the product is fetched."
 msgstr ""
 
 #: src/Admin/Settings.php:199
-msgid "Displayed for the brief moment between opening the modal and the product fragment arriving over AJAX."
+msgid ""
+"Displayed for the brief moment between opening the modal and the product "
+"fragment arriving over AJAX."
 msgstr ""
 
 #: src/Admin/Settings.php:200
@@ -208,7 +239,9 @@ msgid "Shown if the product fails to load."
 msgstr ""
 
 #: src/Admin/Settings.php:200
-msgid "A friendly message shown if the request fails (network error, product removed). Reassure the shopper they can try again or open the full page."
+msgid ""
+"A friendly message shown if the request fails (network error, product "
+"removed). Reassure the shopper they can try again or open the full page."
 msgstr ""
 
 #: src/Admin/Settings.php:201
@@ -220,7 +253,9 @@ msgid "Label for the link to the full product page."
 msgstr ""
 
 #: src/Admin/Settings.php:201
-msgid "Label for the button that takes the shopper to the complete product page for reviews, full description and more."
+msgid ""
+"Label for the button that takes the shopper to the complete product page for "
+"reviews, full description and more."
 msgstr ""
 
 #: src/Admin/Settings.php:202
@@ -232,7 +267,9 @@ msgid "Prefix shown before the SKU value."
 msgstr ""
 
 #: src/Admin/Settings.php:202
-msgid "The prefix before the SKU, e.g. “SKU”, “Item no.” or “Ref”. Hidden automatically when a product has no SKU."
+msgid ""
+"The prefix before the SKU, e.g. “SKU”, “Item no.” or “Ref”. Hidden "
+"automatically when a product has no SKU."
 msgstr ""
 
 #: src/Admin/Settings.php:203
@@ -244,7 +281,9 @@ msgid "Show the modal title above the loaded product."
 msgstr ""
 
 #: src/Admin/Settings.php:203
-msgid "Prints the modal title as a visible heading inside the dialog. Turn off for a cleaner, image-led layout."
+msgid ""
+"Prints the modal title as a visible heading inside the dialog. Turn off for "
+"a cleaner, image-led layout."
 msgstr ""
 
 #: src/Admin/Settings.php:204
@@ -256,7 +295,9 @@ msgid "Show the close (×) button."
 msgstr ""
 
 #: src/Admin/Settings.php:204
-msgid "Keep this on for usability. The modal can always be closed with the Escape key regardless of this setting."
+msgid ""
+"Keep this on for usability. The modal can always be closed with the Escape "
+"key regardless of this setting."
 msgstr ""
 
 #: src/Admin/Settings.php:205
@@ -268,7 +309,9 @@ msgid "Close the modal when the backdrop is clicked."
 msgstr ""
 
 #: src/Admin/Settings.php:205
-msgid "Lets shoppers dismiss the modal by clicking the dimmed area around it, a familiar pattern most users expect."
+msgid ""
+"Lets shoppers dismiss the modal by clicking the dimmed area around it, a "
+"familiar pattern most users expect."
 msgstr ""
 
 #: src/Admin/Settings.php:214
@@ -276,7 +319,9 @@ msgid "Modal content"
 msgstr ""
 
 #: src/Admin/Settings.php:215
-msgid "Choose what the quick-view modal shows for each product. Anything a product is missing (no SKU, no gallery, etc.) is hidden automatically."
+msgid ""
+"Choose what the quick-view modal shows for each product. Anything a product "
+"is missing (no SKU, no gallery, etc.) is hidden automatically."
 msgstr ""
 
 #: src/Admin/Settings.php:220
@@ -288,7 +333,9 @@ msgid "Show the featured image."
 msgstr ""
 
 #: src/Admin/Settings.php:220
-msgid "The main product photo. Products with no image fall back to the WooCommerce placeholder so the layout never breaks."
+msgid ""
+"The main product photo. Products with no image fall back to the WooCommerce "
+"placeholder so the layout never breaks."
 msgstr ""
 
 #: src/Admin/Settings.php:221
@@ -300,7 +347,9 @@ msgid "Show gallery thumbnails."
 msgstr ""
 
 #: src/Admin/Settings.php:221
-msgid "Extra product photos shown as a thumbnail strip beneath the main image. Hidden when a product has no gallery."
+msgid ""
+"Extra product photos shown as a thumbnail strip beneath the main image. "
+"Hidden when a product has no gallery."
 msgstr ""
 
 #: src/Admin/Settings.php:222
@@ -312,7 +361,9 @@ msgid "Maximum gallery thumbnails to show (0–12)."
 msgstr ""
 
 #: src/Admin/Settings.php:222
-msgid "Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to show the main image only."
+msgid ""
+"Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to "
+"show the main image only."
 msgstr ""
 
 #: src/Admin/Settings.php:223
@@ -327,8 +378,7 @@ msgstr ""
 msgid "The product name as a heading at the top of the summary column."
 msgstr ""
 
-#: src/Admin/Settings.php:224
-#: templates/quick-view-content.php:22
+#: src/Admin/Settings.php:224 templates/quick-view-content.php:22
 msgid "SKU"
 msgstr ""
 
@@ -337,7 +387,9 @@ msgid "Show the product SKU."
 msgstr ""
 
 #: src/Admin/Settings.php:224
-msgid "The stock-keeping unit. Useful for catalogues and B2B; hidden when the product has none."
+msgid ""
+"The stock-keeping unit. Useful for catalogues and B2B; hidden when the "
+"product has none."
 msgstr ""
 
 #: src/Admin/Settings.php:225
@@ -349,7 +401,9 @@ msgid "Show the product price."
 msgstr ""
 
 #: src/Admin/Settings.php:225
-msgid "The formatted price, including any sale price, exactly as WooCommerce renders it elsewhere."
+msgid ""
+"The formatted price, including any sale price, exactly as WooCommerce "
+"renders it elsewhere."
 msgstr ""
 
 #: src/Admin/Settings.php:226
@@ -361,7 +415,9 @@ msgid "Show the stock availability."
 msgstr ""
 
 #: src/Admin/Settings.php:226
-msgid "Availability such as “In stock”, “Only 3 left” or “Out of stock”, based on your WooCommerce inventory settings."
+msgid ""
+"Availability such as “In stock”, “Only 3 left” or “Out of stock”, based on "
+"your WooCommerce inventory settings."
 msgstr ""
 
 #: src/Admin/Settings.php:227
@@ -373,7 +429,9 @@ msgid "Show the product short description."
 msgstr ""
 
 #: src/Admin/Settings.php:227
-msgid "The product’s short/excerpt description, the perfect length for a quick preview. Hidden when empty."
+msgid ""
+"The product’s short/excerpt description, the perfect length for a quick "
+"preview. Hidden when empty."
 msgstr ""
 
 #: src/Admin/Settings.php:228
@@ -385,7 +443,9 @@ msgid "Show the add-to-cart form (with variations)."
 msgstr ""
 
 #: src/Admin/Settings.php:228
-msgid "Lets shoppers buy straight from the modal. Variable products get the full variation picker. Hidden for products that aren’t purchasable."
+msgid ""
+"Lets shoppers buy straight from the modal. Variable products get the full "
+"variation picker. Hidden for products that aren’t purchasable."
 msgstr ""
 
 #: src/Admin/Settings.php:229
@@ -397,15 +457,16 @@ msgid "Show a link to the full product page."
 msgstr ""
 
 #: src/Admin/Settings.php:229
-msgid "A button to the complete product page. Recommended so shoppers can reach reviews and full details."
+msgid ""
+"A button to the complete product page. Recommended so shoppers can reach "
+"reviews and full details."
 msgstr ""
 
 #: src/Admin/Settings.php:258
 msgid "More information"
 msgstr ""
 
-#: src/Admin/Settings.php:395
-#: templates/quick-view-button.php:17
+#: src/Admin/Settings.php:395 templates/quick-view-button.php:17
 msgid "Quick view"
 msgstr ""
 
@@ -421,8 +482,7 @@ msgstr ""
 msgid "Product not found."
 msgstr ""
 
-#: templates/quick-view-content.php:102
-#: templates/quick-view-content.php:116
+#: templates/quick-view-content.php:102 templates/quick-view-content.php:116
 msgid "View full product"
 msgstr ""
 
@@ -436,4 +496,40 @@ msgstr ""
 
 #: templates/quick-view-modal.php:20
 msgid "Close"
+msgstr ""
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:67
+#, php-format
+msgid "od %d zł/rok"
+msgstr ""
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:72
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr ""
+
+#: src/Admin/ProUpsell.php:104
+msgid "Permission denied."
+msgstr ""
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:130
+#, php-format
+msgid "Do more with %s"
+msgstr ""
+
+#: src/Admin/ProUpsell.php:135
+msgid "Upgrade to PRO"
+msgstr ""
+
+#: src/Admin/ProUpsell.php:137
+msgid "Dismiss this notice"
+msgstr ""
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:155
+#, php-format
+msgid "What %s adds"
 msgstr ""
