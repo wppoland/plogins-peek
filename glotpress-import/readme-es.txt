@@ -119,7 +119,7 @@ Plogins Peek incluye traducciones al polaco, al alemán y al español para la in
 = 0.2.0 =
 * Nuevo: shortcode `[peek_quick_view]` para colocar un activador de vista rápida en cualquier lugar, con atributos opcionales `id`, `text` y `style`.
 * Nuevo: fila de estado del stock en el modal, con un interruptor.
-* Nuevo: número de miniaturas de la galería configurable (0–12).
+* Nuevo: número de miniaturas de la galería configurable (0-12).
 * Nuevo: estilo del botón que activa, texto, icono o icono + texto (solo icono conserva un nombre accesible).
 * Nuevo: ámbito de visualización, cargar solo en la tienda/archivos, o también en los bucles de relacionados/venta adicional de producto individual.
 * Nuevo: controles de la interfaz del modal en la página de ajustes (título, etiqueta del botón de cerrar, texto de carga/error, texto del enlace para ver el producto, etiqueta del SKU e interruptores para el encabezado del modal, el botón de cerrar y el cierre al hacer clic en el fondo).

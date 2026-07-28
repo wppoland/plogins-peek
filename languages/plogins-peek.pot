@@ -357,7 +357,7 @@ msgid "Gallery thumbnail count"
 msgstr ""
 
 #: src/Admin/Settings.php:222
-msgid "Maximum gallery thumbnails to show (0–12)."
+msgid "Maximum gallery thumbnails to show (0-12)."
 msgstr ""
 
 #: src/Admin/Settings.php:222

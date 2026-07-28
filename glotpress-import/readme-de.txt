@@ -26,7 +26,7 @@ Das Modal zeigt das Beitragsbild und die Galerie-Miniaturbilder, den Titel, die 
 
 = Built for speed and accessibility =
 
-* <strong>Kein jQuery</strong> im eigenen Frontend-Code des Plugins – das Skript ist reines JavaScript, verzögert und im Footer geladen.
+* <strong>Kein jQuery</strong> im eigenen Frontend-Code des Plugins, das Skript ist reines JavaScript, verzögert und im Footer geladen.
 * <strong>Keine Layout-Verschiebung (CLS).</strong> Das Modal ist bis zum Öffnen vollständig ausgeblendet und scrollt intern, sodass es die Seite nie neu umbricht.
 * <strong>Fokus-Falle und tastaturfreundlich.</strong> Beim Öffnen wandert der Fokus in den Dialog und bleibt dort gefangen, der Dialog schließt sich mit Escape oder per Klick auf den Hintergrund und kehrt beim Schließen zum auslösenden Button zurück. Der Dialog nutzt `role="dialog"` mit `aria-modal`.
 * <strong>Varianten-fähig.</strong> Das In-den-Warenkorb-Formular unterstützt variable Produkte über WooCommerces eigenes Variations-Skript.
@@ -45,7 +45,7 @@ Eine Einstellungsseite (Menü „Peek“, für WooCommerce-Berechtigungen) läss
 
 Platziere mit `[peek_quick_view id="123"]` oder dem kürzeren Alias `[peek id="123"]` an beliebiger Stelle einen Schnellansicht-Auslöser. Optionale Attribute: `text` (eigene Beschriftung) und `style` (`text`, `icon` oder `icon_text`). Das Modal und seine Assets werden automatisch geladen, wo immer der Shortcode erscheint.
 
-Peek wird quelloffen entwickelt. Der Code, offene Issues und der Release-Verlauf liegen unter https://github.com/wppoland/plogins-peek – Fehlerberichte und Patches sind dort willkommen.
+Peek wird quelloffen entwickelt. Der Code, offene Issues und der Release-Verlauf liegen unter https://github.com/wppoland/plogins-peek, Fehlerberichte und Patches sind dort willkommen.
 
 == Installation ==
 
@@ -119,7 +119,7 @@ Plogins Peek enthält deutsche, polnische und spanische Übersetzungen für die 
 = 0.2.0 =
 * Neu: Shortcode `[peek_quick_view]`, um an beliebiger Stelle einen Schnellansicht-Auslöser zu platzieren, mit optionalen Attributen `id`, `text` und `style`.
 * Neu: Zeile mit Lagerstatus im Modal, mit Schalter.
-* Neu: konfigurierbare Anzahl an Galerie-Miniaturbildern (0–12).
+* Neu: konfigurierbare Anzahl an Galerie-Miniaturbildern (0-12).
 * Neu: Stil des auslösenden Buttons, Text, Icon oder Icon + Text (nur Icon behält einen barrierefreien Namen).
 * Neu: Anzeigebereich, nur auf Shop/Archiven laden oder auch in Verwandt-/Up-Sell-Schleifen einzelner Produkte.
 * Neu: Steuerelemente für die Modal-Oberfläche auf der Einstellungsseite (Titel, Beschriftung des Schließen-Buttons, Lade-/Fehlertext, Linktext „Produkt ansehen“, SKU-Beschriftung und Schalter für Modal-Überschrift, Schließen-Button und Schließen per Klick auf den Hintergrund).

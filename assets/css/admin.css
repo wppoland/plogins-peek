@@ -8,7 +8,7 @@
  */
 
 .peek-admin {
-    /* Iris accent — matched to the storefront modal's lens rim (#6d3bf5) so the
+    /* Iris accent, matched to the storefront modal's lens rim (#6d3bf5) so the
        admin reads as the same product, used in restraint (intro rail, help "?",
        focus rings) over WP's native grey. Computed contrast on the wp-admin
        surfaces, sRGB: #6d3bf5 → 5.84:1 on #fff, 5.13:1 on the #f0f0f1 body

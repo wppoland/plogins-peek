@@ -168,7 +168,7 @@ msgstr ""
 "Unterhalb der Karte befindet sich die sicherste Standardeinstellung. Durch "
 "die On-Image-Überlagerung bleiben die Raster kompakt und die Schaltfläche "
 "wird sichtbar, wenn Käufer mit der Maus darüber fahren oder das Produkt "
-"fokussieren – ideal für bildgeführte Kataloge."
+"fokussieren, ideal für bildgeführte Kataloge."
 
 #: src/Admin/Settings.php:166
 msgid "Below product card"
@@ -426,8 +426,8 @@ msgid "Gallery thumbnail count"
 msgstr "Anzahl der Miniaturansichten der Galerie"
 
 #: src/Admin/Settings.php:222
-msgid "Maximum gallery thumbnails to show (0–12)."
-msgstr "Maximale Anzahl anzuzeigender Galerie-Miniaturansichten (0–12)."
+msgid "Maximum gallery thumbnails to show (0-12)."
+msgstr "Maximale Anzahl anzuzeigender Galerie-Miniaturansichten (0-12)."
 
 #: src/Admin/Settings.php:222
 msgid ""

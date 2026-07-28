@@ -1,5 +1,5 @@
 /**
- * Peek — accessible WooCommerce quick view.
+ * Peek, accessible WooCommerce quick view.
  *
  * Vanilla JS (no jQuery dependency of our own). Opens a focus-trapped modal,
  * fetches the product fragment over admin-ajax, restores focus on close, and
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Build a friendly status block (spinner / icon + message) without injecting
-  // markup from config strings as HTML — text is set via textContent.
+  // markup from config strings as HTML, text is set via textContent.
   const renderStatus = (message, variant) => {
     content.textContent = '';
     const wrap = document.createElement('div');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const text = document.createElement('p');
     text.textContent = message || '';
-    // The visible status text is decorative for SR users — the dedicated
+    // The visible status text is decorative for SR users, the dedicated
     // live region below carries the announcement.
     text.setAttribute('aria-hidden', 'true');
     wrap.appendChild(text);

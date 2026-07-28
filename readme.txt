@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,7 +169,7 @@ Plogins Peek includes Polish, German and Spanish translations for the plugin int
 = 0.2.0 =
 * New: `[peek_quick_view]` shortcode to place a quick-view trigger anywhere, with optional `id`, `text` and `style` attributes.
 * New: stock status row in the modal, with a toggle.
-* New: configurable gallery thumbnail count (0–12).
+* New: configurable gallery thumbnail count (0-12).
 * New: trigger button style, text, icon, or icon + text (icon-only keeps an accessible name).
 * New: display scope, load on shop/archives only, or also single-product related/up-sell loops.
 * New: modal chrome controls in the settings page (title, close-button label, loading/error text, view-product link text, SKU label, and toggles for the modal heading, close button and backdrop-click close).

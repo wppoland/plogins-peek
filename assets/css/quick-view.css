@@ -9,7 +9,7 @@
  */
 
 .peek-quick-view-modal {
-    /* Accent is "iris violet" — the colored ring of an eye coming into focus.
+    /* Accent is "iris violet", the colored ring of an eye coming into focus.
        Deliberately not WP/SaaS blue: peeking is an optical act, so the moment
        the panel snaps into focus is tinted like light caught through a lens. */
     --peek-accent: #6d3bf5;
@@ -85,7 +85,7 @@ ul.products li.product:hover .peek-quick-view-trigger--overlay {
 .peek-quick-view-backdrop {
     position: absolute;
     inset: 0;
-    /* A faint, static iris-coloured tint pooled behind the panel — a quiet
+    /* A faint, static iris-coloured tint pooled behind the panel, a quiet
        sense-of-place cue. The motion lives in the aperture itself (below),
        not here, so the scrim never competes with the moment. */
     background:
@@ -106,11 +106,11 @@ ul.products li.product:hover .peek-quick-view-trigger--overlay {
     box-shadow: var(--peek-surface-shadow);
 }
 
-/* THE MOMENT — the lens rim. A single accent stroke across the top of the
+/* THE MOMENT, the lens rim. A single accent stroke across the top of the
    panel, gradient-thinned at the edges so it reads as the rim of an aperture.
    On open it draws in from the centre outward (scaleX), so the rim "snaps
    shut around" the product the instant the peek lands in focus. One mark,
-   one gesture — no competing flourishes. */
+   one gesture, no competing flourishes. */
 .peek-quick-view-dialog::before {
     content: "";
     position: absolute;
@@ -283,8 +283,8 @@ body.peek-quick-view-open {
 
 /* Open/close transition (progressive enhancement; the modal works without it).
    THE EARNED MICRO-INTERACTION: the panel irises open. A circular clip-path
-   expands from the centre — like a camera aperture widening to let the product
-   through — while the lens rim draws outward from the middle. One gesture,
+   expands from the centre, like a camera aperture widening to let the product
+   through, while the lens rim draws outward from the middle. One gesture,
    rooted in peek's optical world: you are literally watching the shop "open
    its eye" on the product without leaving the listing. */
 .peek-quick-view-backdrop {
