@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.0.12
+Stable tag: 1.0.13
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,6 +125,10 @@ Peek does not connect to any external services. The quick-view modal fetches its
 Plogins Peek includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-peek`, so WordPress.org language packs can also override or extend these bundled translations.
 
 == Changelog ==
+
+= 1.0.13 =
+* Fix: the quick-view button no longer prints in the related and up-sell loops on single product pages, where the modal it opens is not loaded. It obeys the same "where to load" setting as the modal itself.
+* The modal now announces when it has finished loading a product, which is what Peek Pro's quick-view analytics counts. Without it that screen could only ever show zeros.
 
 = 1.0.11 =
 * Translations: completed Polish, German and Spanish for the PRO upgrade panel.

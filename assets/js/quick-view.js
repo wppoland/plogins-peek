@@ -214,6 +214,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       content.innerHTML = payload.data.html;
+      // Tell add-ons the modal is populated. Peek Pro's analytics counts opens
+      // from this, and without it its dashboard could only ever show zeros.
+      content.dispatchEvent(
+        new CustomEvent('peek:quick-view-loaded', {
+          bubbles: true,
+          detail: { productId: Number(productId) },
+        }),
+      );
       // Clear the loading announcement; focus moves into the dialog so the
       // product itself does not need to be announced via the live region.
       if (statusRegion) {

@@ -93,7 +93,10 @@ final class QuickViewEngine
     {
         global $product;
 
-        if (! $product instanceof \WC_Product || ! $this->isEnabled() || ! ($this->getSettings()['show_on_loop'] ?? true)) {
+        // shouldRender decides which templates load the modal shell and script.
+        // Without it here the button printed in related and up-sell loops on
+        // single product pages, where nothing can open it.
+        if (! $product instanceof \WC_Product || ! $this->isEnabled() || ! $this->shouldRender() || ! ($this->getSettings()['show_on_loop'] ?? true)) {
             return;
         }
 
