@@ -34,8 +34,8 @@ return [
             'pl' => ['title' => 'Swatche wariantów', 'desc' => 'Peek → Settings: chipy koloru, miniatury wariantów lub przyciski z etykietą zamiast list rozwijanych w modalu.'],
         ],
         [
-            'en' => ['title' => 'Custom modal sections', 'desc' => 'Peek → Settings: extra content blocks (HTML) before/after add-to-cart or at the bottom of the modal summary.'],
-            'pl' => ['title' => 'Własne sekcje modalu', 'desc' => 'Peek → Settings: dodatkowe bloki treści (HTML) przed/po koszyku lub na dole podsumowania modalu.'],
+            'en' => ['title' => 'Custom modal sections', 'desc' => 'Peek → Settings: extra content blocks before or after add-to-cart, or at the bottom of the modal summary. Post-safe HTML, so no scripts or iframes.'],
+            'pl' => ['title' => 'Własne sekcje modalu', 'desc' => 'Peek → Settings: dodatkowe bloki treści przed przyciskiem dodania do koszyka, po nim albo na dole podsumowania modalu. HTML jak w treści wpisu, więc bez skryptów i iframe\'ów.'],
         ],
         [
             'en' => ['title' => 'Quick-view analytics', 'desc' => 'Peek → Quick View Analytics: modal opens, add-to-cart from the modal and conversions with revenue per product.'],
