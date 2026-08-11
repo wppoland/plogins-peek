@@ -70,6 +70,8 @@ Learn more at [plogins.com/plogins-peek-pro](https://plogins.com/plogins-peek-pr
 
 Browse the full family at [plogins.com](https://plogins.com/)
 
+Reporting a security issue: email hello@wppoland.com, and under our [coordinated disclosure policy](https://wppoland.com/en/security-policy/) we confirm within two business days, assess within five, and patch a critical issue within seven days of confirming it.
+
 == Installation ==
 
 1. Upload the plugin to `/wp-content/plugins/plogins-peek`, or install via Plugins → Add New.
