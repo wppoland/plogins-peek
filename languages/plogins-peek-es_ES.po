@@ -2,19 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Plogins Peek for WooCommerce 0.3.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plogins-peek\n"
-"POT-Creation-Date: 2026-06-16T20:25:09+00:00\n"
-"PO-Revision-Date: 2026-06-16T20:25:09+00:00\n"
-"Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
-"Language-Team: Spanish <es@li.org>\n"
-"Language: es_ES\n"
+"PO-Revision-Date: 2026-07-28 18:47:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Domain: plogins-peek\n"
-"X-Generator: WP-CLI 2.12.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Peek &#8211; Product Preview for WooCommerce - Stable (latest release)\n"
 
 #. Plugin Name of the plugin
 #: plogins-peek.php
@@ -52,7 +47,7 @@ msgstr "Peek requiere que WooCommerce esté activo."
 
 #: src/Admin/Settings.php:60
 msgid "Peek Settings"
-msgstr "Configuración de vista previa"
+msgstr "Ajustes de Peek"
 
 #: src/Admin/Settings.php:61
 msgid "Peek"
@@ -60,9 +55,7 @@ msgstr "Peek"
 
 #: src/Admin/Settings.php:107
 msgid "Let shoppers preview products without leaving the page"
-msgstr ""
-"Permita que los compradores obtengan una vista previa de los productos sin "
-"salir de la página"
+msgstr "Permite a los compradores previsualizar productos sin salir de la página"
 
 #: src/Admin/Settings.php:108
 msgid ""
@@ -79,13 +72,11 @@ msgstr ""
 
 #: src/Admin/Settings.php:116
 msgid "Trigger button"
-msgstr "Botón de disparo"
+msgstr "Botón de activación"
 
 #: src/Admin/Settings.php:117
 msgid "Controls the quick-view button shown in your product loops."
-msgstr ""
-"Controla el botón de vista rápida que se muestra en los bucles de sus "
-"productos."
+msgstr "Controla el botón de vista rápida mostrado en tus bucles de productos."
 
 #: src/Admin/Settings.php:123
 msgid "Enable quick view"
@@ -101,9 +92,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:136
 msgid "Show the quick-view button on shop and archive product loops."
-msgstr ""
-"Muestre el botón de vista rápida en los bucles de productos de compra y "
-"archivo."
+msgstr "Mostrar el botón de vista rápida en los bucles de productos de la tienda y de archivo."
 
 #: src/Admin/Settings.php:141
 msgid "Button label"
@@ -137,7 +126,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:151
 msgid "Text only"
-msgstr "Sólo texto"
+msgstr "Solo texto"
 
 #: src/Admin/Settings.php:152
 msgid "Icon only"
@@ -157,7 +146,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:160
 msgid "Button placement"
-msgstr "Colocación de botones"
+msgstr "Ubicación del botón"
 
 #: src/Admin/Settings.php:161
 msgid ""
@@ -176,7 +165,7 @@ msgstr "Debajo de la tarjeta de producto"
 
 #: src/Admin/Settings.php:167
 msgid "On image (hover / focus)"
-msgstr "En la imagen (desplazar el cursor/enfocar)"
+msgstr "En la imagen (al pasar el ratón / al enfocar)"
 
 #: src/Admin/Settings.php:169
 msgid ""
@@ -188,7 +177,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:174
 msgid "Where to load"
-msgstr "donde cargar"
+msgstr "Dónde cargar"
 
 #: src/Admin/Settings.php:175
 msgid ""
@@ -205,8 +194,7 @@ msgstr "Archivos de tienda y productos"
 
 #: src/Admin/Settings.php:181
 msgid "Archives + single-product related/upsell loops"
-msgstr ""
-"Archivos + bucles de ventas adicionales/relacionados con un solo producto"
+msgstr "Archivos + bucles relacionados con productos individuales/ventas dirigidas"
 
 #: src/Admin/Settings.php:183
 msgid ""
@@ -247,7 +235,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:198
 msgid "Close button label"
-msgstr "Cerrar etiqueta del botón"
+msgstr "Etiqueta del botón Cerrar"
 
 #: src/Admin/Settings.php:198
 msgid "Accessible label for the close button."
@@ -279,7 +267,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:200
 msgid "Error text"
-msgstr "Mensaje de fallo"
+msgstr "Texto de error"
 
 #: src/Admin/Settings.php:200
 msgid "Shown if the product fails to load."
@@ -296,7 +284,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:201
 msgid "View product link text"
-msgstr "Ver texto del enlace del producto"
+msgstr "Ver producto"
 
 #: src/Admin/Settings.php:201
 msgid "Label for the link to the full product page."
@@ -312,11 +300,11 @@ msgstr ""
 
 #: src/Admin/Settings.php:202
 msgid "SKU label"
-msgstr "etiqueta SKU"
+msgstr "Etiqueta SKU"
 
 #: src/Admin/Settings.php:202
 msgid "Prefix shown before the SKU value."
-msgstr "Prefijo que se muestra antes del valor de SKU."
+msgstr "Prefijo mostrado antes del valor del SKU."
 
 #: src/Admin/Settings.php:202
 msgid ""
@@ -344,7 +332,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:204
 msgid "Close button"
-msgstr "botón cerrar"
+msgstr "Botón «Cerrar»"
 
 #: src/Admin/Settings.php:204
 msgid "Show the close (×) button."
@@ -426,7 +414,7 @@ msgstr "Recuento de miniaturas de la galería"
 
 #: src/Admin/Settings.php:222
 msgid "Maximum gallery thumbnails to show (0-12)."
-msgstr "Miniaturas máximas de la galería para mostrar (0-12)."
+msgstr "Miniaturas máximas de la galería para mostrar (0–12)."
 
 #: src/Admin/Settings.php:222
 msgid ""
@@ -446,9 +434,7 @@ msgstr "Mostrar el título del producto."
 
 #: src/Admin/Settings.php:223
 msgid "The product name as a heading at the top of the summary column."
-msgstr ""
-"El nombre del producto como encabezado en la parte superior de la columna de "
-"resumen."
+msgstr "El nombre del producto como encabezado en la parte superior de la columna de resumen."
 
 #: src/Admin/Settings.php:224 templates/quick-view-content.php:22
 msgid "SKU"
@@ -500,11 +486,11 @@ msgstr ""
 
 #: src/Admin/Settings.php:227
 msgid "Short description"
-msgstr "Breve descripción"
+msgstr "Descripción corta"
 
 #: src/Admin/Settings.php:227
 msgid "Show the product short description."
-msgstr "Mostrar la breve descripción del producto."
+msgstr "Mostrar la descripción corta del producto."
 
 #: src/Admin/Settings.php:227
 msgid ""
@@ -533,7 +519,7 @@ msgstr ""
 
 #: src/Admin/Settings.php:229
 msgid "View full product link"
-msgstr "Ver enlace completo del producto"
+msgstr "Enlace para ver producto completo"
 
 #: src/Admin/Settings.php:229
 msgid "Show a link to the full product page."
@@ -561,7 +547,7 @@ msgstr "Cargando producto…"
 
 #: src/Service/PeekService.php:53
 msgid "Failed to load the product preview."
-msgstr "No se pudo cargar la vista previa del producto."
+msgstr "No se ha podido cargar la vista previa del producto."
 
 #: src/Service/PeekService.php:54
 msgid "Product not found."
