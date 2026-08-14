@@ -24,6 +24,14 @@ $peek_stock_html   = (bool) ($settings['show_stock'] ?? true)
     ? wc_get_stock_html($product)
     : '';
 
+// Merchants who unticked "Product image" still got one: an empty image list fell
+// through to a fallback that printed get_image(), so the shopper saw the featured
+// photo (or the WooCommerce placeholder) anyway. The fallback is now reserved for
+// its real job, a product that has no image of its own, and the media column is
+// dropped entirely when the merchant asked for no images at all.
+$peek_show_image = (bool) ($settings['show_image'] ?? true);
+$peek_has_media  = $images !== [] || $peek_show_image;
+
 // Track whether the summary column rendered anything, so we can show a friendly
 // fallback instead of an empty panel if the merchant disabled every section.
 $peek_has_summary = ((bool) ($settings['show_title'] ?? true) && trim((string) $product->get_name()) !== '')
@@ -35,7 +43,8 @@ $peek_has_summary = ((bool) ($settings['show_title'] ?? true) && trim((string) $
     || (bool) ($settings['show_view_product_link'] ?? true);
 ?>
 <div class="peek-quick-view-product product product-type-<?php echo esc_attr($product->get_type()); ?>">
-    <div class="peek-quick-view-grid">
+    <div class="peek-quick-view-grid<?php echo $peek_has_media ? '' : ' peek-quick-view-grid--no-media'; ?>">
+        <?php if ($peek_has_media) : ?>
         <div class="peek-quick-view-media">
             <?php if ($images !== []) : ?>
                 <div class="peek-quick-view-main-image">
@@ -56,6 +65,7 @@ $peek_has_summary = ((bool) ($settings['show_title'] ?? true) && trim((string) $
                 </div>
             <?php endif; ?>
         </div>
+        <?php endif; ?>
 
         <div class="peek-quick-view-summary">
             <?php

@@ -28,11 +28,18 @@ $peek_close_label = (string) ($settings['close_label'] ?? __('Close', 'plogins-p
             </button>
         <?php endif; ?>
         <?php do_action( 'peek_quick_view_modal_dialog_start' ); ?>
+        <?php if ($show_modal_label) : ?>
+            <?php
+            // The heading used to sit inside [data-peek-quick-view-content], which
+            // the script empties on every open, so merchants who ticked "Modal
+            // heading" got a title no shopper ever saw. It lives outside the
+            // swapped region now. Hidden from screen readers because the dialog
+            // aria-label already announces the same text.
+            ?>
+            <p class="peek-quick-view-content__label" aria-hidden="true"><?php echo esc_html($peek_modal_title); ?></p>
+        <?php endif; ?>
         <p class="peek-quick-view-status-msg" data-peek-quick-view-status role="status" aria-live="polite"><?php echo esc_html($loading_text); ?></p>
         <div class="peek-quick-view-content" data-peek-quick-view-content>
-            <?php if ($show_modal_label) : ?>
-                <p class="peek-quick-view-content__label"><?php echo esc_html($peek_modal_title); ?></p>
-            <?php endif; ?>
             <div class="peek-quick-view-status">
                 <span class="peek-quick-view-status__spinner" aria-hidden="true"></span>
                 <p><?php echo esc_html($loading_text); ?></p>
