@@ -3,7 +3,7 @@
  * Plugin Name:       Peek - Product Preview for WooCommerce
  * Plugin URI:        https://plogins.com/plogins-peek/
  * Description:        Fast, accessible WooCommerce quick view, AJAX product modal (gallery, price, stock, add-to-cart, variations), no jQuery, focus-trapped
- * Version:           1.0.15
+ * Version:           1.0.16
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce

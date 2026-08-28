@@ -15,7 +15,6 @@ return [
     'sellable'   => true,
     'price_from' => 19,
     'currency'   => 'EUR',
-    'price_pln'  => 85,
     'lead'       => [
         'en' => 'All Peek PRO roadmap features ship in the current release.',
         'pl' => 'Wszystkie funkcje PRO z roadmapy Peek są dostępne w bieżącym wydaniu.',
