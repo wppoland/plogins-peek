@@ -25,7 +25,7 @@ namespace Peek;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '1.0.15';
+const VERSION     = '1.0.17';
 const PLUGIN_FILE = __FILE__;
 
 define('PEEK_DIR', plugin_dir_path(__FILE__));
