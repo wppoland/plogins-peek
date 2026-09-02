@@ -124,7 +124,7 @@ Peek does not connect to any external services. The quick-view modal fetches its
 
 == Translations ==
 
-Plogins Peek includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-peek`, so WordPress.org language packs can also override or extend these bundled translations.
+Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
 
