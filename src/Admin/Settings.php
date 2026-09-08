@@ -404,7 +404,10 @@ final class Settings implements HasHooks
 
         $sanitized = array_merge($defaults, [
             'enabled'                => ! empty($raw['enabled']),
-            'button_text'            => $buttonText !== '' ? $buttonText : (string) ($defaults['button_text'] ?? __('Quick view', 'plogins-peek')),
+            // Empty stays empty: it is what tells the render path to use the
+            // translated default. Substituting English here is how the option
+            // came to hold untranslatable text in the first place.
+            'button_text'            => $buttonText,
             'button_style'           => $buttonStyle,
             'loop_button_placement'  => $loopPlacement,
             'display_scope'          => $displayScope,
@@ -441,9 +444,10 @@ final class Settings implements HasHooks
      */
     private function sanitizeText(array $raw, string $key, array $defaults): string
     {
-        $value = isset($raw[$key]) ? sanitize_text_field((string) $raw[$key]) : '';
+        unset($defaults);
 
-        return $value !== '' ? $value : (string) ($defaults[$key] ?? '');
+        // Empty stays empty, so Texts can supply the translated default.
+        return isset($raw[$key]) ? sanitize_text_field((string) $raw[$key]) : '';
     }
 
     /**

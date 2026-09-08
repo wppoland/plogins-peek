@@ -244,7 +244,8 @@ final class PeekService implements HasHooks
         /** @var array<string, mixed> $defaults */
         $defaults = require PEEK_DIR . 'config/defaults.php';
 
-        return array_merge($defaults, $stored);
+        // Resolved on the way out, where the string is shown, and never stored.
+        return Texts::apply(array_merge($defaults, $stored));
     }
 
     /**

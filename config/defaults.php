@@ -15,13 +15,18 @@ declare(strict_types=1);
 
 defined('ABSPATH') || exit;
 
+// Every customer-facing string below is empty on purpose. A value here is
+// written into the option at activation and can never be translated, because a
+// config array is not a gettext call, so the packaged text survived even a
+// complete language pack. Empty means "use Peek\Service\Texts", which is
+// translated; anything a merchant types still wins.
 return [
     'enabled' => true,
 
     // Loop trigger button.
     'show_on_loop' => true,
     'loop_button_placement' => 'below',
-    'button_text'  => 'Quick view',
+    'button_text'  => '',
     // Trigger display style: 'text', 'icon', or 'icon_text'.
     'button_style' => 'text',
     // Where the quick-view assets/button load: 'shop' (shop + product archives)
@@ -29,16 +34,16 @@ return [
     'display_scope' => 'shop',
 
     // Modal chrome.
-    'modal_title'        => 'Product quick view',
+    'modal_title'        => '',
     'show_modal_label'   => true,
     'show_close_button'  => true,
-    'close_label'        => 'Close',
+    'close_label'        => '',
     'show_backdrop_close' => true,
 
     // Runtime strings (used by the front-end script and the AJAX handler).
-    'loading_text'           => 'Loading product…',
-    'error_text'             => 'Failed to load the product preview.',
-    'product_not_found_text' => 'Product not found.',
+    'loading_text'           => '',
+    'error_text'             => '',
+    'product_not_found_text' => '',
 
     // What the modal fragment renders.
     'show_title'           => true,
@@ -53,6 +58,6 @@ return [
 
     // "View full product" link.
     'show_view_product_link' => true,
-    'view_product_text'      => 'View full product',
-    'sku_label'              => 'SKU',
+    'view_product_text'      => '',
+    'sku_label'              => '',
 ];
