@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.19
+Stable tag: 1.0.20
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -127,6 +127,9 @@ Peek does not connect to any external services. The quick-view modal fetches its
 Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.20 =
+* Fixed: deleting the plugin left the per-user "dismiss" flag from the PRO notice in the database. Uninstall now removes it for every user, not just the one who dismissed it.
 
 = 1.0.19 =
 * Fixed: every customer-facing string was untranslatable. The button label, the modal title, the close label, the loading and error messages, the SKU prefix and the view-product link shipped as English sentences in a config file and were written into the settings option the moment the plugin activated, so a shop running in another language showed English however complete its language pack was. The settings screen already offered to fall back to a default for a blank field; the packaged value meant blank never happened.
