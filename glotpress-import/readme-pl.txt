@@ -49,7 +49,7 @@ Peek jest rozwijany otwarcie (open source). Kod, otwarte zgłoszenia i historia 
 
 == Installation ==
 
-1. Wgraj wtyczkę do `/wp-content/plugins/plogins-peek` lub zainstaluj przez Wtyczki → Dodaj nową.
+1. Wgraj wtyczkę do `/wp-content/plugins/plogins-peek` lub zainstaluj przez Wtyczki > Dodaj nową.
 2. Włącz ją. WooCommerce musi być aktywne.
 3. Wejdź w menu <strong>Peek</strong> w wp-admin, aby skonfigurować etykietę przycisku i zawartość okna modalnego.
 
