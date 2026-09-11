@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.21
+Stable tag: 1.0.22
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,7 +74,7 @@ Reporting a security issue: email hello@wppoland.com, and under our [coordinated
 
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/plogins-peek`, or install via Plugins → Add New.
+1. Upload the plugin to `/wp-content/plugins/plogins-peek`, or install via Plugins > Add New.
 2. Activate it. WooCommerce must be active.
 3. Visit the **Peek** menu in wp-admin to configure the button label and modal contents.
 
@@ -127,6 +127,10 @@ Peek does not connect to any external services. The quick-view modal fetches its
 Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.22 =
+* Fixed: the PRO upgrade promo kept selling to people who had already bought the paid edition. Only the banner could be dismissed, so the sidebar promo and the locked feature cards followed a paying customer around for good. The promo now checks whether the paid edition is active and steps aside when it is.
+* Fixed: arrow glyphs in the admin menu paths, and in the strings handed to translators. An arrow inside a translatable string makes the glyph every translator's problem and changes the layout in any locale that drops it.
 
 = 1.0.21 =
 * Changed: the PRO feature cards printed an arrow glyph in menu paths where the rest of the plugin and the documentation use a plain ">". Same navigation, one character that renders everywhere.

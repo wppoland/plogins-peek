@@ -49,7 +49,7 @@ Peek wird quelloffen entwickelt. Der Code, offene Issues und der Release-Verlauf
 
 == Installation ==
 
-1. Lade das Plugin nach `/wp-content/plugins/plogins-peek` hoch oder installiere es über Plugins → Installieren.
+1. Lade das Plugin nach `/wp-content/plugins/plogins-peek` hoch oder installiere es über Plugins > Installieren.
 2. Aktiviere es. WooCommerce muss aktiv sein.
 3. Öffne das Menü <strong>Peek</strong> in wp-admin, um Button-Beschriftung und Modal-Inhalt zu konfigurieren.
 

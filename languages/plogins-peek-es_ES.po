@@ -157,7 +157,7 @@ msgstr ""
 "Debajo de la tarjeta se encuentra el valor predeterminado más seguro. La "
 "superposición en la imagen mantiene las cuadrículas compactas y revela el "
 "botón cuando los compradores pasan el cursor sobre el producto o lo enfocan, "
-"ideal para catálogos basados ​​en imágenes."
+"ideal para catálogos basados en imágenes."
 
 #: src/Admin/Settings.php:166
 msgid "Below product card"
@@ -414,7 +414,7 @@ msgstr "Recuento de miniaturas de la galería"
 
 #: src/Admin/Settings.php:222
 msgid "Maximum gallery thumbnails to show (0-12)."
-msgstr "Miniaturas máximas de la galería para mostrar (0–12)."
+msgstr "Miniaturas máximas de la galería para mostrar (0-12)."
 
 #: src/Admin/Settings.php:222
 msgid ""

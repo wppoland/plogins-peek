@@ -103,11 +103,11 @@ msgstr ""
 "Fehlerberichte und Patches sind dort willkommen."
 
 msgid ""
-"1. Upload the plugin to `/wp-content/plugins/plogins-peek`, or install via Plugins → Add New.\n"
+"1. Upload the plugin to `/wp-content/plugins/plogins-peek`, or install via Plugins > Add New.\n"
 "2. Activate it. WooCommerce must be active.\n"
 "3. Visit the <strong>Peek</strong> menu in wp-admin to configure the button label and modal contents."
 msgstr ""
-"1. Lade das Plugin nach `/wp-content/plugins/plogins-peek` hoch oder installiere es über Plugins → Installieren.\n"
+"1. Lade das Plugin nach `/wp-content/plugins/plogins-peek` hoch oder installiere es über Plugins > Installieren.\n"
 "2. Aktiviere es. WooCommerce muss aktiv sein.\n"
 "3. Öffne das Menü <strong>Peek</strong> in wp-admin, um Button-Beschriftung und Modal-Inhalt zu konfigurieren."
 
