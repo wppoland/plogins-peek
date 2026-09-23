@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plogins Peek for WooCommerce 0.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plogins-peek\n"
-"POT-Creation-Date: 2026-06-16T20:25:09+00:00\n"
+"POT-Creation-Date: 2026-09-08T13:19:30+00:00\n"
 "PO-Revision-Date: 2026-06-16T20:25:09+00:00\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #: plogins-peek.php
-msgid "Plogins Peek for WooCommerce"
-msgstr "Plogins Peek für WooCommerce"
+msgid "Peek - Product Preview for WooCommerce"
+msgstr ""
 
 #. Plugin URI of the plugin
 #: plogins-peek.php
@@ -38,32 +38,62 @@ msgstr ""
 
 #. Author of the plugin
 #: plogins-peek.php
-msgid "WPPoland"
-msgstr "WPPoland"
+msgid "WPPoland.com"
+msgstr ""
 
 #. Author URI of the plugin
 #: plogins-peek.php
-msgid "https://plogins.com/"
-msgstr "https://plogins.com/"
+msgid "https://wppoland.com"
+msgstr ""
 
-#: plogins-peek.php:47
+#: plogins-peek.php:48
 msgid "Peek requires WooCommerce to be active."
 msgstr "Peek erfordert, dass WooCommerce aktiv ist."
 
-#: src/Admin/Settings.php:60
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:68
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "ab %1$s%2$d/Jahr"
+
+#: src/Admin/ProUpsell.php:100
+msgid "Permission denied."
+msgstr "Zugriff verweigert."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:126
+#, php-format
+msgid "Do more with %s"
+msgstr "Mehr erreichen mit %s"
+
+#: src/Admin/ProUpsell.php:131
+msgid "Upgrade to PRO"
+msgstr "Auf PRO upgraden"
+
+#: src/Admin/ProUpsell.php:133
+msgid "Dismiss this notice"
+msgstr "Diesen Hinweis ausblenden"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:151
+#, php-format
+msgid "What %s adds"
+msgstr "Was %s ergänzt"
+
+#: src/Admin/Settings.php:68
 msgid "Peek Settings"
 msgstr "Peek-Einstellungen"
 
-#: src/Admin/Settings.php:61
+#: src/Admin/Settings.php:69
 msgid "Peek"
 msgstr "Peek"
 
-#: src/Admin/Settings.php:107
+#: src/Admin/Settings.php:117
 msgid "Let shoppers preview products without leaving the page"
 msgstr ""
 "Ermögliche Käufern eine Vorschau der Produkte, ohne die Seite zu verlassen"
 
-#: src/Admin/Settings.php:108
+#: src/Admin/Settings.php:118
 msgid ""
 "Peek adds a quick-view button to your shop loops. Clicking it opens an "
 "accessible, focus-trapped modal with the image gallery, price, stock, add-to-"
@@ -77,21 +107,21 @@ msgstr ""
 "Produkt geöffnet. Stelle alles unten ein und bewege den Mauszeiger über ein "
 "„?“ für eine kurze Erklärung."
 
-#: src/Admin/Settings.php:116
+#: src/Admin/Settings.php:126
 msgid "Trigger button"
 msgstr "Auslöseknopf"
 
-#: src/Admin/Settings.php:117
+#: src/Admin/Settings.php:127
 msgid "Controls the quick-view button shown in your product loops."
 msgstr ""
 "Steuert die Schnellansichtsschaltfläche, die in deinen Produktschleifen "
 "angezeigt wird."
 
-#: src/Admin/Settings.php:123
+#: src/Admin/Settings.php:133
 msgid "Enable quick view"
 msgstr "Aktiviere die Schnellansicht"
 
-#: src/Admin/Settings.php:124
+#: src/Admin/Settings.php:134
 msgid ""
 "Master switch. When off, no button or modal is loaded anywhere and the "
 "storefront is completely unaffected."
@@ -100,20 +130,20 @@ msgstr ""
 "Schaltfläche oder ein Modal geladen und die Storefront bleibt völlig "
 "unberührt."
 
-#: src/Admin/Settings.php:136
+#: src/Admin/Settings.php:146
 msgid "Show the quick-view button on shop and archive product loops."
 msgstr ""
 "Zeige die Schnellansichtsschaltfläche in Shop- und Archivproduktschleifen an."
 
-#: src/Admin/Settings.php:141
+#: src/Admin/Settings.php:151
 msgid "Button label"
 msgstr "Knopfbeschriftung"
 
-#: src/Admin/Settings.php:141
+#: src/Admin/Settings.php:151
 msgid "Text shown on the quick-view trigger button."
 msgstr "Text, der auf der Schnellansicht-Auslöseschaltfläche angezeigt wird."
 
-#: src/Admin/Settings.php:141
+#: src/Admin/Settings.php:151
 msgid ""
 "The clickable label, e.g. “Quick view” or “Peek inside”. With the icon-only "
 "style this becomes the button’s accessible name for screen readers."
@@ -122,11 +152,11 @@ msgstr ""
 "Beim Nur-Symbol-Stil wird dies zum barrierefreien Namen der Schaltfläche für "
 "Screenreader."
 
-#: src/Admin/Settings.php:145
+#: src/Admin/Settings.php:155
 msgid "Button style"
 msgstr "Knopfstil"
 
-#: src/Admin/Settings.php:146
+#: src/Admin/Settings.php:156
 msgid ""
 "Text only is the safest match for most themes. Icon only saves space in "
 "tight grids (the eye icon). Icon + text gives the clearest call to action."
@@ -135,19 +165,19 @@ msgstr ""
 "Symbol spart nur Platz in engen Rastern (das Augensymbol). Symbol + Text "
 "geben den klarsten Aufruf zum Handeln."
 
-#: src/Admin/Settings.php:151
+#: src/Admin/Settings.php:161
 msgid "Text only"
 msgstr "Nur Beschriftung"
 
-#: src/Admin/Settings.php:152
+#: src/Admin/Settings.php:162
 msgid "Icon only"
 msgstr "Nur Symbol"
 
-#: src/Admin/Settings.php:153
+#: src/Admin/Settings.php:163
 msgid "Icon and text"
 msgstr "Symbol und Beschriftung"
 
-#: src/Admin/Settings.php:155
+#: src/Admin/Settings.php:165
 msgid ""
 "How the trigger appears in the product loop. The icon-only style keeps the "
 "label as its accessible name."
@@ -155,11 +185,11 @@ msgstr ""
 "Wie der Auslöser in der Produktschleife erscheint. Der Nur-Symbol-Stil "
 "behält die Bezeichnung als zugänglichen Namen bei."
 
-#: src/Admin/Settings.php:160
+#: src/Admin/Settings.php:170
 msgid "Button placement"
 msgstr "Platzierung der Knöpfe"
 
-#: src/Admin/Settings.php:161
+#: src/Admin/Settings.php:171
 msgid ""
 "Below the card is the safest default. On-image overlay keeps grids compact "
 "and reveals the button when shoppers hover or focus the product, ideal for "
@@ -170,15 +200,15 @@ msgstr ""
 "wird sichtbar, wenn Käufer mit der Maus darüber fahren oder das Produkt "
 "fokussieren, ideal für bildgeführte Kataloge."
 
-#: src/Admin/Settings.php:166
+#: src/Admin/Settings.php:176
 msgid "Below product card"
 msgstr "Unten auf der Produktkarte"
 
-#: src/Admin/Settings.php:167
+#: src/Admin/Settings.php:177
 msgid "On image (hover / focus)"
 msgstr "Auf dem Bild (schweben/fokussieren)"
 
-#: src/Admin/Settings.php:169
+#: src/Admin/Settings.php:179
 msgid ""
 "Where the quick-view trigger sits in shop loops. Overlay mode never shifts "
 "card height."
@@ -186,11 +216,11 @@ msgstr ""
 "Wo der Schnellansicht-Trigger in Shop-Loops sitzt. Im Overlay-Modus wird die "
 "Kartenhöhe nie verschoben."
 
-#: src/Admin/Settings.php:174
+#: src/Admin/Settings.php:184
 msgid "Where to load"
 msgstr "Wohin geladen werden soll"
 
-#: src/Admin/Settings.php:175
+#: src/Admin/Settings.php:185
 msgid ""
 "Loading only where needed keeps pages fast. The second option also covers "
 "the “Related products” and “You may also like” loops on single product pages."
@@ -199,15 +229,15 @@ msgstr ""
 "Die zweite Option deckt auch die Schleifen „Ähnliche Produkte“ und „Das "
 "könnte dir auch gefallen“ auf einzelnen Produktseiten ab."
 
-#: src/Admin/Settings.php:180
+#: src/Admin/Settings.php:190
 msgid "Shop and product archives"
 msgstr "Shop- und Produktarchive"
 
-#: src/Admin/Settings.php:181
+#: src/Admin/Settings.php:191
 msgid "Archives + single-product related/upsell loops"
 msgstr "Archive + einzelproduktbezogene/Upselling-Schleifen"
 
-#: src/Admin/Settings.php:183
+#: src/Admin/Settings.php:193
 msgid ""
 "Choose whether the quick-view button also appears in the related and up-sell "
 "loops on single product pages."
@@ -215,11 +245,11 @@ msgstr ""
 "Wähle aus, ob die Schnellansichtsschaltfläche auch in den zugehörigen und Up-"
 "Selling-Schleifen auf einzelnen Produktseiten angezeigt werden soll."
 
-#: src/Admin/Settings.php:191
+#: src/Admin/Settings.php:201
 msgid "Modal chrome"
 msgstr "Modales Chrom"
 
-#: src/Admin/Settings.php:192
+#: src/Admin/Settings.php:202
 msgid ""
 "Labels and behaviour for the modal dialog itself. Empty text fields fall "
 "back to the built-in defaults."
@@ -227,15 +257,15 @@ msgstr ""
 "Beschriftungen und Verhalten für den modalen Dialog selbst. Leere Textfelder "
 "greifen auf die integrierten Standardeinstellungen zurück."
 
-#: src/Admin/Settings.php:197
+#: src/Admin/Settings.php:207
 msgid "Modal title"
 msgstr "Modaler Titel"
 
-#: src/Admin/Settings.php:197
+#: src/Admin/Settings.php:207
 msgid "Heading announced for the dialog."
 msgstr "Überschrift für den Dialog angekündigt."
 
-#: src/Admin/Settings.php:197
+#: src/Admin/Settings.php:207
 msgid ""
 "Read out to screen-reader users when the dialog opens, and shown as a "
 "heading if “Modal heading” is on. Keep it short and descriptive."
@@ -244,15 +274,15 @@ msgstr ""
 "vorgelesen und als Überschrift angezeigt, wenn „Modale Überschrift“ "
 "aktiviert ist. Halte es kurz und beschreibend."
 
-#: src/Admin/Settings.php:198
+#: src/Admin/Settings.php:208
 msgid "Close button label"
 msgstr "Beschriftung der Schaltfläche „Schließen“."
 
-#: src/Admin/Settings.php:198
+#: src/Admin/Settings.php:208
 msgid "Accessible label for the close button."
 msgstr "Zugängliche Beschriftung für die Schaltfläche „Schließen“."
 
-#: src/Admin/Settings.php:198
+#: src/Admin/Settings.php:208
 msgid ""
 "The “×” button is visual only; this text is its accessible name for screen "
 "readers and keyboard users."
@@ -260,15 +290,15 @@ msgstr ""
 "Die Schaltfläche „×“ ist nur visuell; Dieser Text ist der für "
 "Bildschirmleser und Tastaturbenutzer zugängliche Name."
 
-#: src/Admin/Settings.php:199
+#: src/Admin/Settings.php:209
 msgid "Loading text"
 msgstr "Ladehinweis"
 
-#: src/Admin/Settings.php:199
+#: src/Admin/Settings.php:209
 msgid "Shown while the product is fetched."
 msgstr "Wird angezeigt, während das Produkt abgeholt wird."
 
-#: src/Admin/Settings.php:199
+#: src/Admin/Settings.php:209
 msgid ""
 "Displayed for the brief moment between opening the modal and the product "
 "fragment arriving over AJAX."
@@ -276,15 +306,15 @@ msgstr ""
 "Wird für den kurzen Moment zwischen dem Öffnen des Modals und dem Eintreffen "
 "des Produktfragments über AJAX angezeigt."
 
-#: src/Admin/Settings.php:200
+#: src/Admin/Settings.php:210
 msgid "Error text"
 msgstr "Fehlertext"
 
-#: src/Admin/Settings.php:200
+#: src/Admin/Settings.php:210
 msgid "Shown if the product fails to load."
 msgstr "Wird angezeigt, wenn das Produkt nicht geladen werden kann."
 
-#: src/Admin/Settings.php:200
+#: src/Admin/Settings.php:210
 msgid ""
 "A friendly message shown if the request fails (network error, product "
 "removed). Reassure the shopper they can try again or open the full page."
@@ -293,15 +323,15 @@ msgstr ""
 "(Netzwerkfehler, Produkt entfernt). Versichern Sie dem Käufer, dass er es "
 "noch einmal versuchen oder die ganze Seite öffnen kann."
 
-#: src/Admin/Settings.php:201
+#: src/Admin/Settings.php:211
 msgid "View product link text"
 msgstr "Produktlinktext anzeigen"
 
-#: src/Admin/Settings.php:201
+#: src/Admin/Settings.php:211
 msgid "Label for the link to the full product page."
 msgstr "Beschriftung für den Link zur vollständigen Produktseite."
 
-#: src/Admin/Settings.php:201
+#: src/Admin/Settings.php:211
 msgid ""
 "Label for the button that takes the shopper to the complete product page for "
 "reviews, full description and more."
@@ -310,15 +340,15 @@ msgstr ""
 "Produktseite mit Rezensionen, ausführlicher Beschreibung und mehr "
 "weiterleitet."
 
-#: src/Admin/Settings.php:202
+#: src/Admin/Settings.php:212
 msgid "SKU label"
 msgstr "SKU-Bezeichnung"
 
-#: src/Admin/Settings.php:202
+#: src/Admin/Settings.php:212
 msgid "Prefix shown before the SKU value."
 msgstr "Präfix wird vor dem SKU-Wert angezeigt."
 
-#: src/Admin/Settings.php:202
+#: src/Admin/Settings.php:212
 msgid ""
 "The prefix before the SKU, e.g. “SKU”, “Item no.” or “Ref”. Hidden "
 "automatically when a product has no SKU."
@@ -326,15 +356,15 @@ msgstr ""
 "Das Präfix vor der SKU, z. B. „SKU“, „Artikelnr.“ oder „Ref“. Wird "
 "automatisch ausgeblendet, wenn ein Produkt keine SKU hat."
 
-#: src/Admin/Settings.php:203
+#: src/Admin/Settings.php:213
 msgid "Modal heading"
 msgstr "Modale Überschrift"
 
-#: src/Admin/Settings.php:203
+#: src/Admin/Settings.php:213
 msgid "Show the modal title above the loaded product."
 msgstr "Zeige den modalen Titel über dem geladenen Produkt an."
 
-#: src/Admin/Settings.php:203
+#: src/Admin/Settings.php:213
 msgid ""
 "Prints the modal title as a visible heading inside the dialog. Turn off for "
 "a cleaner, image-led layout."
@@ -342,15 +372,15 @@ msgstr ""
 "Druckt den modalen Titel als sichtbare Überschrift im Dialog. Schalte die "
 "Option aus, um ein übersichtlicheres, bildgesteuertes Layout zu erhalten."
 
-#: src/Admin/Settings.php:204
+#: src/Admin/Settings.php:214
 msgid "Close button"
 msgstr "Schaltfläche „Schließen“."
 
-#: src/Admin/Settings.php:204
+#: src/Admin/Settings.php:214
 msgid "Show the close (×) button."
 msgstr "Zeige die Schaltfläche „Schließen“ (×) an."
 
-#: src/Admin/Settings.php:204
+#: src/Admin/Settings.php:214
 msgid ""
 "Keep this on for usability. The modal can always be closed with the Escape "
 "key regardless of this setting."
@@ -359,15 +389,15 @@ msgstr ""
 "dieser Einstellung kann das Modal immer mit der Escape-Taste geschlossen "
 "werden."
 
-#: src/Admin/Settings.php:205
+#: src/Admin/Settings.php:215
 msgid "Close on backdrop click"
 msgstr "Beim Klicken auf den Hintergrund schließen"
 
-#: src/Admin/Settings.php:205
+#: src/Admin/Settings.php:215
 msgid "Close the modal when the backdrop is clicked."
 msgstr "Schließe das Modal, wenn auf den Hintergrund geklickt wird."
 
-#: src/Admin/Settings.php:205
+#: src/Admin/Settings.php:215
 msgid ""
 "Lets shoppers dismiss the modal by clicking the dimmed area around it, a "
 "familiar pattern most users expect."
@@ -376,11 +406,11 @@ msgstr ""
 "abgeblendeten Bereich um es herum klicken, ein vertrautes Muster, das die "
 "meisten Benutzer erwarten."
 
-#: src/Admin/Settings.php:214
+#: src/Admin/Settings.php:224
 msgid "Modal content"
 msgstr "Modaler Inhalt"
 
-#: src/Admin/Settings.php:215
+#: src/Admin/Settings.php:225
 msgid ""
 "Choose what the quick-view modal shows for each product. Anything a product "
 "is missing (no SKU, no gallery, etc.) is hidden automatically."
@@ -389,15 +419,15 @@ msgstr ""
 "was einem Produkt fehlt (keine SKU, keine Galerie usw.), wird automatisch "
 "ausgeblendet."
 
-#: src/Admin/Settings.php:220
+#: src/Admin/Settings.php:230
 msgid "Product image"
 msgstr "Produktbild"
 
-#: src/Admin/Settings.php:220
+#: src/Admin/Settings.php:230
 msgid "Show the featured image."
 msgstr "Zeige das ausgewählte Bild an."
 
-#: src/Admin/Settings.php:220
+#: src/Admin/Settings.php:230
 msgid ""
 "The main product photo. Products with no image fall back to the WooCommerce "
 "placeholder so the layout never breaks."
@@ -405,15 +435,15 @@ msgstr ""
 "Das Hauptproduktfoto. Produkte ohne Bild greifen auf den WooCommerce-"
 "Platzhalter zurück, sodass das Layout nie beschädigt wird."
 
-#: src/Admin/Settings.php:221
+#: src/Admin/Settings.php:231
 msgid "Gallery thumbnails"
 msgstr "Miniaturansichten der Galerie"
 
-#: src/Admin/Settings.php:221
+#: src/Admin/Settings.php:231
 msgid "Show gallery thumbnails."
 msgstr "Miniaturansichten der Galerie anzeigen."
 
-#: src/Admin/Settings.php:221
+#: src/Admin/Settings.php:231
 msgid ""
 "Extra product photos shown as a thumbnail strip beneath the main image. "
 "Hidden when a product has no gallery."
@@ -421,15 +451,15 @@ msgstr ""
 "Zusätzliche Produktfotos werden als Miniaturbildstreifen unter dem Hauptbild "
 "angezeigt. Ausgeblendet, wenn ein Produkt keine Galerie hat."
 
-#: src/Admin/Settings.php:222
+#: src/Admin/Settings.php:232
 msgid "Gallery thumbnail count"
 msgstr "Anzahl der Miniaturansichten der Galerie"
 
-#: src/Admin/Settings.php:222
+#: src/Admin/Settings.php:232
 msgid "Maximum gallery thumbnails to show (0-12)."
 msgstr "Maximale Anzahl anzuzeigender Galerie-Miniaturansichten (0-12)."
 
-#: src/Admin/Settings.php:222
+#: src/Admin/Settings.php:232
 msgid ""
 "Caps how many gallery thumbnails appear, keeping the modal tidy. Set to 0 to "
 "show the main image only."
@@ -437,27 +467,28 @@ msgstr ""
 "Begrenzt die Anzahl der angezeigten Galerie-Miniaturansichten und sorgt so "
 "für Ordnung im Modal. Auf 0 einstellen, um nur das Hauptbild anzuzeigen."
 
-#: src/Admin/Settings.php:223
+#: src/Admin/Settings.php:233
 msgid "Title"
 msgstr "Titel"
 
-#: src/Admin/Settings.php:223
+#: src/Admin/Settings.php:233
 msgid "Show the product title."
 msgstr "Zeige den Produkttitel an."
 
-#: src/Admin/Settings.php:223
+#: src/Admin/Settings.php:233
 msgid "The product name as a heading at the top of the summary column."
 msgstr "Der Produktname als Überschrift oben in der Zusammenfassungsspalte."
 
-#: src/Admin/Settings.php:224 templates/quick-view-content.php:22
+#: src/Admin/Settings.php:234 src/Service/Texts.php:40
+#: templates/quick-view-content.php:22
 msgid "SKU"
 msgstr "Artikelnummer"
 
-#: src/Admin/Settings.php:224
+#: src/Admin/Settings.php:234
 msgid "Show the product SKU."
 msgstr "Zeige die Produkt-SKU an."
 
-#: src/Admin/Settings.php:224
+#: src/Admin/Settings.php:234
 msgid ""
 "The stock-keeping unit. Useful for catalogues and B2B; hidden when the "
 "product has none."
@@ -465,15 +496,15 @@ msgstr ""
 "Die Lagereinheit. Nützlich für Kataloge und B2B; ausgeblendet, wenn das "
 "Produkt keine hat."
 
-#: src/Admin/Settings.php:225
+#: src/Admin/Settings.php:235
 msgid "Price"
 msgstr "Preis"
 
-#: src/Admin/Settings.php:225
+#: src/Admin/Settings.php:235
 msgid "Show the product price."
 msgstr "Zeige den Produktpreis an."
 
-#: src/Admin/Settings.php:225
+#: src/Admin/Settings.php:235
 msgid ""
 "The formatted price, including any sale price, exactly as WooCommerce "
 "renders it elsewhere."
@@ -481,15 +512,15 @@ msgstr ""
 "Der formatierte Preis, einschließlich aller Verkaufspreise, genau so, wie "
 "WooCommerce ihn anderswo darstellt."
 
-#: src/Admin/Settings.php:226
+#: src/Admin/Settings.php:236
 msgid "Stock status"
 msgstr "Lagerstatus"
 
-#: src/Admin/Settings.php:226
+#: src/Admin/Settings.php:236
 msgid "Show the stock availability."
 msgstr "Zeige die Lagerverfügbarkeit an."
 
-#: src/Admin/Settings.php:226
+#: src/Admin/Settings.php:236
 msgid ""
 "Availability such as “In stock”, “Only 3 left” or “Out of stock”, based on "
 "your WooCommerce inventory settings."
@@ -497,15 +528,15 @@ msgstr ""
 "Verfügbarkeit wie „Auf Lager“, „Nur noch 3 verfügbar“ oder „Ausverkauft“, "
 "basierend auf deinen WooCommerce-Inventareinstellungen."
 
-#: src/Admin/Settings.php:227
+#: src/Admin/Settings.php:237
 msgid "Short description"
 msgstr "Kurze Beschreibung"
 
-#: src/Admin/Settings.php:227
+#: src/Admin/Settings.php:237
 msgid "Show the product short description."
 msgstr "Zeige die Kurzbeschreibung des Produkts an."
 
-#: src/Admin/Settings.php:227
+#: src/Admin/Settings.php:237
 msgid ""
 "The product’s short/excerpt description, the perfect length for a quick "
 "preview. Hidden when empty."
@@ -513,15 +544,15 @@ msgstr ""
 "Die Kurz-/Auszugsbeschreibung des Produkts, die perfekte Länge für eine "
 "schnelle Vorschau. Im leeren Zustand ausgeblendet."
 
-#: src/Admin/Settings.php:228
+#: src/Admin/Settings.php:238
 msgid "Add to cart"
 msgstr "In den Warenkorb legen"
 
-#: src/Admin/Settings.php:228
+#: src/Admin/Settings.php:238
 msgid "Show the add-to-cart form (with variations)."
 msgstr "Zeige das Add-to-Cart-Formular (mit Variationen) an."
 
-#: src/Admin/Settings.php:228
+#: src/Admin/Settings.php:238
 msgid ""
 "Lets shoppers buy straight from the modal. Variable products get the full "
 "variation picker. Hidden for products that aren’t purchasable."
@@ -530,15 +561,15 @@ msgstr ""
 "die vollständige Variationsauswahl. Ausgeblendet für Produkte, die nicht "
 "käuflich sind."
 
-#: src/Admin/Settings.php:229
+#: src/Admin/Settings.php:239
 msgid "View full product link"
 msgstr "Vollständigen Produktlink anzeigen"
 
-#: src/Admin/Settings.php:229
+#: src/Admin/Settings.php:239
 msgid "Show a link to the full product page."
 msgstr "Zeige einen Link zur vollständigen Produktseite an."
 
-#: src/Admin/Settings.php:229
+#: src/Admin/Settings.php:239
 msgid ""
 "A button to the complete product page. Recommended so shoppers can reach "
 "reviews and full details."
@@ -546,74 +577,52 @@ msgstr ""
 "Ein Button zur vollständigen Produktseite. Empfohlen, damit Käufer "
 "Bewertungen und vollständige Details erhalten können."
 
-#: src/Admin/Settings.php:258
+#: src/Admin/Settings.php:270
 msgid "More information"
 msgstr "Weitere Informationen"
 
-#: src/Admin/Settings.php:395 templates/quick-view-button.php:17
-msgid "Quick view"
-msgstr "Schnellansicht"
-
-#: src/Service/PeekService.php:52
+#: src/Service/PeekService.php:52 src/Service/Texts.php:36
 msgid "Loading product…"
 msgstr "Produkt wird geladen…"
 
-#: src/Service/PeekService.php:53
+#: src/Service/PeekService.php:53 src/Service/Texts.php:37
 msgid "Failed to load the product preview."
 msgstr "Die Produktvorschau konnte nicht geladen werden."
 
-#: src/Service/PeekService.php:54
+#: src/Service/PeekService.php:54 src/Service/Texts.php:38
 msgid "Product not found."
 msgstr "Produkt nicht gefunden."
 
-#: templates/quick-view-content.php:102 templates/quick-view-content.php:116
-msgid "View full product"
-msgstr "Vollständiges Produkt ansehen"
+#: src/Service/Texts.php:33 templates/quick-view-button.php:17
+msgid "Quick view"
+msgstr "Schnellansicht"
 
-#: templates/quick-view-content.php:110
-msgid "Product preview"
-msgstr "Produktvorschau"
-
-#: templates/quick-view-modal.php:19
+#: src/Service/Texts.php:34 templates/quick-view-modal.php:19
 msgid "Product quick view"
 msgstr "Produkt-Schnellansicht"
 
-#: templates/quick-view-modal.php:20
+#: src/Service/Texts.php:35 templates/quick-view-modal.php:20
 msgid "Close"
 msgstr "Schließen"
 
-#. translators: %d: yearly price in PLN
-#: src/Admin/ProUpsell.php:67
+#: src/Service/Texts.php:39 templates/quick-view-content.php:112
+#: templates/quick-view-content.php:126
+msgid "View full product"
+msgstr "Vollständiges Produkt ansehen"
+
+#: templates/quick-view-content.php:120
+msgid "Product preview"
+msgstr "Produktvorschau"
+
+#~ msgid "Plogins Peek for WooCommerce"
+#~ msgstr "Plogins Peek für WooCommerce"
+
+#~ msgid "WPPoland"
+#~ msgstr "WPPoland"
+
+#~ msgid "https://plogins.com/"
+#~ msgstr "https://plogins.com/"
+
 #, php-format
-msgid "od %d zł/rok"
-msgstr "ab %d zł/Jahr"
-
-#. translators: 1: currency symbol, 2: yearly price
-#: src/Admin/ProUpsell.php:72
-#, php-format
-msgid "from %1$s%2$d/yr"
-msgstr "ab %1$s%2$d/Jahr"
-
-#: src/Admin/ProUpsell.php:104
-msgid "Permission denied."
-msgstr "Zugriff verweigert."
-
-#. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:130
-#, php-format
-msgid "Do more with %s"
-msgstr "Mehr erreichen mit %s"
-
-#: src/Admin/ProUpsell.php:135
-msgid "Upgrade to PRO"
-msgstr "Auf PRO upgraden"
-
-#: src/Admin/ProUpsell.php:137
-msgid "Dismiss this notice"
-msgstr "Diesen Hinweis ausblenden"
-
-#. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:155
-#, php-format
-msgid "What %s adds"
-msgstr "Was %s ergänzt"
+#~ msgid "od %d zł/rok"
+#~ msgstr "ab %d zł/Jahr"
