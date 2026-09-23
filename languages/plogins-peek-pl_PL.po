@@ -18,7 +18,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: plogins-peek.php
 msgid "Peek - Product Preview for WooCommerce"
-msgstr ""
+msgstr "Peek - Podgląd produktu dla WooCommerce"
 
 #. Plugin URI of the plugin
 #: plogins-peek.php
@@ -38,12 +38,12 @@ msgstr ""
 #. Author of the plugin
 #: plogins-peek.php
 msgid "WPPoland.com"
-msgstr ""
+msgstr "WPPoland.com"
 
 #. Author URI of the plugin
 #: plogins-peek.php
 msgid "https://wppoland.com"
-msgstr ""
+msgstr "https://wppoland.com"
 
 #: plogins-peek.php:48
 msgid "Peek requires WooCommerce to be active."
