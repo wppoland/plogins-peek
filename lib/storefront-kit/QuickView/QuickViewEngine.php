@@ -145,17 +145,21 @@ final class QuickViewEngine
 
     /**
      * Guard against serving a quick-view fragment for products the visitor
-     * should not see (drafts, private, pending, trashed). Only publicly
-     * published products are exposed over the unauthenticated AJAX endpoint,
-     * unless the current user can edit the product.
+     * should not see (drafts, private, pending, trashed, password-protected).
+     * Only published products without a password (or whose password the
+     * visitor already entered) are exposed over the unauthenticated AJAX
+     * endpoint, unless the current user can edit the product. A variation is
+     * judged by its parent, which carries the status and password.
      */
     private function isViewable(\WC_Product $product): bool
     {
-        if (get_post_status($product->get_id()) === 'publish') {
+        $postId = $product->get_parent_id() ?: $product->get_id();
+
+        if (get_post_status($postId) === 'publish' && ! post_password_required($postId)) {
             return true;
         }
 
-        return current_user_can('edit_post', $product->get_id());
+        return current_user_can('edit_post', $postId);
     }
 
     private function isEnabled(): bool
