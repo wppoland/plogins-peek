@@ -135,6 +135,7 @@ Security release. The quick view no longer shows password-protected products to 
 
 = 1.0.23 =
 * Security (low): the quick view served password-protected products to anyone. A visitor who had not entered the password could open the preview and read the short description, gallery and add-to-cart form that the product page keeps behind the password form. The preview now refuses a password-protected product (or a variation of one) until the password has been entered; shop managers still see it.
+* Security (low): a disabled variation, or a variation of a draft or password-protected product, is no longer shown in the quick view either.
 
 = 1.0.22 =
 * Fixed: the PRO upgrade promo kept selling to people who had already bought the paid edition. Only the banner could be dismissed, so the sidebar promo and the locked feature cards followed a paying customer around for good. The promo now checks whether the paid edition is active and steps aside when it is.

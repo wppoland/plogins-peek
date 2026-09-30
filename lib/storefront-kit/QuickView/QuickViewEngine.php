@@ -155,11 +155,15 @@ final class QuickViewEngine
     {
         $postId = $product->get_parent_id() ?: $product->get_id();
 
-        if (get_post_status($postId) === 'publish' && ! post_password_required($postId)) {
-            return true;
+        // A variation is public only when it AND its parent are published:
+        // a disabled variation is 'private' under a published parent.
+        foreach (array_unique([$product->get_id(), $postId]) as $id) {
+            if (get_post_status($id) !== 'publish' || post_password_required($id)) {
+                return current_user_can('edit_post', $postId);
+            }
         }
 
-        return current_user_can('edit_post', $postId);
+        return true;
     }
 
     private function isEnabled(): bool
