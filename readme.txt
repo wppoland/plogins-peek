@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.22
+Stable tag: 1.0.23
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -126,7 +126,15 @@ Peek does not connect to any external services. The quick-view modal fetches its
 
 Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
+== Upgrade Notice ==
+
+= 1.0.23 =
+Security release. The quick view no longer shows password-protected products to visitors who have not entered the password.
+
 == Changelog ==
+
+= 1.0.23 =
+* Security (low): the quick view served password-protected products to anyone. A visitor who had not entered the password could open the preview and read the short description, gallery and add-to-cart form that the product page keeps behind the password form. The preview now refuses a password-protected product (or a variation of one) until the password has been entered; shop managers still see it.
 
 = 1.0.22 =
 * Fixed: the PRO upgrade promo kept selling to people who had already bought the paid edition. Only the banner could be dismissed, so the sidebar promo and the locked feature cards followed a paying customer around for good. The promo now checks whether the paid edition is active and steps aside when it is.
