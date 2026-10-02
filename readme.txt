@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.23
+Stable tag: 1.0.24
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,6 +132,10 @@ Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Tr
 Security release. The quick view no longer shows password-protected products to visitors who have not entered the password.
 
 == Changelog ==
+
+= 1.0.24 =
+* Fixed: with the button placed over the thumbnail, block themes (including the default Twenty Twenty-Five) stacked every product's quick view button in one corner of the shop page, always visible, and each one opened the same product. The button now sits on its own product card and appears on hover or focus.
+* Fixed: on a product on sale, the block Sale badge covered the overlay button so it could not be clicked.
 
 = 1.0.23 =
 * Security (low): the quick view served password-protected products to anyone. A visitor who had not entered the password could open the preview and read the short description, gallery and add-to-cart form that the product page keeps behind the password form. The preview now refuses a password-protected product (or a variation of one) until the password has been entered; shop managers still see it.
