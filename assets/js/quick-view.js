@@ -157,6 +157,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Wire up the gallery thumbnail switcher so clicking or keyboard-activating
+  // a thumbnail swaps the large image in the preview column.
+  const initGallery = () => {
+    const gallery = content.querySelector('.peek-quick-view-gallery');
+    const mainImg = content.querySelector('.peek-quick-view-main-image img');
+    if (!gallery || !mainImg) {
+      return;
+    }
+
+    const switchImage = (thumb) => {
+      const targetSrc = thumb.dataset.largeSrc;
+      const targetSrcset = thumb.dataset.largeSrcset;
+
+      if (!targetSrc || thumb.getAttribute('aria-current') === 'true') {
+        return;
+      }
+
+      if (!prefersReducedMotion) {
+        mainImg.style.opacity = '0.35';
+        const restoreOpacity = () => {
+          mainImg.style.opacity = '1';
+          mainImg.removeEventListener('load', restoreOpacity);
+        };
+        mainImg.addEventListener('load', restoreOpacity);
+        setTimeout(restoreOpacity, 150);
+      }
+
+      mainImg.src = targetSrc;
+      if (targetSrcset) {
+        mainImg.srcset = targetSrcset;
+      } else {
+        mainImg.removeAttribute('srcset');
+      }
+
+      const thumbImg = thumb.querySelector('img');
+      if (thumbImg && thumbImg.alt) {
+        mainImg.alt = thumbImg.alt;
+      }
+
+      const thumbs = gallery.querySelectorAll('.peek-quick-view-thumb');
+      thumbs.forEach((el) => {
+        if (el === thumb) {
+          el.setAttribute('aria-current', 'true');
+          el.classList.add('peek-quick-view-thumb--active');
+        } else {
+          el.setAttribute('aria-current', 'false');
+          el.classList.remove('peek-quick-view-thumb--active');
+        }
+      });
+    };
+
+    gallery.addEventListener('click', (event) => {
+      const thumb = event.target.closest('.peek-quick-view-thumb');
+      if (thumb && gallery.contains(thumb)) {
+        event.preventDefault();
+        switchImage(thumb);
+      }
+    });
+
+    gallery.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
+        return;
+      }
+      const activeEl = document.activeElement;
+      if (!activeEl || !activeEl.classList.contains('peek-quick-view-thumb')) {
+        return;
+      }
+      const thumbs = Array.from(gallery.querySelectorAll('.peek-quick-view-thumb'));
+      const idx = thumbs.indexOf(activeEl);
+      if (idx === -1) {
+        return;
+      }
+      event.preventDefault();
+      const nextIdx = event.key === 'ArrowRight'
+        ? (idx + 1) % thumbs.length
+        : (idx - 1 + thumbs.length) % thumbs.length;
+      thumbs[nextIdx].focus();
+      switchImage(thumbs[nextIdx]);
+    });
+  };
+
+  content.addEventListener('peek:quick-view-loaded', () => {
+    initGallery();
+  });
+
   document.addEventListener('click', async (event) => {
     const trigger = event.target.closest('[data-peek-quick-view]');
     const close = event.target.closest('[data-peek-quick-view-close]');
@@ -228,6 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
         statusRegion.textContent = '';
       }
       initVariations();
+      initGallery();
       // Move focus into the freshly loaded content if the modal is still open.
       focusFirst();
     } catch (error) {

@@ -52,10 +52,24 @@ $peek_has_summary = ((bool) ($settings['show_title'] ?? true) && trim((string) $
                 </div>
                 <?php if (count($images) > 1) : ?>
                     <div class="peek-quick-view-gallery">
-                        <?php foreach ($images as $peek_image_id) : ?>
-                            <span class="peek-quick-view-thumb">
+                        <?php
+                        foreach ($images as $peek_index => $peek_image_id) :
+                            $peek_large_src    = (string) wp_get_attachment_image_url($peek_image_id, 'large');
+                            $peek_large_srcset = (string) wp_get_attachment_image_srcset($peek_image_id, 'large');
+                            $peek_is_active    = $peek_index === 0;
+                            /* translators: 1: Image index, 2: Total number of images */
+                            $peek_aria_label   = sprintf(__('View image %1$d of %2$d', 'plogins-peek'), $peek_index + 1, count($images));
+                            ?>
+                            <button
+                                type="button"
+                                class="peek-quick-view-thumb<?php echo $peek_is_active ? ' peek-quick-view-thumb--active' : ''; ?>"
+                                data-large-src="<?php echo esc_url($peek_large_src); ?>"
+                                data-large-srcset="<?php echo esc_attr($peek_large_srcset); ?>"
+                                aria-label="<?php echo esc_attr($peek_aria_label); ?>"
+                                aria-current="<?php echo $peek_is_active ? 'true' : 'false'; ?>"
+                            >
                                 <?php echo wp_get_attachment_image($peek_image_id, 'thumbnail'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-                            </span>
+                            </button>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
