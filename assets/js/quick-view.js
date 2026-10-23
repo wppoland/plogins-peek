@@ -325,6 +325,167 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Add to cart inside the modal without leaving the listing. The form is
+  // posted as-is (variation fields and hidden inputs other plugins add, such as
+  // Peek Pro's analytics flag) to its own action, the way the browser would,
+  // and the result is read from the WooCommerce notices in the response.
+  // Grouped and external products keep their native behaviour.
+  const noticeText = (doc, selector) =>
+    Array.prototype.map
+      .call(doc.querySelectorAll(selector), (el) => el.textContent.replace(/\s+/g, ' ').trim())
+      .filter(Boolean);
+
+  const showCartResult = (form, variant, messages) => {
+    const old = content.querySelector('.peek-quick-view-notice');
+    if (old) {
+      old.remove();
+    }
+
+    const notice = document.createElement('div');
+    notice.className = 'peek-quick-view-notice peek-quick-view-notice--' + variant;
+    notice.setAttribute('role', variant === 'error' ? 'alert' : 'status');
+
+    messages.forEach((message) => {
+      const line = document.createElement('p');
+      line.textContent = message;
+      notice.appendChild(line);
+    });
+
+    if (variant === 'success' && config.cartUrl) {
+      const link = document.createElement('a');
+      link.className = 'button peek-quick-view-notice__link';
+      link.href = config.cartUrl;
+      link.textContent = config.viewCartText || '';
+      notice.appendChild(link);
+    }
+
+    form.parentNode.insertBefore(notice, form);
+  };
+
+  // Refresh mini-carts the way WooCommerce's own add-to-cart script does:
+  // fetch fresh fragments, swap them in, then announce the add.
+  const refreshCart = async () => {
+    let fragments;
+    let cartHash;
+
+    if (config.fragmentsUrl) {
+      try {
+        const response = await fetch(config.fragmentsUrl, { method: 'POST', credentials: 'same-origin' });
+        const data = response.ok ? await response.json() : null;
+        if (data && data.fragments) {
+          fragments = data.fragments;
+          cartHash = data.cart_hash;
+          Object.keys(fragments).forEach((selector) => {
+            document.querySelectorAll(selector).forEach((el) => {
+              el.outerHTML = fragments[selector];
+            });
+          });
+        }
+      } catch (error) {
+        // The cart itself changed; only the mini-cart refresh is lost.
+      }
+    }
+
+    const jq = window.jQuery;
+    if (jq) {
+      // wc-cart-fragments stores these, and the Mini-Cart block bridges this
+      // jQuery event to its own native one. No button is passed: WooCommerce
+      // would append a second View cart link next to it, and the modal notice
+      // already carries one.
+      jq(document.body).trigger('added_to_cart', [fragments, cartHash]);
+    } else {
+      document.body.dispatchEvent(
+        new CustomEvent('wc-blocks_added_to_cart', { bubbles: true, cancelable: true }),
+      );
+    }
+  };
+
+  content.addEventListener('submit', async (event) => {
+    const form = event.target;
+    const product = form.closest('.peek-quick-view-product');
+
+    if (
+      event.defaultPrevented ||
+      !(form instanceof HTMLFormElement) ||
+      !form.classList.contains('cart') ||
+      form.classList.contains('grouped_form') ||
+      !product ||
+      product.classList.contains('product-type-grouped') ||
+      product.classList.contains('product-type-external')
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const submitter = event.submitter || form.querySelector('[type="submit"]');
+    let data;
+    try {
+      data = new FormData(form, submitter || undefined);
+    } catch (error) {
+      data = new FormData(form);
+    }
+    // A simple product's id travels on the submit button itself.
+    if (submitter && submitter.name && !data.has(submitter.name)) {
+      data.append(submitter.name, submitter.value);
+    }
+
+    if (submitter) {
+      submitter.disabled = true;
+      submitter.classList.add('loading');
+    }
+    form.setAttribute('aria-busy', 'true');
+
+    let response;
+    try {
+      response = await fetch(form.action || window.location.href, {
+        method: 'POST',
+        body: data,
+        credentials: 'same-origin',
+      });
+    } catch (error) {
+      // Network failure before WooCommerce saw the request: submit normally.
+      // The button's name/value is not sent by submit(), so carry it over.
+      if (submitter && submitter.name && !form.querySelector('input[type="hidden"][name="' + submitter.name + '"]')) {
+        const carry = document.createElement('input');
+        carry.type = 'hidden';
+        carry.name = submitter.name;
+        carry.value = submitter.value;
+        form.appendChild(carry);
+      }
+      HTMLFormElement.prototype.submit.call(form);
+      return;
+    } finally {
+      if (submitter) {
+        submitter.disabled = false;
+        submitter.classList.remove('loading');
+        // Disabling the focused button dropped focus out of the dialog.
+        if (!modal.hidden && !dialog.contains(document.activeElement)) {
+          submitter.focus();
+        }
+      }
+      form.removeAttribute('aria-busy');
+    }
+
+    const doc = new DOMParser().parseFromString(await response.text(), 'text/html');
+    let errors = noticeText(
+      doc,
+      '.woocommerce-error li, .wc-block-components-notice-banner.is-error .wc-block-components-notice-banner__content',
+    );
+    if (errors.length === 0) {
+      errors = noticeText(doc, '.woocommerce-error');
+    }
+
+    if (!response.ok || errors.length > 0) {
+      showCartResult(form, 'error', errors.length > 0 ? errors : [config.errorText]);
+      return;
+    }
+
+    showCartResult(form, 'success', [config.addedText]);
+    content.dispatchEvent(new CustomEvent('peek:added-to-cart', { bubbles: true }));
+    await refreshCart();
+  });
+
   document.addEventListener('keydown', (event) => {
     if (modal.hidden) {
       return;
