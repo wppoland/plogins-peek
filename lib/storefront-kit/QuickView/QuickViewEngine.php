@@ -28,7 +28,8 @@ final class QuickViewEngine
      * @param \Closure(\WC_Product, array<string, mixed>): string $renderFragment
      *        Returns the quick-view HTML fragment for a product.
      * @param array<string, string> $labels Fallback strings keyed by
-     *        `loading`, `error`, `not_found` used when a settings value is absent.
+     *        `loading`, `error`, `not_found` used when a settings value is absent,
+     *        plus `added` and `view_cart` for the in-modal add-to-cart result.
      */
     public function __construct(
         private readonly string $ajaxAction,
@@ -67,7 +68,9 @@ final class QuickViewEngine
 
     public function enqueueAssets(): void
     {
-        if (! $this->isEnabled() || ! $this->shouldRender()) {
+        // Called again by every block button and shortcode on the page; the
+        // config must be localized once, not once per caller.
+        if (! $this->isEnabled() || ! $this->shouldRender() || wp_script_is($this->assetHandle, 'enqueued')) {
             return;
         }
 
@@ -77,10 +80,14 @@ final class QuickViewEngine
             'strategy' => 'defer',
         ]);
 
-        wp_enqueue_script('wc-add-to-cart-variation');
-
+        // WooCommerce's variation script (jQuery) is not enqueued here: the host
+        // loads it only when a variable product is listed on the page.
         wp_localize_script($this->assetHandle, $this->scriptObjectName, [
             'ajaxUrl' => admin_url('admin-ajax.php'),
+            'cartUrl' => function_exists('wc_get_cart_url') ? wc_get_cart_url() : '',
+            'fragmentsUrl' => class_exists('WC_AJAX') ? \WC_AJAX::get_endpoint('get_refreshed_fragments') : '',
+            'addedText' => $this->label('added'),
+            'viewCartText' => $this->label('view_cart'),
             'action' => $this->ajaxAction,
             'nonce' => wp_create_nonce($this->nonceAction),
             'loadingText' => (string) ($this->getSettings()['loading_text'] ?? $this->label('loading')),

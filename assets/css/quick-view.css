@@ -283,6 +283,34 @@ li.wc-block-product:hover .peek-quick-view-trigger--overlay {
     margin-block: 0 1em;
 }
 
+/* Result of an add to cart made inside the modal. */
+.peek-quick-view-notice {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-block: 0 1em;
+    padding: 10px 14px;
+    border-radius: var(--peek-surface-radius-md);
+    border-inline-start: 4px solid var(--peek-accent);
+    background: var(--peek-accent-soft);
+}
+
+.peek-quick-view-notice p {
+    margin: 0;
+    flex: 1 1 12em;
+}
+
+.peek-quick-view-notice--error {
+    border-inline-start-color: #d63638;
+    background: rgba(214, 54, 56, 0.1);
+}
+
+.peek-quick-view-cart form.cart[aria-busy="true"] .single_add_to_cart_button {
+    opacity: 0.6;
+    cursor: progress;
+}
+
 /* Dedicated polite live region for loading / error announcements. Visually
    hidden (the spinner block carries the visible cue) but kept in the a11y tree
    so screen readers hear status changes without re-announcing the whole

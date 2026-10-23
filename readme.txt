@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.24
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Fast product preview popup for WooCommerce: an AJAX product modal with gallery, 
 
 == Description ==
 
-Peek adds a product quick view button to your WooCommerce shop and archive product loops. Clicking it opens an accessible AJAX product modal, so shoppers can preview products, choose options and add to cart without leaving the listing.
+Peek adds a product quick view button to your WooCommerce shop and archive product loops, and to block Product Collection grids on any page. Clicking it opens an accessible AJAX product modal, so shoppers can preview products, choose options and add to cart without leaving the listing.
 
 The modal shows the featured image and gallery thumbnails, title, SKU, price, stock status, short description, the native add-to-cart form (including variable products), and a link to the full product page. Each part can be toggled from the settings screen.
 
@@ -29,7 +29,7 @@ The modal shows the featured image and gallery thumbnails, title, SKU, price, st
 * **No jQuery** in the plugin's own front-end code, the script is vanilla JS, deferred, and loaded in the footer.
 * **No layout shift (CLS).** The modal is fully hidden until opened and scrolls internally, so it never reflows the page.
 * **Focus-trapped & keyboard friendly.** Focus moves into the dialog on open, is trapped while it is open, closes on Escape or backdrop click, and returns to the trigger button on close. The dialog uses `role="dialog"` with `aria-modal`.
-* **Variation aware.** The add-to-cart form supports variable products via WooCommerce's own variation script.
+* **Variation aware.** The add-to-cart form supports variable products via WooCommerce's own variation script, loaded only on pages that list a variable product.
 
 = Settings =
 
@@ -86,15 +86,15 @@ Yes. Peek requires an active WooCommerce installation.
 
 = Does it use jQuery? =
 
-The plugin's own front-end script is vanilla JavaScript with no jQuery dependency. When a product has variations, WooCommerce's bundled variation script (which itself uses jQuery) is enqueued so the variation form works as expected.
+The plugin's own front-end script is vanilla JavaScript with no jQuery dependency. When a variable product is listed on the page, WooCommerce's bundled variation script (which itself uses jQuery) is loaded so the variation form works in the modal. Pages without a variable product do not load it.
 
 = Where does the quick-view button appear? =
 
-On the shop page and product archive loops (categories, tags, taxonomies), after each product. It does not change single product pages.
+On the shop page and product archive loops (categories, tags, taxonomies), after each product, and in block Product Collection grids on any page, such as a block theme homepage. It does not change single product pages.
 
 = Does the modal support add to cart? =
 
-Yes. Peek renders WooCommerce's native add-to-cart form inside the quick shop modal, including quantity and variable-product choices.
+Yes. Peek renders WooCommerce's native add-to-cart form inside the quick shop modal, including quantity and variable-product choices. The product is added without leaving the page: the modal confirms it with a View cart link and the mini-cart refreshes. If WooCommerce refuses the add (for example the product just sold out), its message is shown inside the modal. Grouped and external products keep their normal behaviour.
 
 = Does it work with variable products? =
 
@@ -117,6 +117,7 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 
 1. The quick-view modal showing the product gallery, price and add-to-cart form.
 2. The Peek settings screen.
+3. The quick view opened from a block Product Collection grid, with add to cart that stays on the page.
 
 == External Services ==
 
@@ -132,6 +133,11 @@ Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Tr
 Security release. The quick view no longer shows password-protected products to visitors who have not entered the password.
 
 == Changelog ==
+
+= 1.1.0 =
+* New: add to cart inside the quick view stays on the page. The modal confirms the add with a View cart link, mini-carts (classic header cart and the Mini-Cart block) refresh, and a WooCommerce error such as an out-of-stock product is shown in the modal. Before, the form posted to the product page and the shopper left the listing.
+* New: the quick view button appears in block Product Collection grids on any page, such as a block theme homepage, with the modal and its assets loaded there. Before, it showed only in shop and archive loops.
+* Changed: WooCommerce's variation script (which uses jQuery) now loads only on pages that list a variable product, instead of on every shop page.
 
 = 1.0.24 =
 * Fixed: with the button placed over the thumbnail, block themes (including the default Twenty Twenty-Five) stacked every product's quick view button in one corner of the shop page, always visible, and each one opened the same product. The button now sits on its own product card and appears on hover or focus.
