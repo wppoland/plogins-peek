@@ -202,6 +202,10 @@ li.wc-block-product:hover .peek-quick-view-trigger--overlay {
     border-radius: var(--peek-surface-radius-md);
 }
 
+.peek-quick-view-main-image img {
+    transition: opacity 0.15s ease;
+}
+
 .peek-quick-view-gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -209,11 +213,40 @@ li.wc-block-product:hover .peek-quick-view-trigger--overlay {
     margin-block-start: 10px;
 }
 
+.peek-quick-view-thumb {
+    display: block;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: calc(var(--peek-surface-radius-md) + 2px);
+    cursor: pointer;
+    line-height: 0;
+    inline-size: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.peek-quick-view-thumb:hover {
+    border-color: var(--peek-border);
+}
+
+.peek-quick-view-thumb:focus-visible {
+    outline: 2px solid var(--peek-accent);
+    outline-offset: 2px;
+}
+
+.peek-quick-view-thumb[aria-current="true"],
+.peek-quick-view-thumb--active {
+    border-color: var(--peek-accent);
+    box-shadow: 0 0 0 1px var(--peek-accent), 0 2px 8px var(--peek-accent-soft);
+}
+
 .peek-quick-view-thumb img {
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.peek-quick-view-thumb img:hover {
+.peek-quick-view-thumb:hover img {
     transform: scale(1.03);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
@@ -358,7 +391,9 @@ body.peek-quick-view-open {
     .peek-quick-view-backdrop,
     .peek-quick-view-dialog,
     .peek-quick-view-close,
-    .peek-quick-view-thumb img {
+    .peek-quick-view-thumb,
+    .peek-quick-view-thumb img,
+    .peek-quick-view-main-image img {
         transition: none;
         scroll-behavior: auto;
     }
