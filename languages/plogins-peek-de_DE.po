@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plogins Peek for WooCommerce 0.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plogins-peek\n"
-"POT-Creation-Date: 2026-09-08T13:19:30+00:00\n"
+"POT-Creation-Date: 2026-10-23T18:40:23+00:00\n"
 "PO-Revision-Date: 2026-06-16T20:25:09+00:00\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -51,31 +51,31 @@ msgid "Peek requires WooCommerce to be active."
 msgstr "Peek erfordert, dass WooCommerce aktiv ist."
 
 #. translators: 1: currency symbol, 2: yearly price
-#: src/Admin/ProUpsell.php:68
+#: src/Admin/ProUpsell.php:75
 #, php-format
 msgid "from %1$s%2$d/yr"
 msgstr "ab %1$s%2$d/Jahr"
 
-#: src/Admin/ProUpsell.php:100
+#: src/Admin/ProUpsell.php:107
 msgid "Permission denied."
 msgstr "Zugriff verweigert."
 
 #. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:126
+#: src/Admin/ProUpsell.php:133
 #, php-format
 msgid "Do more with %s"
 msgstr "Mehr erreichen mit %s"
 
-#: src/Admin/ProUpsell.php:131
+#: src/Admin/ProUpsell.php:138
 msgid "Upgrade to PRO"
 msgstr "Auf PRO upgraden"
 
-#: src/Admin/ProUpsell.php:133
+#: src/Admin/ProUpsell.php:140
 msgid "Dismiss this notice"
 msgstr "Diesen Hinweis ausblenden"
 
 #. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:151
+#: src/Admin/ProUpsell.php:158
 #, php-format
 msgid "What %s adds"
 msgstr "Was %s ergänzt"
@@ -593,6 +593,14 @@ msgstr "Die Produktvorschau konnte nicht geladen werden."
 msgid "Product not found."
 msgstr "Produkt nicht gefunden."
 
+#: src/Service/PeekService.php:55
+msgid "Added to your cart."
+msgstr ""
+
+#: src/Service/PeekService.php:56
+msgid "View cart"
+msgstr ""
+
 #: src/Service/Texts.php:33 templates/quick-view-button.php:17
 msgid "Quick view"
 msgstr "Schnellansicht"
@@ -605,12 +613,18 @@ msgstr "Produkt-Schnellansicht"
 msgid "Close"
 msgstr "Schließen"
 
-#: src/Service/Texts.php:39 templates/quick-view-content.php:112
-#: templates/quick-view-content.php:126
+#: src/Service/Texts.php:39 templates/quick-view-content.php:126
+#: templates/quick-view-content.php:140
 msgid "View full product"
 msgstr "Vollständiges Produkt ansehen"
 
-#: templates/quick-view-content.php:120
+#. translators: 1: Image index, 2: Total number of images
+#: templates/quick-view-content.php:61
+#, php-format
+msgid "View image %1$d of %2$d"
+msgstr ""
+
+#: templates/quick-view-content.php:134
 msgid "Product preview"
 msgstr "Produktvorschau"
 
