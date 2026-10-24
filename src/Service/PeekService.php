@@ -52,6 +52,8 @@ final class PeekService implements HasHooks
                 'loading'   => __('Loading product…', 'plogins-peek'),
                 'error'     => __('Failed to load the product preview.', 'plogins-peek'),
                 'not_found' => __('Product not found.', 'plogins-peek'),
+                'added'     => __('Added to your cart.', 'plogins-peek'),
+                'view_cart' => __('View cart', 'plogins-peek'),
             ],
             isEnabled: fn (): bool => $this->isEnabled(),
             shouldRender: fn (): bool => $this->shouldRenderOnCurrentPage(),
@@ -67,6 +69,7 @@ final class PeekService implements HasHooks
     {
         if ($this->engine instanceof QuickViewEngine) {
             $this->engine->registerHooks();
+            add_filter('render_block_woocommerce/product-button', [$this, 'appendBlockButton'], 10, 3);
             return;
         }
 
@@ -125,6 +128,66 @@ final class PeekService implements HasHooks
         return (string) ob_get_clean();
     }
 
+    /**
+     * Add the quick-view trigger after the Add to Cart button of a block
+     * Product Collection card. WooCommerce fires the classic loop hooks (where
+     * the engine prints the button) only in archive templates; everywhere else,
+     * a homepage or any page with a Product Collection block, this is the only
+     * way the button reaches the grid.
+     *
+     * @param array<string, mixed> $block
+     */
+    public function appendBlockButton(string $content, array $block, ?\WP_Block $instance = null): string
+    {
+        $settings = $this->settings();
+
+        if (! (bool) ($settings['enabled'] ?? false) || ! (bool) ($settings['show_on_loop'] ?? true)) {
+            return $content;
+        }
+
+        $attrs = is_array($block['attrs'] ?? null) ? $block['attrs'] : [];
+        $isArchive = is_shop() || is_product_taxonomy();
+
+        if (self::classicHooksCoverBlock(
+            $isArchive,
+            ! empty($attrs['isInherited']),
+            (bool) apply_filters('woocommerce_disable_compatibility_layer', false),
+        )) {
+            return $content;
+        }
+
+        // Related and up-sell collections on a product page follow the same
+        // display scope setting as the classic loops there.
+        if (! $isArchive && is_product() && (string) ($settings['display_scope'] ?? 'shop') !== 'shop_single') {
+            return $content;
+        }
+
+        $postId = (int) ($instance instanceof \WP_Block ? ($instance->context['postId'] ?? 0) : 0);
+        $product = wc_get_product($postId > 0 ? $postId : (int) get_the_ID());
+
+        if (! $product instanceof \WC_Product) {
+            return $content;
+        }
+
+        // Same path as the shortcode: the modal shell and assets follow the
+        // button onto this request.
+        $this->forceQuickViewOnRequest();
+        $this->enqueueAssets();
+
+        return $content . $this->renderButton($product, $settings);
+    }
+
+    /**
+     * Whether WooCommerce's block template compatibility layer already prints
+     * the classic loop hooks for this Product Collection card. It does so on
+     * shop and product taxonomy archives for a collection that inherits the
+     * query from the template, unless a site switched the layer off.
+     */
+    public static function classicHooksCoverBlock(bool $isArchive, bool $isInherited, bool $layerDisabled): bool
+    {
+        return $isArchive && $isInherited && ! $layerDisabled;
+    }
+
     private function shouldRenderOnCurrentPage(): bool
     {
         if ($this->forced) {
@@ -134,6 +197,12 @@ final class PeekService implements HasHooks
         $onArchive = is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag();
 
         if ($onArchive) {
+            return true;
+        }
+
+        // A page built with a Product Collection block: decide before
+        // wp_enqueue_scripts, so add-ons that check for the script there see it.
+        if (is_singular() && (has_block('woocommerce/product-collection') || has_block('woocommerce/product-button'))) {
             return true;
         }
 
@@ -257,6 +326,15 @@ final class PeekService implements HasHooks
 
         if (! is_readable($file)) {
             return;
+        }
+
+        // A variable product in the grid needs WooCommerce's variation script in
+        // the modal. Loading it only then keeps jQuery off listings without one.
+        // ponytail: products added later by AJAX filtering or infinite scroll are
+        // not seen here; the form still submits and WooCommerce matches the
+        // variation from the chosen attributes, without the live price swap.
+        if ($template === 'quick-view-button' && ($context['product'] ?? null) instanceof \WC_Product && $context['product']->is_type('variable')) {
+            wp_enqueue_script('wc-add-to-cart-variation');
         }
 
         extract($context, EXTR_SKIP);
