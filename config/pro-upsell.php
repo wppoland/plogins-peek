@@ -12,6 +12,8 @@ defined('ABSPATH') || exit;
 return [
     'name'       => 'Peek Pro',
     'url'        => 'https://plogins.com/plogins-peek-pro/pricing/',
+    'campaign'   => 'plogins-peek',
+    'locales'    => ['pl', 'de', 'es'],
     'sellable'   => true,
     'price_from' => 19,
     'currency'   => 'EUR',
