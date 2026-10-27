@@ -61,13 +61,20 @@ Reporting a security issue: email hello@wppoland.com, and under our [coordinated
 
 == Peek Pro ==
 
-Peek Pro is a separate paid plugin that works on top of Peek. It adds:
+Peek Pro is a separate paid plugin that extends Peek:
 
-* Recently viewed
-* Related carousel
-* Variation swatches
-* Custom modal sections
-* Quick-view analytics
+| Feature | Free | Pro |
+|:--- |:---:|:---:|
+| AJAX modal | Yes | Yes |
+| Full product content | Yes | Yes |
+| Variation support | Yes | Yes |
+| Accessible | Yes | Yes |
+| No jQuery, no CLS | Yes | Yes |
+| Recently viewed | - | Yes |
+| Related carousel | - | Yes |
+| Variation swatches | - | Yes |
+| Custom modal sections | - | Yes |
+| Quick-view analytics | - | Yes |
 
 The free edition is not a trial and its features stay available without a time limit.
 
