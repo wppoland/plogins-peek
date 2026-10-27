@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,20 +61,23 @@ Reporting a security issue: email hello@wppoland.com, and under our [coordinated
 
 == Peek Pro ==
 
-Peek Pro is a separate paid plugin that extends Peek:
+Peek Pro is a separate paid plugin that extends Peek.
 
-| Feature | Free | Pro |
-|:--- |:---:|:---:|
-| AJAX modal | Yes | Yes |
-| Full product content | Yes | Yes |
-| Variation support | Yes | Yes |
-| Accessible | Yes | Yes |
-| No jQuery, no CLS | Yes | Yes |
-| Recently viewed | - | Yes |
-| Related carousel | - | Yes |
-| Variation swatches | - | Yes |
-| Custom modal sections | - | Yes |
-| Quick-view analytics | - | Yes |
+Included in Peek:
+
+* AJAX modal
+* Full product content
+* Variation support
+* Accessible
+* No jQuery, no CLS
+
+Peek Pro adds:
+
+* Recently viewed
+* Related carousel
+* Variation swatches
+* Custom modal sections
+* Quick-view analytics
 
 The free edition is not a trial and its features stay available without a time limit.
 
@@ -143,6 +146,10 @@ Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Tr
 Security release. The quick view no longer shows password-protected products to visitors who have not entered the password.
 
 == Changelog ==
+
+= 1.1.2 =
+* The Upgrade to PRO links open the pricing page in the admin's language where plogins.com has one, and tell plogins.com which plugin the visit came from (utm_source, utm_medium and utm_campaign in the link). Nothing is sent from your site.
+* Readme: the PRO section lists what the free plugin includes and what the paid edition adds as two lists, which WordPress.org can display (it does not display tables).
 
 = 1.1.1 =
 * Readme only: a PRO section with links to the paid edition.
