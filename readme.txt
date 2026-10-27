@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,7 @@ The modal shows the featured image and gallery thumbnails, title, SKU, price, st
 * **Plugin page** - [plogins.com/plogins-peek](https://plogins.com/plogins-peek/)
 * **Source code** - [github.com/wppoland/plogins-peek](https://github.com/wppoland/plogins-peek)
 * **Bug reports and feature requests** - [GitHub issues](https://github.com/wppoland/plogins-peek/issues)
+* **Peek Pro** - [plogins.com/plogins-peek-pro/](https://plogins.com/plogins-peek-pro/)
 
 
 = Built for speed and accessibility =
@@ -47,20 +48,6 @@ Place a quick-view trigger anywhere with `[peek_quick_view id="123"]`, or the sh
 
 Peek is developed in the open. The code, open issues and release history live at [GitHub](https://github.com/wppoland/plogins-peek), bug reports and patches are welcome there.
 
-= Upgrade to Peek PRO =
-
-Peek PRO extends the free quick view with:
-
-* Recently viewed products.
-* A related-products carousel inside the modal.
-* Colour and label variation swatches.
-* Custom modal sections.
-* Previous / next navigation between products without closing the modal.
-* Extra styling controls.
-* Quick-view analytics.
-
-Learn more at [plogins.com/plogins-peek-pro](https://plogins.com/plogins-peek-pro/)
-
 = More WooCommerce plugins by Plogins =
 
 * **Reel** - hover zoom, an accessible lightbox and product video for WooCommerce galleries: [plogins.com/plogins-reel](https://plogins.com/plogins-reel/)
@@ -71,6 +58,22 @@ Learn more at [plogins.com/plogins-peek-pro](https://plogins.com/plogins-peek-pr
 Browse the full family at [plogins.com](https://plogins.com/)
 
 Reporting a security issue: email hello@wppoland.com, and under our [coordinated disclosure policy](https://wppoland.com/en/security-policy/) we confirm within two business days, assess within five, and patch a critical issue within seven days of confirming it.
+
+== Peek Pro ==
+
+Peek Pro is a separate paid plugin that works on top of Peek. It adds:
+
+* Recently viewed
+* Related carousel
+* Variation swatches
+* Custom modal sections
+* Quick-view analytics
+
+The free edition is not a trial and its features stay available without a time limit.
+
+* **Peek Pro** - [plogins.com/plogins-peek-pro/](https://plogins.com/plogins-peek-pro/)
+* **Compare editions and pricing** - [plogins.com/plogins-peek-pro/pricing/](https://plogins.com/plogins-peek-pro/pricing/)
+* **PRO documentation** - [plogins.com/plogins-peek-pro/docs/](https://plogins.com/plogins-peek-pro/docs/)
 
 == Installation ==
 
@@ -133,6 +136,9 @@ Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Tr
 Security release. The quick view no longer shows password-protected products to visitors who have not entered the password.
 
 == Changelog ==
+
+= 1.1.1 =
+* Readme only: a PRO section with links to the paid edition.
 
 = 1.1.0 =
 * New: add to cart inside the quick view stays on the page. The modal confirms the add with a View cart link, mini-carts (classic header cart and the Mini-Cart block) refresh, and a WooCommerce error such as an out-of-stock product is shown in the modal. Before, the form posted to the product page and the shopper left the listing.
