@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,8 +51,8 @@ Peek is developed in the open. The code, open issues and release history live at
 = More WooCommerce plugins by Plogins =
 
 * **Reel** - hover zoom, an accessible lightbox and product video for WooCommerce galleries: [plogins.com/plogins-reel](https://plogins.com/plogins-reel/)
-* **Sizer** - accessible size guides and tables in a modal: [plogins.com/plogins-sizer](https://plogins.com/plogins-sizer/)
-* **Marks** - automatic and manual product badges, CSS-only: [plogins.com/plogins-marks](https://plogins.com/plogins-marks/)
+* **Sizer** - accessible size guides and tables in a modal: [plogins.com/sizavo](https://plogins.com/sizavo/)
+* **Marks** - automatic and manual product badges, CSS-only: [plogins.com/plogins-sale-stock-badges](https://plogins.com/plogins-sale-stock-badges/)
 * **Swatch** - accessible colour and label variation swatches, no jQuery: [plogins.com/plogins-swatch](https://plogins.com/plogins-swatch/)
 
 Browse the full family at [plogins.com](https://plogins.com/)
@@ -146,6 +146,9 @@ Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Tr
 Security release. The quick view no longer shows password-protected products to visitors who have not entered the password.
 
 == Changelog ==
+
+= 1.1.3 =
+* Links point at the new plogins.com address.
 
 = 1.1.2 =
 * The Upgrade to PRO links open the pricing page in the admin's language where plogins.com has one, and tell plogins.com which plugin the visit came from (utm_source, utm_medium and utm_campaign in the link). Nothing is sent from your site.
