@@ -48,6 +48,11 @@ Place a quick-view trigger anywhere with `[peek_quick_view id="123"]`, or the sh
 
 Peek is developed in the open. The code, open issues and release history live at [GitHub](https://github.com/wppoland/plogins-peek), bug reports and patches are welcome there.
 
+= Works with other Plogins plugins =
+
+* [Swift - Buy Now Button for WooCommerce](https://plogins.com/plogins-swift/) - Swift's Buy Now button in the quick view goes straight to checkout, and Add to cart still adds through the quick view.
+* [Swatch - Variation Swatches for WooCommerce](https://plogins.com/plogins-swatch/) - from Swatch 1.0.24, variable products opened in the quick view show the same colour and label swatches as the product page.
+
 = More WooCommerce plugins by Plogins =
 
 * **Reel** - hover zoom, an accessible lightbox and product video for WooCommerce galleries: [plogins.com/plogins-reel](https://plogins.com/plogins-reel/)
@@ -121,6 +126,10 @@ No. The modal is hidden until opened and overlays the page, so opening it never 
 
 Yes. Use `[peek_quick_view id="123"]` or `[peek id="123"]` to add a product quick view trigger in custom layouts.
 
+
+= Does it work with Swift and Swatch? =
+
+Yes, with no setting in Peek. Swift's Buy Now button works in the quick view and goes to checkout. With Swatch 1.0.24 or later, variable products in the quick view show Swatch's swatches instead of dropdowns.
 
 = Does this plugin work on WordPress Multisite? =
 
