@@ -16,7 +16,7 @@
     "autoload": {
         "psr-4": {
             "Peek\\": "src/",
-            "WPPoland\\StorefrontKit\\": "lib/storefront-kit/"
+            "Peek\\Vendor\\StorefrontKit\\": "lib/storefront-kit/"
         }
     },
     "scripts": {
