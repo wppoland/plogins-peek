@@ -21,8 +21,8 @@ if (is_readable($peek_composer)) {
 
 spl_autoload_register(static function (string $class): void {
     $prefixes = [
+        'Peek\\Vendor\\StorefrontKit\\'    => __DIR__ . '/lib/storefront-kit/',
         'Peek\\'           => __DIR__ . '/src/',
-        'WPPoland\\StorefrontKit\\'    => __DIR__ . '/lib/storefront-kit/',
     ];
 
     foreach ($prefixes as $prefix => $baseDir) {

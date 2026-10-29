@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WPPoland\StorefrontKit\QuickView;
+namespace Peek\Vendor\StorefrontKit\QuickView;
 
 /**
  * Namespace-neutral AJAX quick-view engine for shop archives.
@@ -11,7 +11,7 @@ namespace WPPoland\StorefrontKit\QuickView;
  * shell in the footer, enqueues the (host-supplied) modal JS/CSS, and serves
  * the product quick-view HTML fragment over `admin-ajax.php`. Mirrors the
  * enqueue + nonce + AJAX pattern of
- * {@see \WPPoland\StorefrontKit\Waitlist\WaitlistEngine}: the markup, fragment
+ * {@see \Peek\Vendor\StorefrontKit\Waitlist\WaitlistEngine}: the markup, fragment
  * HTML, enabled-check and resolved settings are all constructor-injected via
  * closures, so no text-domain, option key or asset path is hard-coded here.
  * The modal JS/CSS itself ships in the consuming (Peek) plugin.

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Peek\Service;
 
 use Peek\Contract\HasHooks;
-use WPPoland\StorefrontKit\QuickView\QuickViewEngine;
+use Peek\Vendor\StorefrontKit\QuickView\QuickViewEngine;
 
 defined('ABSPATH') || exit;
 
