@@ -407,6 +407,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (
       event.defaultPrevented ||
       !(form instanceof HTMLFormElement) ||
+      // A submit button with its own formaction (Swift's Buy Now) posts
+      // natively to that URL; sending it by AJAX would turn it into Add to cart.
+      (event.submitter && event.submitter.hasAttribute('formaction')) ||
       !form.classList.contains('cart') ||
       form.classList.contains('grouped_form') ||
       !product ||
