@@ -23,10 +23,32 @@ if (! function_exists('get_plugins')) {
 wp_cache_delete('plugins', 'plugins');
 $peek_addon_installed = in_array('plogins-peek-pro', array_column(get_plugins(), 'TextDomain'), true);
 
-if (! $peek_addon_installed) {
-    delete_option('peek_settings');
+/**
+ * Remove this plugin's options from the current site.
+ *
+ * @param bool $addon_installed True while the add-on, which keeps its settings in peek_settings, is on disk.
+ */
+function peek_uninstall_site(bool $addon_installed): void
+{
+    if (! $addon_installed) {
+        delete_option('peek_settings');
+    }
+    delete_option('peek_db_version');
 }
-delete_option('peek_db_version');
+
+// Options are per site, so a network uninstall has to visit every site. The
+// add-on check above is about the plugin folders, which are shared by the whole
+// network, so it is read once.
+if (is_multisite()) {
+    foreach (get_sites(['fields' => 'ids', 'number' => 0]) as $peek_site_id) {
+        switch_to_blog((int) $peek_site_id);
+        peek_uninstall_site($peek_addon_installed);
+        restore_current_blog();
+    }
+    unset($peek_site_id);
+} else {
+    peek_uninstall_site($peek_addon_installed);
+}
 
 // The PRO banner's dismissal is stored per user, so it belongs to the
 // plugin rather than to the site content. User meta is global, not
