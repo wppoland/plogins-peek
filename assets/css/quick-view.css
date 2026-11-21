@@ -447,19 +447,41 @@ body.peek-quick-view-open {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark styling follows the page's color-scheme (set by the theme), not the
+   visitor's OS. Tokens sit in @supports: a custom property is never dropped
+   at parse time, so an unsupported light-dark() would blank every use site. */
+@supports (color: light-dark(white, black)) {
     .peek-quick-view-modal {
-        /* Brighter iris so the accent rail and price stay legible on dark. */
-        --peek-accent: #a98bff;
-        --peek-accent-soft: rgba(169, 139, 255, 0.22);
-        --peek-iris-glow: rgba(124, 77, 255, 0.34);
+        /* Brighter iris on dark so the accent rail and price stay legible. */
+        --peek-accent: light-dark(#6d3bf5, #a98bff);
+        --peek-accent-soft: light-dark(rgba(109, 59, 245, 0.16), rgba(169, 139, 255, 0.22));
+        --peek-iris-glow: light-dark(rgba(109, 59, 245, 0.28), rgba(124, 77, 255, 0.34));
 
-        --peek-overlay-bg: rgba(6, 4, 16, 0.72);
-        --peek-surface-bg: #1e1e1e;
-        --peek-surface-fg: #e6e6e6;
-        --peek-muted-fg: #b0b3b8;
-        --peek-border: rgba(255, 255, 255, 0.12);
-        --peek-surface-shadow: 0 24px 70px rgba(0, 0, 0, 0.62);
+        --peek-overlay-bg: light-dark(rgba(15, 13, 28, 0.58), rgba(6, 4, 16, 0.72));
+        --peek-surface-bg: light-dark(#fff, #1e1e1e);
+        --peek-surface-fg: light-dark(#1d2327, #e6e6e6);
+        --peek-muted-fg: light-dark(#50575e, #b0b3b8);
+        --peek-border: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.12));
+        --peek-surface-shadow: 0 24px 70px light-dark(rgba(20, 12, 48, 0.32), rgba(0, 0, 0, 0.62));
+    }
+}
+
+/* Browsers without light-dark() keep the previous OS-based dark pass. */
+@supports not (color: light-dark(white, black)) {
+    @media (prefers-color-scheme: dark) {
+        .peek-quick-view-modal {
+            /* Brighter iris so the accent rail and price stay legible on dark. */
+            --peek-accent: #a98bff;
+            --peek-accent-soft: rgba(169, 139, 255, 0.22);
+            --peek-iris-glow: rgba(124, 77, 255, 0.34);
+
+            --peek-overlay-bg: rgba(6, 4, 16, 0.72);
+            --peek-surface-bg: #1e1e1e;
+            --peek-surface-fg: #e6e6e6;
+            --peek-muted-fg: #b0b3b8;
+            --peek-border: rgba(255, 255, 255, 0.12);
+            --peek-surface-shadow: 0 24px 70px rgba(0, 0, 0, 0.62);
+        }
     }
 }
 

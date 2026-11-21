@@ -176,19 +176,41 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark styling follows the page's color-scheme (set by the theme), not the
+   visitor's OS. Tokens sit in @supports: a custom property is never dropped
+   at parse time, so an unsupported light-dark() would blank every use site. */
+@supports (color: light-dark(white, black)) {
     .peek-admin {
         /* Brighter iris on dark cards (matches the storefront's dark pass).
            Computed sRGB: #9b78f8 > 5.11:1 on the #1e1e1e card (AA text). */
-        --peek-accent: #9b78f8;
-        --peek-accent-hover: #b39bfa;
-        --peek-card-bg: #1e1e1e;
-        --peek-card-border: #3c3c3c;
-        --peek-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-        --peek-fg: #e8e8ea;
-        --peek-muted: #bdc1c6;
-        --peek-tip-bg: #f0f0f1;
-        --peek-tip-fg: #1d2327;
+        --peek-accent: light-dark(#6d3bf5, #9b78f8);
+        --peek-accent-hover: light-dark(#5b2fd6, #b39bfa);
+        --peek-card-bg: light-dark(#fff, #1e1e1e);
+        --peek-card-border: light-dark(#dcdcde, #3c3c3c);
+        --peek-card-shadow: 0 1px 2px light-dark(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.4));
+        --peek-fg: light-dark(#1d2327, #e8e8ea);
+        --peek-muted: light-dark(#50575e, #bdc1c6);
+        --peek-tip-bg: light-dark(#1d2327, #f0f0f1);
+        --peek-tip-fg: light-dark(#fff, #1d2327);
+    }
+}
+
+/* Browsers without light-dark() keep the previous OS-based dark pass. */
+@supports not (color: light-dark(white, black)) {
+    @media (prefers-color-scheme: dark) {
+        .peek-admin {
+            /* Brighter iris on dark cards (matches the storefront's dark pass).
+               Computed sRGB: #9b78f8 > 5.11:1 on the #1e1e1e card (AA text). */
+            --peek-accent: #9b78f8;
+            --peek-accent-hover: #b39bfa;
+            --peek-card-bg: #1e1e1e;
+            --peek-card-border: #3c3c3c;
+            --peek-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            --peek-fg: #e8e8ea;
+            --peek-muted: #bdc1c6;
+            --peek-tip-bg: #f0f0f1;
+            --peek-tip-fg: #1d2327;
+        }
     }
 }
 
