@@ -17,9 +17,6 @@ defined('WP_UNINSTALL_PLUGIN') || exit;
 // uninstalled; with no add-on on disk it is ours. Matched on the text domain,
 // so a renamed folder still counts. The plugin list is cached per request and
 // a bulk delete runs both uninstalls in one request, so drop the cache first.
-if (! function_exists('get_plugins')) {
-    require_once ABSPATH . 'wp-admin/includes/plugin.php';
-}
 wp_cache_delete('plugins', 'plugins');
 $peek_addon_installed = in_array('plogins-peek-pro', array_column(get_plugins(), 'TextDomain'), true);
 
