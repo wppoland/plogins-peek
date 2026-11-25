@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.1.9
+Stable tag: 1.1.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -155,6 +155,9 @@ Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Tr
 Security release. The quick view no longer shows password-protected products to visitors who have not entered the password.
 
 == Changelog ==
+
+= 1.1.10 =
+* Plugins list shows a shortcut to the settings screen.
 
 = 1.1.9 =
 * Uninstall no longer loads a WordPress core file itself; WordPress has already loaded it when it runs the uninstall.
