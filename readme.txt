@@ -2,7 +2,7 @@
 Contributors: motylanogha
 Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
-Tested up to: 7.1
+Tested up to: 7.2
 Requires PHP: 8.1
 Stable tag: 1.1.10
 License: GPLv2 or later
