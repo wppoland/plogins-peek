@@ -150,8 +150,10 @@ li.wc-block-product:hover .peek-quick-view-trigger--overlay {
     margin-inline-start: auto;
     display: grid;
     place-items: center;
+    box-sizing: border-box;
     inline-size: 36px;
     block-size: 36px;
+    padding: 0; /* themes pad every button, which turned the circle into an oval */
     border: 0;
     border-radius: 50%;
     background: transparent;
