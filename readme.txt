@@ -4,7 +4,7 @@ Tags: woocommerce, quick view, product quick view, product modal, quick shop
 Requires at least: 6.5
 Tested up to: 7.2
 Requires PHP: 8.1
-Stable tag: 1.1.10
+Stable tag: 1.1.11
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -155,6 +155,9 @@ Plogins Peek is fully translatable and ships the `plogins-peek.pot` template. Tr
 Security release. The quick view no longer shows password-protected products to visitors who have not entered the password.
 
 == Changelog ==
+
+= 1.1.11 =
+* Fixed: on themes that pad every button (Storefront among them) the quick view close button was an oval with the x off centre. It is a circle again.
 
 = 1.1.10 =
 * Plugins list shows a shortcut to the settings screen.
